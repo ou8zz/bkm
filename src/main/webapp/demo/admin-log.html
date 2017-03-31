@@ -1,0 +1,226 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Amaze UI Admin log Examples</title>
+  <meta name="description" content="这是一个log页面">
+  <meta name="keywords" content="log">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="assets/i/favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+  <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+
+<header class="am-topbar am-topbar-inverse admin-header">
+  <div class="am-topbar-brand">
+  <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:swcmenu();">
+          <span class="am-icon-home am-icon-lg"></span> 
+        </a>
+     <strong>机构信息维护及产品文档管理系统</strong><small></small>
+  </div>
+
+  <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+  <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
+    <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
+      <li class="am-dropdown" data-am-dropdown>
+        <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+          <span class="am-icon-users"></span> 管理员 <span class="am-icon-caret-down"></span>
+        </a>
+        <ul class="am-dropdown-content">
+          <li><a href="#"><span class="am-icon-user"></span> 资料</a></li>
+          <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
+          <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
+        </ul>
+      </li>
+      <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="am-cf admin-main">
+<!-- sidebar start -->
+<div class="admin-sidebar am-offcanvas" id="admin-offcanvas"></div>
+<!-- sidebar end -->
+
+  <!-- content start -->
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl"><strong class="am-text-primary am-text-lg">操作日志</strong> / <small>log</small></div>
+      </div>
+
+      <hr/>
+
+      <div class="am-g error-log">
+        <div class="am-u-sm-12 am-u-sm-centered">
+        <pre class="am-pre-scrollable">
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [报告配置] <a href="javascript:logDlg(1);">长城消费-托管协议</a> 信息被管理员"赵丽"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [报告配置] <a href="javascript:logDlg(1);">长城工资宝-合同</a> 信息被用户"赵丽"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [章节配置] <a href="javascript:logDlg(1);">十、基金的财产</a> 信息被用户"李小可"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[新增]</span> [章节配置] <a href="javascript:logDlg(1);">三、相关服务机构</a> 信息被管理员"伍海"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [代销机构基本信息] <a href="javascript:logDlg(1);">XX股份有限公司</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [基金经理基本信息] <a href="javascript:logDlg(1);">王丽华</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [部门信息] <a href="javascript:logDlg(2);">稽核部门</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[删除]</span> [用户信息] <a href="javascript:logDlg(2);">王凯</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[新增]</span> [用户信息] <a href="javascript:logDlg(2);">王凯</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [报告配置] <a href="javascript:logDlg(1);">长城工资宝-合同</a> 信息被用户"赵丽"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [章节配置] <a href="javascript:logDlg(1);">十、基金的财产</a> 信息被用户"李小可"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[新增]</span> [章节配置] <a href="javascript:logDlg(1);">三、相关服务机构</a> 信息被管理员"伍海"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [代销机构基本信息] <a href="javascript:logDlg(1);">XX股份有限公司</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [基金经理基本信息] <a href="javascript:logDlg(1);">王丽华</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [部门信息] <a href="javascript:logDlg(2);">稽核部门</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[删除]</span> [用户信息] <a href="javascript:logDlg(2);">王凯</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[新增]</span> [用户信息] <a href="javascript:logDlg(2);">王凯</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [报告配置] <a href="javascript:logDlg(1);">长城工资宝-合同</a> 信息被用户"赵丽"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [章节配置] <a href="javascript:logDlg(1);">十、基金的财产</a> 信息被用户"李小可"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[新增]</span> [章节配置] <a href="javascript:logDlg(1);">三、相关服务机构</a> 信息被管理员"伍海"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [代销机构基本信息] <a href="javascript:logDlg(1);">XX股份有限公司</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [基金经理基本信息] <a href="javascript:logDlg(1);">王丽华</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [部门信息] <a href="javascript:logDlg(2);">稽核部门</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[删除]</span> [用户信息] <a href="javascript:logDlg(2);">王凯</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[新增]</span> [用户信息] <a href="javascript:logDlg(2);">王凯</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [报告配置] <a href="javascript:logDlg(1);">长城工资宝-合同</a> 信息被用户"赵丽"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [章节配置] <a href="javascript:logDlg(1);">十、基金的财产</a> 信息被用户"李小可"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[新增]</span> [章节配置] <a href="javascript:logDlg(1);">三、相关服务机构</a> 信息被管理员"伍海"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [代销机构基本信息] <a href="javascript:logDlg(1);">XX股份有限公司</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [基金经理基本信息] <a href="javascript:logDlg(1);">王丽华</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [部门信息] <a href="javascript:logDlg(2);">稽核部门</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[删除]</span> [用户信息] <a href="javascript:logDlg(2);">王凯</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[新增]</span> [用户信息] <a href="javascript:logDlg(2);">王凯</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [报告配置] <a href="javascript:logDlg(1);">长城工资宝-合同</a> 信息被用户"赵丽"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [章节配置] <a href="javascript:logDlg(1);">十、基金的财产</a> 信息被用户"李小可"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[新增]</span> [章节配置] <a href="javascript:logDlg(1);">三、相关服务机构</a> 信息被管理员"伍海"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [代销机构基本信息] <a href="javascript:logDlg(1);">XX股份有限公司</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [基金经理基本信息] <a href="javascript:logDlg(1);">王丽华</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [部门信息] <a href="javascript:logDlg(2);">稽核部门</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[删除]</span> [用户信息] <a href="javascript:logDlg(2);">王凯</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[新增]</span> [用户信息] <a href="javascript:logDlg(2);">王凯</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [报告配置] <a href="javascript:logDlg(1);">长城工资宝-合同</a> 信息被用户"赵丽"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [章节配置] <a href="javascript:logDlg(1);">十、基金的财产</a> 信息被用户"李小可"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[新增]</span> [章节配置] <a href="javascript:logDlg(1);">三、相关服务机构</a> 信息被管理员"伍海"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [代销机构基本信息] <a href="javascript:logDlg(1);">XX股份有限公司</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [基金经理基本信息] <a href="javascript:logDlg(1);">王丽华</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [部门信息] <a href="javascript:logDlg(2);">稽核部门</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[删除]</span> [用户信息] <a href="javascript:logDlg(2);">王凯</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[新增]</span> [用户信息] <a href="javascript:logDlg(2);">王凯</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [报告配置] <a href="javascript:logDlg(1);">长城工资宝-合同</a> 信息被用户"赵丽"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [章节配置] <a href="javascript:logDlg(1);">十、基金的财产</a> 信息被用户"李小可"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[新增]</span> [章节配置] <a href="javascript:logDlg(1);">三、相关服务机构</a> 信息被管理员"伍海"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [代销机构基本信息] <a href="javascript:logDlg(1);">XX股份有限公司</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [基金经理基本信息] <a href="javascript:logDlg(1);">王丽华</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [部门信息] <a href="javascript:logDlg(2);">稽核部门</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[删除]</span> [用户信息] <a href="javascript:logDlg(2);">王凯</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[新增]</span> [用户信息] <a href="javascript:logDlg(2);">王凯</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [报告配置] <a href="javascript:logDlg(1);">长城工资宝-合同</a> 信息被用户"赵丽"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [章节配置] <a href="javascript:logDlg(1);">十、基金的财产</a> 信息被用户"李小可"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[新增]</span> [章节配置] <a href="javascript:logDlg(1);">三、相关服务机构</a> 信息被管理员"伍海"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [代销机构基本信息] <a href="javascript:logDlg(1);">XX股份有限公司</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [基金经理基本信息] <a href="javascript:logDlg(1);">王丽华</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[修改]</span> [部门信息] <a href="javascript:logDlg(2);">稽核部门</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[删除]</span> [用户信息] <a href="javascript:logDlg(2);">王凯</a> 信息被管理员"王凯"修改了.
+<span class="am-text-success">[2016-04-02 17:32:52]</span> <span class="am-text-danger">[新增]</span> [用户信息] <a href="javascript:logDlg(2);">王凯</a> 信息被管理员"王凯"修改了.
+        </pre>
+        </div>
+      </div>
+    </div>
+
+    <footer class="admin-content-footer">
+      <hr>
+      <p class="am-padding-left">© 2016 Ccfund.com.cn All Rights Reserved.</p>
+    </footer>
+  </div>
+  <!-- content end -->
+
+</div>
+
+<!-- 日志详细情况 -->
+<div id="lg">
+<table class="am-table am-table-striped am-table-hover table-main">
+   <thead>
+   <tr>
+     <th>字段</th>
+     <th>新值</th>
+     <th>旧值</th>
+   </tr>
+   </thead>
+   <tbody>
+   <tr>
+     <td>用户名</td>
+     <td>王凯</td>
+     <td>王凯</td>
+   </tr>
+   <tr>
+     <td>用户类型</td>
+     <td><span class="am-text-danger">基金经理</span></td>
+     <td>基金经理助理</td>
+   </tr>
+   <tr>
+     <td>邮箱</td>
+     <td>abc@ccfund.com</td>
+     <td>abc@ccfund.com</td>
+   </tr>
+   <tr>
+     <td>部门</td>
+     <td>投资部</td>
+     <td>投资部</td>
+   </tr>
+   <tr>
+     <td>角色</td>
+     <td>普通用户</td>
+     <td>普通用户</td>
+   </tr>
+  
+   </tbody>
+ </table>
+</div>
+
+<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+
+<footer>
+  <hr>
+  <p class="am-padding-left">© 2016 Ccfund.com.cn All Rights Reserved.</p>
+</footer>
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/layer/layer.js"></script>
+<script type="text/javascript">
+var ht;
+function logDlg() {
+	if(ht==undefined) {
+		ht = $("#lg").html();
+		$("#lg").html('');
+	}
+	layer.open({
+		title: '日志修改情况',
+		type:1,
+		fix: false, //不固定
+		maxmin: true,
+		area: ['800px', '500px'], //宽高
+		content: ht
+	});
+}
+</script>
+</body>
+</html>

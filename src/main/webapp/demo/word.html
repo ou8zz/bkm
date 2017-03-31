@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+</HEAD>
+<script>
+function AllAreaWord()  
+ {  
+  var oWD = new ActiveXObject("Word.Application");  
+  var oDC = oWD.Documents.Add("",0,1);  
+  var oRange =oDC.Range(0,1);  
+  var sel = document.body.createTextRange();  
+  sel.moveToElementText(PrintA);  
+  sel.select();  
+  sel.execCommand("Copy");  
+  oRange.Paste();  
+  oWD.Application.Visible = true;  
+  //window.close();  
+ }
+</script>
+<BODY>
+<input type="button" onclick="javascript:AllAreaWord();" value="生成Word">
+<TABLE width="100%" align="center" border=1 id="PrintA">
+<TR><TD  colspan="4">表单A&nbsp;demo</TD></TR>
+<TR>
+<TD  width="10%">A1</TD>
+<TD  colspan="3">&nbsp;21312</TD>
+</TR>
+<TR>
+<TD  width="10%">A2</TD>
+<TD  width="35%">&nbsp;123</TD>
+<TD  width="10%">A3</TD>
+<TD  width="35%">&nbsp;123123</TD>
+</TR>
+<TR>
+<TD width="10%">A4</TD>
+<TD  colspan="3"><IMG height=296 src="C:\Documents and Settings\zdg\My Documents\My Pictures\2008212181150844m.jpg"   alt="23423423423" width=50%></TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

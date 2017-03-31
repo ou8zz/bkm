@@ -1,0 +1,387 @@
+<!doctype html>
+<html class="no-js fixed-layout">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>历史公告查询</title>
+  <meta name="description" content="这是一个 index 页面">
+  <meta name="keywords" content="index">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="assets/i/favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+  <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+
+<header class="am-topbar am-topbar-inverse admin-header">
+  <div class="am-topbar-brand">
+     <strong>机构信息维护及产品文档管理系统</strong><small></small>
+  </div>
+
+  <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+  <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
+    <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
+     
+      <li class="am-dropdown" data-am-dropdown>
+        <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+          <span class="am-icon-users"></span> 管理员 <span class="am-icon-caret-down"></span>
+        </a>
+        <ul class="am-dropdown-content">
+          <li><a href="#"><span class="am-icon-user"></span> 资料</a></li>
+          <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
+          <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
+        </ul>
+      </li>
+      <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="am-cf admin-main">
+  <!-- sidebar start -->
+  <div class="admin-sidebar am-offcanvas" id="admin-offcanvas"></div>
+  <!-- sidebar end -->
+
+  <!-- content start -->
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">历史公告查询</strong>  <small></small></div>
+      </div>
+
+ 	  <div class="am-g">
+        
+		<div class="am-u-sm-12 am-u-md-3">
+          <div class="am-form-group">
+            <select name="select" data-am-selected="{btnSize: 'sm'}">
+              <option value="option0" selected>所有产品</option>
+			  <option value="option1">长城新视野  002225</option>
+              <option value="option2">长城债券  200009</option>
+              <option value="option3">长城增利（A）  200013</option>
+              <option value="option3">长城增利（C）  200113</option>
+              <option value="option3">长城增收（A）  000254</option>
+              <option value="option3">长城增收（A）  000254</option>
+              <option value="option3">长城增收（A）  000254</option>
+              <option value="option3">长城增收（A）  000254</option>
+              <option value="option3">长城增收（A）  000254</option>
+              <option value="option3">长城增收（A）  000254</option>
+            </select>
+          </div>
+        </div>
+		<div class="am-u-sm-12 am-u-md-2">
+          <div class="am-input-group am-input-group-sm">
+<input type="text" class="am-form-field" placeholder="开始日期" data-am-datepicker readonly required />
+          <span class="am-input-group-btn"></span>
+          </div>
+        </div>
+        <div class="am-u-sm-12 am-u-md-2">
+          <div class="am-input-group am-input-group-sm">
+<input type="text" class="am-form-field" placeholder="结束日期" data-am-datepicker readonly required />
+          <span class="am-input-group-btn"></span>
+          </div>
+        </div>
+		<div class="am-u-sm-12 am-u-md-3">
+          <div class="am-input-group am-input-group-sm">
+            <input type="text" class="am-form-field" placeholder="输入查询条件">
+          <span class="am-input-group-btn">
+            <button class="am-btn am-btn-default" type="button" onClick="addUser()">搜索</button>
+          </span>
+          </div>
+        </div>
+      </div>
+	  
+      <div class="am-g">
+        <div class="am-u-sm-12">
+          <form class="am-form">
+            <table class="am-table am-table-striped am-table-hover table-main">
+              <thead>
+              <tr>
+                <th width="28" class="table-check"><input type="checkbox" /></th>
+                <th class="table-id">ID</th>
+                <th class="table-title">基金代码</th>
+				<th class="table-title">基金名称</th>
+				<th class="table-title">公告事项</th>
+				<th class="table-title">公告日期</th>
+                <th class="table-set">操作</th>
+              </tr>
+              </thead>
+              <tbody>
+              
+              <tr>
+                <td><input type="checkbox" /></td>
+				<td>1</td>
+                <td>000615</td>
+                <td>长城工资宝</td>
+				<td>关于长城工资宝货币市场基金2016年端午节假期前暂停申购业务的公告</td>
+				<td>2016-06-02</td>
+                <td>
+                  <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                      <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                      <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+			  <tr>
+                <td><input type="checkbox" /></td>
+				<td>2</td>
+                <td>002703</td>
+                <td>长城久源</td>
+				<td>关于增加工商银行为长城久源保本混合型证券投资基金代销机构的公告</td>
+				<td>2016-06-06</td>
+                <td>
+                  <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                      <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                      <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+			  <tr>
+                <td><input type="checkbox" /></td>
+				<td>3</td>
+                <td>200003</td>
+                <td>长城货币（A）</td>
+				<td>关于长城货币市场证券投资基金2016年端午节假期前暂停A级、B级……</td>
+				<td>2016-06-02</td>
+                <td>
+                  <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                      <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                      <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+			  <tr>
+                <td><input type="checkbox" /></td>
+				<td>4</td>
+                <td>000611</td>
+                <td>长城淘金</td>
+				<td>长城淘金一年期理财债券型证券投资基金2015年5月7日审计报告</td>
+				<td>2015-05-26</td>
+                <td>
+                  <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                      <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                      <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+			  <tr>
+                <td><input type="checkbox" /></td>
+				<td>5</td>
+                <td>002225</td>
+                <td>长城新视野</td>
+				<td>长城新视野混合型证券投资基金开放日常申购、赎回、转换和定期……</td>
+				<td>2016-05-25</td>
+                <td>
+                  <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                      <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                      <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+			  <tr>
+                <td><input type="checkbox" /></td>
+				<td>6</td>
+                <td>000768</td>
+                <td>长城久盈</td>
+				<td>长城基金管理有限公司关于增聘长城久盈纯债分级债券型证券投资……</td>
+				<td>2016-05-21</td>
+                <td>
+                  <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                      <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                      <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+			  <tr>
+                <td><input type="checkbox" /></td>
+				<td>7</td>
+                <td>000334</td>
+                <td>长城稳固（C）</td>
+				<td>长城基金管理有限公司关于增聘长城稳固收益债券型证券投资基金……</td>
+				<td>2015-05-12</td>
+                <td>
+                  <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                      <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                      <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+			  
+              </tbody>
+            </table>
+            <div class="am-cf">
+              共 105 条记录
+              <div class="am-fr">
+                <ul class="am-pagination">
+                  <li class="am-disabled"><a href="#">«</a></li>
+                  <li class="am-active"><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">5</a></li>
+				  <li><a href="#">6</a></li>
+				  <li><a href="#">7</a></li>
+				  <li><a href="#">8</a></li>
+				  <li><a href="#">9</a></li>
+				  <li><a href="#">10</a></li>
+                  <li><a href="#">»</a></li>
+                </ul>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <footer class="admin-content-footer">
+      <hr>
+      <p class="am-padding-left">© 2016 Ccfund.com.cn All Rights Reserved.</p>
+    </footer>
+  </div>
+  <!-- content end -->
+
+</div>
+<!-- 弹出窗 -->
+<div id="addForm">
+   
+	  
+    <div class="am-tabs am-margin" data-am-tabs>
+      <ul class="am-tabs-nav am-nav am-nav-tabs">
+        <li  class="am-active"><a href="#tab1" id="aat1">长城新视野（A） 002225</a></li>
+<!--         <li ><a href="#tab2" id="aat2">列表配置</a></li> -->
+      </ul>
+          
+      <div class="am-tabs-bd">
+        <div class="am-tab-panel am-fade am-in am-active" id="tab1">
+		<form class="am-form">
+            <table class="am-table am-table-striped am-table-hover table-main">
+              <thead>
+              <tr>
+                <th class="table-check"><input type="checkbox" /></th>
+                <th class="table-id">ID</th>
+				<th class="table-title">公告事项</th>
+				<th class="table-title">公告日期</th>
+              </tr>
+              </thead>
+              <tbody>
+              
+              <tr>
+                <td><input type="checkbox" /></td>
+				<td>1</td>
+				<td>长城新视野混合型证券投资基金开放日常申购、赎回、转换和定期定额投资业务的公告</td>
+				<td>2016-05-25</td>
+                
+              </tr>
+			  <tr>
+                <td><input type="checkbox" /></td>
+				<td>2</td>
+				<td>长城新视野混合型证券投资基金基金合同生效公告</td>
+				<td>2016-05-03</td>
+                
+              </tr>
+			  <tr>
+                <td><input type="checkbox" /></td>
+				<td>3</td>
+				<td>长城新视野混合型证券投资基金提前结束募集的公告……</td>
+				<td>2016-04-28</td>
+                
+              </tr>
+			  
+              </tbody>
+            </table>
+            <div class="am-cf">
+              共 3 条记录
+              <div class="am-fr">
+                <ul class="am-pagination">
+                  <li class="am-disabled"><a href="#">«</a></li>
+                  <li class="am-active"><a href="#">1</a></li>
+                  <li><a href="#">»</a></li>
+                </ul>
+              </div>
+            </div>
+          </form>
+    <!--    	<form class="am-form">
+            <div class="am-g am-margin-top-sm">
+              <div class="am-u-sm-8 am-u-md-2 am-text-right">长城新视野 (A) 002225</div>
+              <div class="am-u-sm-8 am-u-md-10 am-u-end"><input type="text" class="am-input-sm"></div>
+            </div>
+          	<div class="am-g am-margin-top-sm">
+              <div class="am-u-sm-4 am-u-md-2 am-text-right"> 内容  </div>
+              <div class="am-u-sm-8 am-u-md-10 am-u-end">
+                <textarea rows="12"></textarea>
+              </div>
+            </div>
+          	</form> -->
+        </div>
+      </div> 
+    </div>
+	<div class="am-margin">
+      <button type="button" class="am-btn am-btn-primary am-btn-xs am-radius"><span class="am-icon-external-link"></span> 导出</button>
+	  <button type="button" class="am-btn am-btn-default am-btn-xs am-text-primary am-radius"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+	  <button type="button" class="am-btn am-btn-default  am-btn-xs am-text-danger am-radius"><span class="am-icon-trash-o"></span> 删除</button>
+    </div>  
+	
+</div>
+<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/layer/layer.js"></script>
+<script type="text/javascript">
+var ht;
+// addForm
+function addUser(u) {
+var addForm = $("#addForm");
+if(ht==undefined) {
+	ht = addForm.html();
+	addForm.html('');
+}
+layer.open({
+	title: '查询结果',
+	type:1,
+	fix: false, //不固定
+	maxmin: true,
+	area: ['900px', '550px'], //宽高
+	content: ht
+});
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,867 @@
+﻿<!doctype html>
+<html class="no-js fixed-layout">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>产品文档管理</title>
+  <meta name="description" content="这是一个 index 页面">
+  <meta name="keywords" content="index">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="assets/i/favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+  <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+
+  <link rel="stylesheet" href="assets/css/admin.css">
+  <style type="text/css">
+<!--
+
+.word-divcss {
+	width:570px;
+	margin:auto;
+	vertical-align: middle;font-size:10.5pt; font-family:"宋体", Arial, Helvetica, sans-serif; line-height:23px;
+}
+.word-h1 {
+	font-size: 21pt;line-height:23px;
+	font-family:"黑体", "宋体", Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	text-align: center;
+}
+.word-mulu1 {
+	font-size: 14pt; line-height:23px;
+	font-family: "黑体", "宋体";font-weight: bold; 
+	text-align: center;
+}
+.word-mulu2 {
+	font-size: 12pt; 
+	font-family: "黑体", "宋体";font-weight: bold; line-height:23px;
+	text-align: center;
+}
+.word-text {
+	line-height:30px; text-indent: 2em;font-size:10.5pt; font-family:"宋体", Arial, Helvetica, sans-serif;
+}
+.word-mulubt {
+	font-size: 12pt; line-height:39px;
+}
+.word-hr-size { padding:0px; margin:0px; color:#eee; 
+	font-size: 9pt;
+	line-height: 0px;
+	text-align: right;
+	vertical-align: bottom;
+}
+.word-hr { size:1px; border:0;background-color:#eee;height:1px;}
+
+-->
+</style>
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+
+<header class="am-topbar am-topbar-inverse admin-header">
+  <div class="am-topbar-brand">
+  	<a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:swcmenu();">
+          <span class="am-icon-home am-icon-lg"></span> 
+        </a>
+    <strong>机构信息维护及产品文档管理系统</strong><small></small>
+  </div>
+
+  <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+  <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
+    <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
+     
+      <li class="am-dropdown" data-am-dropdown>
+        <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+          <span class="am-icon-users"></span> 管理员 <span class="am-icon-caret-down"></span>
+        </a>
+        <ul class="am-dropdown-content">
+          <li><a href="#"><span class="am-icon-user"></span> 资料</a></li>
+          <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
+          <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
+        </ul>
+      </li>
+      <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="am-cf admin-main">
+  <!-- sidebar start -->
+  <div class="admin-sidebar am-offcanvas" id="admin-offcanvas"></div>
+  <!-- sidebar end -->
+
+  <!-- content start -->
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">产品文档管理</strong>  <small> </small></div>
+      </div>
+
+ 	  <div class="am-g">
+        
+		<div class="am-u-sm-12 am-u-md-3">
+          <div class="am-form-group">
+            <select data-am-selected="{btnSize: 'sm'}">
+              <option value="option0" selected>所有产品</option>
+              <option value="option2">长城债券  200009</option>
+              <option value="option3">长城增利（A）  200013</option>
+              <option value="option3">长城增利（C）  200113</option>
+              <option value="option3">长城增收（A）  000254</option>
+			  <option value="option3">长城增收（A）  000254</option>
+			  <option value="option3">长城增收（A）  000254</option>
+			  <option value="option3">长城增收（A）  000254</option>
+			  <option value="option3">长城增收（A）  000254</option>
+			  <option value="option3">长城增收（A）  000254</option>
+            </select>
+          </div>
+        </div>
+ <!--       <div class="am-u-sm-12 am-u-md-3">
+          <div class="am-form-group">
+            <select data-am-selected="{btnSize: 'sm'}">
+              <option value="option2">公募</option>
+              <option value="option3">专户</option>
+              <option value="option3">年金</option>
+              <option value="option3">社保</option>
+            </select>
+          </div>
+        </div>
+-->		
+		<div class="am-u-sm-12 am-u-md-3">
+          <div class="am-form-group">
+            <select data-am-selected="{btnSize: 'sm'}" multiple="multiple">
+              <option value="">产品类型</option>
+              <option value="option2">合同</option>
+              <option value="option3">托管协议</option>
+			  <option value="option3">招募说明书摘要</option>
+			  <option value="option3">招募说明书</option>
+			  <option value="option3">发售公告</option>
+			  <option value="option3">成立公告</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="am-u-sm-12 am-u-md-3">
+          <div class="am-input-group am-input-group-sm">
+            <input type="text" class="am-form-field">
+          <span class="am-input-group-btn">
+            <button class="am-btn am-btn-default" type="button">搜索</button>
+          </span>
+          </div>
+        </div>
+      </div>
+	  
+      <div class="am-g">
+        <div class="am-u-sm-12">
+          <table class="am-table am-table-bd am-table-striped admin-content-table">
+            <thead>
+            <tr>
+              <th>ID</th><th>产品代码</th><th>产品名称</th><th>报会日</th>
+              <th>招募说明书</th>
+              <th>招募书摘要</th>
+              <th>基金合同</th>
+              <th>合同摘要</th>
+              <th>托管协议</th>
+              <th>发售公告</th>
+              <th>成立公告</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><td>1</td>
+            <td>002703</td>
+            <td>长城久源</td>
+            <td>2016-5-15</td>
+			<td><span class="am-badge am-badge-warning">08</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onClick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onClick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-warning">08</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onClick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onClick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-warning">15</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onClick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onClick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-secondary">12</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onClick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onClick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-success">21</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onClick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onClick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-success">7</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onClick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onClick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+				<td><span class="am-badge">0</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onClick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onClick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+            </tr>
+			<tr><td>2</td>
+			<td>002225</td>
+			<td>长城新视野</td>
+			<td>2016-4-9</td>
+			<td><span class="am-badge am-badge-warning">05</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onClick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onClick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-warning">05</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onClick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onClick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-warning">03</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onClick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onClick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-warning">03</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onClick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onClick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-secondary">21</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onClick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onClick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-success">7</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onClick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onClick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+				<td><span class="am-badge">0</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onClick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onClick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+            </tr>
+            <tr><td>3</td><td>002543</td>
+            <td>长城久益</td>
+            <td>2016-4-5</td>
+			<td><span class="am-badge am-badge-secondary">22</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onClick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onClick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-secondary">22</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onClick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onClick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-success">27</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onClick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onClick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-success">12</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onClick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onClick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-success">21</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onClick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onClick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-success">7</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onClick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onClick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+				<td><span class="am-badge">0</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onClick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onClick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="admin-content-footer">
+      <hr>
+      <p class="am-padding-left">注：数字为文档目录条数。</p>
+	  <p><span class="am-badge am-badge-warning">08</span> 黄色高亮表示部分目录已提交；<span class="am-badge am-badge-secondary">22</span> 蓝色高亮表示目录已全部提交，但未全部通过审核；<span class="am-badge am-badge-success">22</span> 绿色高亮表示目录已全部提交，且已审核通过。</p>
+    </footer>
+  </div>
+  <!-- content end -->
+
+</div>
+
+<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+
+
+
+<div id="ml" class="" tabindex="-1">
+ <div class="am-panel-group" id="accordion">
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	<div style="text-align:right; float:right;"> 2016-06-03 10:10:09  <span class="am-badge am-badge-success"> 已提交</span> <a class="am-badge am-badge-secondary"> 退回修改 </a> <a class="am-badge am-badge-success"> 已阅 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-1'}">
+       一、绪言(点击预览)
+      </h4>
+	 
+    </div>
+    <div id="do-not-say-1" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+
+<form class="am-form">
+ <fieldset>
+   <div class="am-form-group">
+      <label for="doc-ta-1">第一部分  绪言</label>
+      <textarea class="doc-ta-1" rows="15" id="doc-ta-1" style="width:100%;height:260px;visibility:hidden;" >
+本招募说明书依据《中华人民共和国证券投资基金法》（以下简称“《基金法》”）、《证券 投资基金信息披露管理办法》（以下简称“《信息披露办法》”）、《公开募集证券投资基金运作 管理办法》（以下简称“《运作办法》”）、《证券投资基金销售管理办法》（以下简称“《销售办 法》”）等有关法律法规及《长城新视野混合型证券投资基金基金合同》（以下简称“基金合 同”）编写。
+本招募说明书阐述了长城新视野混合型证券投资基金的投资目标、策略、风险、费率 等与投资者投资决策有关的全部必要事项，投资者在做出投资决策前应仔细阅读本招募说 明书。
+基金管理人承诺本招募说明书不存在任何虚假记载、误导性陈述或者重大遗漏，并对 其真实性、准确性、完整性承担法律责任。本基金是根据本招募说明书所载明的资料申请 募集的。本基金管理人没有委托或授权任何其他人提供未在本招募说明书中载明的信息， 或对本招募说明书做出任何解释或者说明。
+本招募说明书根据本基金的基金合同编写，并经中国证监会注册。基金合同是约定基 金当事人之间权利、义务的法律文件。基金投资者自依基金合同取得基金份额，即成为基 金份额持有人和本基金合同的当事人，其持有基金份额的行为本身即表明其对基金合同的 承认和接受，并按照《基金法》、基金合同及其他规定享有权利、承担义务。基金投资者 欲了解基金份额持有人的权利和义务，应详细查阅本基金基金合同。
+     </textarea>
+    </div>
+      <p><button type="submit" class="am-btn am-btn-primary am-btn-xs am-radius"><span class="am-icon-check-square-o">  提交</span></button></p>
+ </fieldset>
+</form>
+
+      </div>
+    </div>
+  </div>
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	<div style="text-align:right; float:right;"> 2016-06-03 10:10:09  <span class="am-badge am-badge-success"> 已提交</span> <a class="am-badge am-badge-secondary"> 退回修改 </a> <a class="am-badge am-badge-success"> 已阅 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-2'}">
+        二、释 义(点击预览)
+      </h4>
+    </div>
+    <div id="do-not-say-2" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+	   
+  <form class="am-form">
+   <fieldset>
+   <div class="am-form-group">
+      <label for="doc-ta-1">第二部分  	释   义</label>
+      <textarea rows="15" class="doc-ta-1" style="width:100%;height:260px;visibility:hidden;" >
+
+在本招募说明书中，除非文意另有所指，下列词语或简称具有如下含义：
+
+1、基金或本基金：指长城新视野混合型证券投资基金
+2、基金管理人：指长城基金管理有限公司
+3、基金托管人：指中国民生银行股份有限公司
+4、基金合同或本基金合同：指《长城新视野混合型证券投资基金基金合同》及对本基金合同的任何有效修订和补充
+5、托管协议：指基金管理人与基金托管人就本基金签订之《长城新视野混合型证券投资基金托管协议》及对该托管协议的任何有效修订和补充
+6、招募说明书：指《长城新视野混合型证券投资基金招募说明书》及其定期的更新
+7、基金份额发售公告：指《长城新视野混合型证券投资基金基金份额发售公告》
+8、法律法规：指中国现行有效并公布实施的法律、行政法规、规范性文件、司法解释、 行政规章以及其他对基金合同当事人有约束力的决定、决议、通知等
+9、《基金法》：指《中华人民共和国证券投资基金法》及颁布机关对其不时做出的修订
+10、《销售办法》：指《证券投资基金销售管理办法》及颁布机关对其不时做出的修订
+11、《信息披露办法》：指《证券投资基金信息披露管理办法》及颁布机关对其不时做 出的修订
+12、《运作办法》：指《公开募集证券投资基金运作管理办法》及颁布机关对其不时做出的修订
+13、中国证监会：指中国证券监督管理委员会
+14、银行业监督管理机构：指中国人民银行和/或中国银行业监督管理委员会
+15、基金合同当事人：指受基金合同约束，根据基金合同享有权利并承担义务的法律主 体，包括基金管理人、基金托管人和基金份额持有人
+16、个人投资者：指依据有关法律法规规定可投资于证券投资基金的自然人
+17、机构投资者：指依法可以投资证券投资基金的、在中华人民共和国境内合法登记并 存续或经有关政府部门批准设立并存续的企业法人、事业法人、社会团体或其他组织
+18、合格境外机构投资者：指符合《合格境外机构投资者境内证券投资管理办法》及相 关法律法规规定可以投资于在中国境内依法募集的证券投资基金的中国境外的机构投资者
+19、投资人：指个人投资者、机构投资者和合格境外机构投资者以及法律法规或中国证 监会允许购买证券投资基金的其他投资人的合称
+20、基金份额持有人：指依基金合同和招募说明书合法取得基金份额的投资人
+21、基金销售业务：指基金管理人或销售机构宣传推介基金，发售基金份额，办理基金份额的申购、赎回、转换、非交易过户、转托管及定期定额投资等业务。
+22、销售机构：指长城基金管理有限公司以及符合《销售办法》和中国证监会规定的其他条件，取得基金销售业务资格并与基金管理人签订了基金销售服务代理协议，代为办理基金销售业务的机构
+23、直销机构：指长城基金管理有限公司
+24、代销机构：指符合《销售办法》和中国证监会规定的其他条件，取得基金代销业务 资格并与基金管理人签订了基金销售服务代理协议，代为办理基金销售业务的机构
+25、基金销售网点：指直销机构的直销中心及代销机构的代销网点
+26、登记业务：指基金登记、存管、过户、清算和结算业务，具体内容包括投资人基金账户的建立和管理、基金份额登记、基金销售业务的确认、清算和结算、代理发放红利、建立并保管基金份额 持有人名册和办理非交易过户等
+27、登记机构：指办理登记业务的机构。基金的登记机构为长城基金管理有限公司或接 受长城基金管理有限公司委托代为办理登记业务的机构
+28、基金账户：指登记机构为投资人开立的、记录其持有的、基金管理人所管理的基金 份额余额及其变动情况的账户
+29、基金交易账户：指销售机构为投资人开立的、记录投资人通过该销售机构买卖基金 的基金份额变动及结余情况的账户
+30、基金合同生效日：指基金募集达到法律法规规定及基金合同规定的条件，基金管理 人向中国证监会办理基金备案手续完毕，并获得中国证监会书面确认的日期
+31、基金合同终止日：指基金合同规定的基金合同终止事由出现后，基金财产清算完毕， 清算结果报中国证监会备案并予以公告的日期
+32、基金募集期：指自基金份额发售之日起至发售结束之日止的期间，最长不得超过三 个月
+33、存续期：指基金合同生效至终止之间的不定期期限
+34、工作日：指上海证券交易所、深圳证券交易所的正常交易日
+35、T 日：指销售机构在规定时间受理投资人申购、赎回或其他业务申请的开放日
+36、T+n 日：指自 T 日起第 n 个工作日(不包含 T 日)
+37、开放日：指为投资人办理基金份额申购、赎回或其他业务的工作日
+38、开放时间：指开放日基金接受申购、赎回或其他交易的时间段
+39、《业务规则》：指长城基金管理有限公司开放式基金业务规则，是规范基金管理人所管理的开放式证券投资基金登记方面的业务规则，由基金管理人和投资人共同遵守
+40、认购：指在基金募集期内，投资人申请购买基金份额的行为
+41、申购：指基金合同生效后，投资人根据基金合同和招募说明书的规定申请购买基金 份额的行为
+42、赎回：指基金合同生效后，基金份额持有人按基金合同规定的条件要求将基金份额 兑换为现金的行为
+43、基金转换：指基金份额持有人按照本基金合同和基金管理人届时有效公告规定的条 件，申请将其持有基金管理人管理的、某一基金的基金份额转换为基金管理人管理的其他基金基金份额的行为
+44、转托管：指基金份额持有人在本基金的不同销售机构之间实施的变更所持基金份额 销售机构的操作
+45、定期定额投资计划：指投资人通过有关销售机构提出申请，约定每期申购日、扣款 金额及扣款方式，由销售机构于每期约定扣款日在投资人指定银行账户内自动完成扣款及基金申购申请的一种投资方式
+46、巨额赎回：指本基金单个开放日，基金净赎回申请(赎回申请份额总数加上基金转换中转出申请份额总数后扣除申购申请份额总数及基金转换中转入申请份额总数后的余额)超过上一开放日基金总份额的 10%
+47、元：指人民币元
+48、基金收益：指基金投资所得红利、股息、债券利息、买卖证券价差、银行存款利息、 已实现的其他合法收入及因运用基金财产带来的成本和费用的节约
+49、基金资产总值：指基金拥有的各类有价证券、银行存款本息、基金应收申购款及其他资产的价值总和
+50、基金资产净值：指基金资产总值减去基金负债后的价值
+51、基金份额净值：指计算日基金资产净值除以计算日基金份额总数
+52、基金资产估值：指计算评估基金资产和负债的价值，以确定基金资产净值和基金份额净值的过程
+53、指定媒介：指中国证监会指定的用以进行信息披露的报刊、互联网网站及其他媒介
+54、不可抗力：指本合同当事人不能预见、不能避免且不能克服的客观事件
+       </textarea>
+    </div>
+<p><button type="submit" class="am-btn am-btn-primary am-btn-xs am-radius"><span class="am-icon-check-square-o">  提交</span></button></p>
+	</fieldset>
+</form>
+
+      </div>
+    </div>
+  </div>
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">三、基金管理人</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">五、相关服务机构</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">六、基金的募集</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">七、基金备案与《基金合同》的生效</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">八、基金份额的申购与赎回</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">九、基金的投资管理</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">十、基金的财产</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">十一、基金资产的估值</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">十二、基金的收益分配</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">十三、基金的费用与税收</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">十四、基金的会计与审计</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">十五、基金的信息披露</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">十六、风险揭示</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">十七、基金合同的变更、终止与基金财产的清算</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">十八、基金合同的内容摘要</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">十九、基金托管协议的内容摘要</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> 2016-06-03 10:10:09  <span class="am-badge am-badge-success"> 已提交</span> <a class="am-badge am-badge-secondary"> 退回修改 </a> <a class="am-badge am-badge-warning"> 未阅 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-20'}">二十、对基金份额持有人的服务</h4>
+    </div>
+    <div id="do-not-say-20" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      
+	  <form class="am-form">
+ <fieldset>
+   <div class="am-form-group">
+      <label for="doc-ta-1">第二十部分  	对基金份额持有人的服务</label>
+      <textarea class="" rows="15" id="doc-ta-1">
+基金管理人承诺为基金份额持有人提供一系列的服务，基金管理人将根据基金份额持有 人的需要和市场的变化，增加或变更服务项目。主要服务内容如下：
+（一）账单服务
+1、基金份额持有人可登录本基金管理人网站账户查询系统查阅对账单。
+2、基金份额持有人可通过网站、电话等方式向本基金管理人定制对账单。基金管理人 根据基金份额持有人的对账单定制情况，向账单期内发生交易或账单期末仍持有本公司旗下 基金份额的持有人定期或不定期发送对账单，但由于基金份额持有人未详实填写或未及时更 新相关信息（包括姓名、手机号码、电子邮箱、邮寄地址、邮政编码等）导致基金管理人无 法送出的除外。
+（二）客户服务中心（Call Center）电话服务
+1、24小时自动语音应答服务，为投资者提供基金净值查询、基金账户查询、基金信息 查询等服务。
+2、工作时间由专门客服人员为投资者提供全面业务咨询（包括公司信息、基金信息、 基金投资指南等）及投诉受理等服务。
+公司网站：www.ccfund.com.cn 客服邮箱：support@ccfund.com.cn 客服电话：400-8868-666
+
+     </textarea>
+    </div>
+      <p><button type="submit" class="am-btn am-btn-primary am-btn-xs am-radius"><span class="am-icon-check-square-o">  提交</span></button></p>
+ </fieldset>
+</form>
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+<div style="text-align:right; float:right;"> 2016-06-03 10:10:09  <span class="am-badge am-badge-success"> 已提交</span> <a class="am-badge am-badge-secondary"> 退回修改 </a> <a class="am-badge am-badge-success"> 已阅 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-21'}">二十一、招募说明书的存放及查阅方式</h4>
+    </div>
+    <div id="do-not-say-21" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      
+	  <form class="am-form">
+ <fieldset>
+   <div class="am-form-group">
+      <label for="doc-ta-1">第二十一部分  	招募说明书的存放及查阅方式</label>
+      <textarea class="" rows="15" id="doc-ta-1">
+本招募说明书存放在基金管理人、基金托管人的办公场所，投资者可在办公时间查阅。 在支付工本费后，投资者可在合理时间内取得上述文件的复制件或复印件。招募说明书条款 及内容应以招募说明书正本为准。
+投资者还可以登录基金管理人的网站（http://www.ccfund.com.cn）查阅和下载本招募 说明书。
+
+     </textarea>
+    </div>
+      <p><button type="submit" class="am-btn am-btn-primary am-btn-xs am-radius"><span class="am-icon-check-square-o">  提交</span></button></p>
+ </fieldset>
+</form>
+
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	<div style="text-align:right; float:right;"> 2016-06-03 10:10:09  <span class="am-badge am-badge-success"> 已提交</span> <a class="am-badge am-badge-secondary"> 退回修改 </a> <a class="am-badge am-badge-success"> 已阅 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-22'}">二十二、备查文件</h4>
+    </div>
+    <div id="do-not-say-22" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+     
+	 <form class="am-form">
+ <fieldset>
+   <div class="am-form-group">
+      <label for="doc-ta-1">第二十二部分  	备查文件</label>
+      <textarea class="" rows="15" id="doc-ta-1">
+（一）中国证监会批准长城新视野混合型证券投资基金设立的文件
+（二）《长城新视野混合型证券投资基金基金合同》
+（三）《长城新视野混合型证券投资基金托管协议》
+（四）法律意见书
+（五）基金管理人业务资格批件、营业执照
+（六）基金托管人业务资格批件、营业执照
+（七）中国证监会规定的其他文件
+
+     </textarea>
+    </div>
+      <p><button type="submit" class="am-btn am-btn-primary am-btn-xs am-radius"><span class="am-icon-check-square-o">  提交</span></button></p>
+ </fieldset>
+</form>
+	 
+      </div>
+    </div>
+  </div>
+  
+  
+  
+</div>
+
+</div>
+
+<div id="cl" style="padding: 10px;">
+  <object type="text/x-scriptlet" data="yulan.html" width=100% height=500>
+  </object>
+</div>
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/layer/layer.js"></script>
+<script src="assets/kindeditor/kindeditor-all-min.js"></script>
+<script type="text/javascript">
+
+var ht;
+// 提交情况
+function tj() {
+var ml = $("#ml");
+if(ht==undefined) {
+	ht = ml.html();
+	ml.html('');
+}
+//页面层
+layer.open({
+title: '提交情况',
+type:1,
+fix: false, //不固定
+maxmin: true,
+  skin: 'layui-layer-rim', //加上边框
+  area: ['90%', '600px'], //宽高
+  content: ht
+});
+
+KindEditor.create('textarea[class="doc-ta-1"]');
+	
+$("#ml").html('');
+
+}
+
+var ht1
+// 预览
+function cc() {
+var cl = $("#cl");
+if(ht1==undefined) {
+	ht1 = cl.html();
+	cl.html('');
+}
+
+//页面层
+layer.open({
+title: '报告预览',
+type:1,
+fix: false, //不固定
+maxmin: true,
+  skin: 'layui-layer-rim', //加上边框
+  area: ['800px', '600px'], //宽高
+  content: '<div style="padding: 10px;"><div style="float: right; position: absolute;" class="am-btn am-btn-default">导出</div>' + ht1 + '</div>'
+});
+
+$("#cl").html('');
+
+}
+
+</script>
+</body>
+</html>

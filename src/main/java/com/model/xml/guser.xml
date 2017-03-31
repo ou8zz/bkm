@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="guser">
+	<!--<cache /> 这个标签默认缓存。OH NO -->
+	
+	<select id="getGusers" resultType="guser" parameterType="guser">
+	    SELECT * FROM guser
+	    <where>
+	    	<if test="ename != null"> and ename=#{ename} </if>
+   	    	<if test="pwd != null"> and pwd=#{pwd} </if>
+   	    </where>
+	</select>
+	
+	<select id="getGuserDetil" resultType="guser" parameterType="guser">
+	    SELECT dpt.cname cdepartment, dpt.ename department, dpt.id dptId, pst.cname cposition, pst.ename position,
+		pst.id pstId, role.cname crole, role.ename role, role.id roleId, u.*
+		FROM guser u 
+		left join (select * from ugroup left join usergroup on id=gid where gtype='DEPARTMENT') dpt on u.id=dpt.userid
+		left join (select * from ugroup left join usergroup on id=gid where gtype='POSITION') pst on u.id=pst.userid
+		left join (select * from ugroup left join usergroup on id=gid where gtype='ROLE') role on u.id=role.userid
+   	    <where>
+   	    	<if test="id != null and id !=''"> and u.id = #{id} </if>
+   	    	<if test="gactive != null"> and u.gactive = #{gactive} </if>
+   	    	<if test="locked != null"> and u.locked = #{locked} </if>
+	    	<if test="ename != null and ename !=''"> and u.ename like concat(concat('%',#{ename}),'%') </if>
+	    	<if test="cname != null and cname !=''"> and u.cname like concat(concat('%',#{cname}),'%') </if>
+	    	<if test="dptIds != null and dptIds.length !=0">
+	    		and dpt.id in <foreach item="dptId" collection="dptIds" open="(" separator="," close=")"> #{dptId}</foreach>
+	    	</if>
+   	    </where>
+	</select>
+
+	<insert id="addGuser" parameterType="guser">
+		<selectKey order="BEFORE" resultType="java.lang.Integer" keyProperty="id">
+			SELECT guser_id.nextval FROM DUAL
+	    </selectKey>
+		INSERT INTO guser (id, ename, cname, pwd, email, gender) 
+		VALUES (#{id}, #{ename}, #{cname}, #{pwd}, #{email}, #{gender})
+	</insert>
+	
+	<update id="editGuser" parameterType="guser">
+	    UPDATE guser
+	    <set>
+			<if test="pwd != null"> pwd=#{pwd}, </if>
+		    <if test="ename != null"> ename=#{ename}, </if>
+		    <if test="cname != null"> cname=#{cname}, </if>
+		    <if test="email != null"> email=#{email}, </if>
+		    <if test="birthday != null"> birthday=#{birthday, jdbcType=DATE}, </if>
+		    <if test="gender != null"> gender=#{gender}, </if>
+		    <if test="gactive != null"> gactive=#{gactive}, </if>
+		    <if test="locked != null"> locked=#{locked}, </if>
+	    </set>
+		WHERE id = #{id}
+	</update>
+	
+	<delete id="delGuser">
+		DELETE FROM guser WHERE id in
+		<foreach item="userid" index="key" collection="list" open="(" separator="," close=")">
+			#{userid}
+		</foreach>
+	</delete>
+
+	<!-- 清除用户权限 -->
+	<delete id="delUserGroupByUid">
+		delete from usergroup where userid=#{userid}
+	</delete>
+	
+	<!-- 添加用户权限 -->
+	<insert id="addUserGroupByUid" parameterType="guser">
+		insert into usergroup (userid, gid) select #{id}, #{dptId} from dual union all select #{id}, #{roleId} from dual
+	</insert>
+</mapper>
+

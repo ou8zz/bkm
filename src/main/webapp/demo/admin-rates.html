@@ -1,0 +1,254 @@
+﻿<!doctype html>
+<html class="no-js fixed-layout">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>申购赎回费率维护</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="icon" type="image/png" href="assets/i/favicon.png">
+<link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+<link rel="stylesheet" href="assets/css/amazeui.min.css" />
+<link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+
+	<header class="am-topbar am-topbar-inverse admin-header">
+		<div class="am-topbar-brand">
+		<a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:swcmenu();">
+          <span class="am-icon-home am-icon-lg"></span> 
+        </a>
+			 <strong>机构信息维护及产品文档管理系统</strong><small></small>
+		</div>
+
+		<button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only"
+			data-am-collapse="{target: '#topbar-collapse'}">
+			<span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span>
+		</button>
+
+		<div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+			<ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
+
+				<li class="am-dropdown" data-am-dropdown><a
+					class="am-dropdown-toggle" data-am-dropdown-toggle
+					href="javascript:;"> <span class="am-icon-users"></span> 管理员 <span
+						class="am-icon-caret-down"></span>
+				</a>
+					<ul class="am-dropdown-content">
+						<li><a href="#"><span class="am-icon-user"></span> 资料</a></li>
+						<li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
+						<li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
+					</ul></li>
+				<li class="am-hide-sm-only"><a href="javascript:;"
+					id="admin-fullscreen"><span class="am-icon-arrows-alt"></span>
+						<span class="admin-fullText">开启全屏</span></a></li>
+			</ul>
+		</div>
+	</header>
+
+	<div class="am-cf admin-main">
+		<!-- sidebar start -->
+		<div class="admin-sidebar am-offcanvas" id="admin-offcanvas"></div>
+		<!-- sidebar end -->
+
+		<!-- content start -->
+		<div class="admin-content">
+			<div class="am-cf am-padding">
+				<div class="am-fl am-cf">
+					<strong class="am-text-primary am-text-lg">申购赎回费率维护</strong>  <small></small>
+				</div>
+			</div>
+				
+			<div class="am-g">
+        <div class="am-u-sm-12 am-u-md-6">
+          <div class="am-btn-toolbar">
+            <div class="am-btn-group am-btn-group-xs">
+              <button type="button" class="am-btn am-btn-default" onclick="addUser(this);"><span class="am-icon-plus"></span> 新增</button>
+              <button type="button" class="am-btn am-btn-default"><span class="am-icon-trash-o"></span> 删除</button>
+            </div>
+          </div>
+        </div>
+        <div class="am-u-sm-12 am-u-md-3">
+          <div class="am-form-group">
+            <select data-am-selected="{btnSize: 'sm'}">
+              <option value="option1">部门</option>
+              <option value="option2">角色</option>
+            </select>
+          </div>
+        </div>
+        <div class="am-u-sm-12 am-u-md-3">
+          <div class="am-input-group am-input-group-sm">
+            <input type="text" class="am-form-field">
+          <span class="am-input-group-btn">
+            <button class="am-btn am-btn-default" type="button">搜索</button>
+          </span>
+          </div>
+        </div>
+      </div>
+
+        <div class="am-g">
+        </div>
+  
+			<footer class="admin-content-footer">
+				<hr>
+				<p class="am-padding-left">© 2016 Ccfund.com.cn All Rights Reserved.
+					</p>
+			</footer>
+		</div>
+		<!-- content end -->
+
+	</div>
+
+<div id="addForm">
+   <div class="am-tabs am-margin" data-am-tabs>
+      <ul class="am-tabs-nav am-nav am-nav-tabs">
+        <li class="am-active"><a href="#tab1">基本信息</a></li>
+        <li><a href="#tab2">部门</a></li>
+        <li><a href="#tab3">角色</a></li>
+      </ul>
+
+      <div class="am-tabs-bd">
+        <div class="am-tab-panel am-fade am-in am-active" id="tab1">
+        	<form class="am-form">
+            <div class="am-g am-margin-top-sm">
+              <div class="am-u-sm-4 am-u-md-2 am-text-right">登录ID</div>
+              <div class="am-u-sm-8 am-u-md-4 am-u-end"><input type="text" class="am-input-sm"></div>
+            </div>
+            <div class="am-g am-margin-top-sm">
+              <div class="am-u-sm-4 am-u-md-2 am-text-right">用户名称</div>
+              <div class="am-u-sm-8 am-u-md-4 am-u-end"><input type="text" class="am-input-sm"></div>
+            </div>
+			<div class="am-g am-margin-top-sm">
+              <div class="am-u-sm-4 am-u-md-2 am-text-right">邮箱</div>
+              <div class="am-u-sm-8 am-u-md-4 am-u-end"><input type="text" class="am-input-sm"></div>
+            </div>
+            <div class="am-g am-margin-top">
+              <div class="am-u-sm-4 am-u-md-2 am-text-right">性别</div>
+              <div class="am-btn-group" data-am-button>
+                <label class="am-btn am-btn-default am-btn-xs">
+                  <input type="radio" name="options" id="option1"> 男
+                </label>
+                <label class="am-btn am-btn-default am-btn-xs">
+                  <input type="radio" name="options" id="option2"> 女
+                </label>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="am-tab-panel am-fade" id="tab2">
+        <form class="am-form" id="dptForm">
+          <div class="am-g am-margin-top">
+            <div class="am-u-sm-4 am-u-md-2 am-text-right">所属部门</div>
+            <div class="am-u-sm-8 am-u-md-10">
+              <select data-am-selected="{btnSize: 'sm'}" id="dpt">
+                <option value="option1">信息技术部</option>
+                <option value="option2">稽核部</option>
+                <option value="option3">营销部</option>
+              </select>
+            </div>
+           </div>
+
+          <div class="am-g am-margin-top">
+            <div class="am-u-sm-4 am-u-md-2 am-text-right">显示状态</div>
+            <div class="am-u-sm-8 am-u-md-10">
+              <div class="am-btn-group" data-am-button>
+                <label class="am-btn am-btn-default am-btn-xs">
+                  <input type="radio" name="options" id="option1"> 正常
+                </label>
+                <label class="am-btn am-btn-default am-btn-xs">
+                  <input type="radio" name="options" id="option3"> 不显示
+                </label>
+              </div>
+            </div>
+          </div>
+
+          </form>
+        </div>
+
+        <div class="am-tab-panel am-fade" id="tab3">
+          
+          <div class="am-g am-margin-top">
+            <div class="am-u-sm-4 am-u-md-2 am-text-right">用户角色</div>
+            <div class="am-u-sm-8 am-u-md-10">
+              <select data-am-selected="{btnSize: 'sm'}">
+                <option value="option1">普通角色</option>
+                <option value="option2">管理员</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="am-g am-margin-top">
+            <div class="am-u-sm-4 am-u-md-2 am-text-right">显示状态</div>
+            <div class="am-u-sm-8 am-u-md-10">
+              <div class="am-btn-group" data-am-button>
+                <label class="am-btn am-btn-default am-btn-xs">
+                  <input type="radio" name="options" id="option1"> 正常
+                </label>
+                <label class="am-btn am-btn-default am-btn-xs">
+                  <input type="radio" name="options" id="option3"> 不显示
+                </label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+	<div class="am-margin">
+      <button type="button" class="am-btn am-btn-primary am-btn-xs">提交保存</button>
+      <button type="button" class="am-btn am-btn-primary am-btn-xs">放弃保存</button>
+    </div>
+</div>
+
+	<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu"
+		data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+
+	<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+	<!--[if (gte IE 9)|!(IE)]><!-->
+	<script src="assets/js/jquery.min.js"></script>
+	<!--<![endif]-->
+	<script src="assets/js/amazeui.min.js"></script>
+	<script src="assets/js/app.js"></script>
+<script src="assets/layer/layer.js"></script>
+<script type="text/javascript">
+var ht;
+// addForm
+function addUser() {
+//页面层
+// layer.open({
+// title: '新增用户信息',
+//   type: 2,
+// //   skin: 'layui-layer-rim', //加上边框
+//   area: ['700px', '400px'], //宽高
+//   content: $("#addForm").html()
+// });
+
+if(ht==undefined) {
+	ht = $("#addForm").html();
+	$("#addForm").html('');
+}
+layer.prompt({
+	title: '新增用户信息',
+	  formType: 1, //prompt风格，支持0-2
+	  area: ['700px', '400px'], //宽高
+	  content: ht
+	});
+}
+</script>
+</body>
+</html>

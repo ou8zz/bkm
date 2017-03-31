@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ugroup">
+	
+	<!-- 获取部门，角色资源，可以适用分页和单个查询 -->
+	<select id="getUgroups" resultType="ugroup" parameterType="ugroup">
+	    SELECT * FROM ugroup
+	    <where>
+	    	<if test="id != null and id != ''"> and id=#{id} </if>
+	    	<if test="ename != null and ename != ''"> and ename like concat(concat('%',#{ename}),'%') </if>
+	    	<if test="cname != null and cname != ''"> and cname like concat(concat('%',#{cname}),'%') </if>
+   	    	<if test="gtype != null and gtype != ''"> and gtype=#{gtype} </if>
+   	    </where>
+	</select>
+	
+	<!-- 新增资源 -->
+	<insert id="addUgroup" parameterType="ugroup">
+		<selectKey order="BEFORE" resultType="java.lang.Integer" keyProperty="id">
+			SELECT ugroup_id.nextval FROM DUAL
+	    </selectKey>
+		INSERT INTO ugroup (id, ename, cname, gtype) 
+		VALUES (#{id}, #{ename}, #{cname}, #{gtype})
+	</insert>
+	
+	<!-- 编辑资源 -->
+	<update id="editUgroup" parameterType="ugroup">
+	    UPDATE ugroup
+	    <set>
+			<if test="ename != null and ename != ''"> ename=#{ename}, </if>
+		    <if test="cname != null and cname != ''"> cname=#{cname}, </if>
+	    </set>
+		WHERE id = #{id}
+	</update>
+	
+	<!-- 删除资源 -->
+	<delete id="delUgroup" parameterType="int">DELETE FROM ugroup WHERE id=#{id}</delete>
+</mapper>
+

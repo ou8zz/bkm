@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var tname = "hello word!!!!";
+var obj = {
+	tname : "abc!",
+	fuc:function() {
+		tname = "hh1";
+		var nn = function(){
+			alert(11);
+			//return this.tname;
+		}
+		return nn;
+	}
+}
+// alert(obj.fuc());
+// alert(nn());
+var a=1;
+function outerFun()
+{
+ a=2;
+ function innerFun()
+ {
+  a++;
+  alert(a);
+ }
+ return innerFun;  //注意这里
+}
+var obj=outerFun();
+obj();  //结果为1
+obj();  //结果为2
+// var obj2=outerFun();
+// obj2();  //结果为1
+// obj2();  //结果为2
+
+// outerFun()();
+// outerFun()();
+</script>
+</head>
+<body>
+this a page!
+</body>
+</html>

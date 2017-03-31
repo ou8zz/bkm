@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="legal">
+
+	<!-- LegalTree SQL -->
+	<select id="getLegalTrees" resultType="legal" parameterType="legal">
+	    select z.id, z.name, z.title, z.node, z.pid as pId
+	    from legal_tree z
+	    <where>
+	    	<if test="id != null and id != ''"> and z.id = #{id} </if>
+	    	<if test="node != null and node != ''"> and z.node = #{node} </if>
+	    	<if test="name != null and name != ''"> and z.name like concat(concat('%',#{name}),'%') </if>
+	    </where>
+   	    order by z.node
+	</select>
+
+	<select id="getPrevNode" resultType="Integer" parameterType="Integer">
+		<![CDATA[ select max(t.node) from legal_tree t where t.node < ${node} ]]>
+	</select>
+	
+	<select id="getNextNode" resultType="Integer" parameterType="Integer">
+		<![CDATA[ select min(t.node) from legal_tree t where t.node > ${node} ]]>
+	</select>
+	
+	<!-- add LegalTree -->
+	<insert id="addLegalTree" parameterType="legal">
+		<selectKey order="BEFORE" resultType="java.lang.Integer" keyProperty="id">
+			SELECT legal_id.nextval FROM DUAL
+	    </selectKey>
+		insert into legal_tree (id, pid, name, title, node)
+		values (#{id}, #{pId, jdbcType=VARCHAR}, #{name, jdbcType=VARCHAR}, #{title, jdbcType=VARCHAR}, #{id}*10000)
+	</insert>
+	
+	<!-- update LegalTree -->
+	<update id="editLegalTree" parameterType="legal">
+		update legal_tree
+		<set>
+			<if test="mtype!=null and mtype!=''">
+				pid = #{pId, jdbcType=NUMERIC},
+				<if test="node!=null"> node=#{node}, </if>
+			</if>
+			<if test="mtype==null">
+				<if test="name!=null and name!=''"> name = #{name}, </if>
+	    		<if test="title!=null and title!=''"> title=#{title},  </if>
+			</if>
+		</set>
+	    where id=#{id}
+	</update>
+	
+	<!-- delete LegalTree -->
+	<delete id="delLegalTree" parameterType="legal">
+		delete from legal_tree where id=#{id}
+	</delete>
+	
+	<!-- get Legal SQL -->
+	<select id="getLegal" resultType="legal" parameterType="legal">
+	    select z.id, z.cdate, z.issued, z.title, z.tid, z.remark from legal z
+	    <where>
+	    	<if test="id != null and id != ''"> and z.id = #{id} </if>
+	    	<if test="tid != null and tid != ''"> and z.tid = #{tid} </if>
+	    	<if test="title != null and title != ''"> and z.title like concat(concat('%',#{title}),'%') </if>
+	    	<if test="remark != null and remark != ''"> and z.remark like concat(concat('%',#{remark}),'%') </if>
+	    </where>
+   	    order by z.cdate desc
+	</select>
+
+	<!-- add Legal -->
+	<insert id="addLegal" parameterType="legal">
+		<selectKey order="BEFORE" resultType="java.lang.Integer" keyProperty="id">
+			SELECT legal_id.nextval FROM DUAL
+	    </selectKey>
+		insert into legal (id, cdate, issued, title, tid, remark)
+		values (#{id}, #{cdate}, #{issued}, #{title}, #{tid}, #{remark})
+	</insert>
+	
+	<!-- update Legal -->
+	<update id="editLegal" parameterType="legal">
+		update legal set title=#{title}, cdate=#{cdate}, issued=#{issued}, remark=#{remark}
+	    where id=#{id}
+	</update>
+	
+	<!-- delete Legal -->
+	<delete id="delLegal" parameterType="legal">
+		delete from legal where id=#{id}
+	</delete>
+</mapper>
+

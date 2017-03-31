@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+           http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.0.xsd" >
+
+<!-- 	<debug /> -->
+
+	<!-- use-expressions="true" 开启hasRole()自定义表达式 -->
+	<http use-expressions="true" auto-config="true" create-session="ifRequired">
+		<csrf disabled="true"/>
+		<headers disabled="true"/>
+
+	    <!-- 登录表单设置 -->
+    	<form-login login-page="/login.html"
+    		always-use-default-target="true"
+    		authentication-success-handler-ref="loginSuccessHandler"
+    		authentication-failure-handler-ref="loginFailureHandler"
+    		login-processing-url="/bkm_login"
+    		username-parameter="uname"
+    		password-parameter="upwd"/>
+    	
+        <!-- 登出操作后跳转到该页面 -->
+   		<logout logout-url="/bkm_logout"
+   			invalidate-session="true"
+   			success-handler-ref="logoutHandle"
+   			delete-cookies="JSESSIONID" />
+   		
+		<!-- 
+			后台登录状态保持在数据库表中persistent_logins 
+			在客户端的cookie中，仅保存一个无意义的加密串（与用户名、密码等敏感数据无关），
+			然后在db中保存该加密串-用户信息的对应关系，自动登录时，用cookie中的加密串，到db中验证，
+			如果通过，自动登录才算通过。1209600表示14天 604800表示7天
+		-->
+   		<remember-me data-source-ref="dataSource" 
+   			token-validity-seconds="604800" 
+   			remember-me-parameter="rememberme"/>
+        
+		<!-- 权限异常处理 -->
+        <access-denied-handler ref="accessDeniedHandler"/>
+        
+		<!-- 设置error-if-maximum-exceeded为true后如果你之前已经登录了，然后想再次登录，那么系统将会拒绝你的登录，
+			同时将重定向到由form-login指定的authentication-failure-url。 
+			加入sessionRegistry注册session -->
+        <session-management invalid-session-url="/login.html">
+        	<concurrency-control max-sessions="1" session-registry-ref="sessionRegistry" expired-url="/login.html"/>
+      	</session-management>
+      
+        <!-- 表示匿名用户可以访问  permitAll
+        <intercept-url pattern="/login.html" access="IS_AUTHENTICATED_ANONYMOUSLY"/>-->
+		<!-- 普通用户权限访问的URL -->
+        <intercept-url pattern="/app/*" access="hasAnyRole('Admin', 'Audit', 'User')"/>
+        <!-- 高级用户权限访问的URL -->
+        <intercept-url pattern="/audit/*" access="hasAnyRole('Admin', 'Audit')"/>
+        <!-- 后台Admin权限访问的URL -->
+        <intercept-url pattern="/admin/*" access="hasAnyRole('Admin')"/>
+	</http>
+
+	<!-- 方法注解开启 -->
+	<global-method-security pre-post-annotations="enabled" />
+	
+	<!-- 用户及权限认证 -->
+	<authentication-manager alias="authenticationManager" erase-credentials="false">
+		<authentication-provider user-service-ref="userDetailService" >
+        	<!--<password-encoder hash="md5" /> 如果用户的密码采用加密的话--> 
+		</authentication-provider>
+	</authentication-manager>
+	
+	<!-- 登录成功处理-->
+	<beans:bean id="loginSuccessHandler" class="com.security.LoginSuccessHandle">
+		<beans:property name="defaultTargetUrl" value="/app/index"></beans:property>
+	</beans:bean>
+	
+	<!-- 注销处理 -->
+	<beans:bean id="logoutHandle" class="com.security.LogoutHandle">
+		<beans:property name="defaultTargetUrl" value="/login.html"></beans:property>
+	</beans:bean>
+	
+	<!-- 登录失败处理-->
+	<beans:bean id="loginFailureHandler" class="com.security.LoginFailureHandler" />
+	
+	<!-- 用户信息和验证 -->
+	<beans:bean id="userDetailService" class="com.security.UserDetailService" />
+
+	<!-- 注册session -->
+	<beans:bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl" />
+
+	<!-- 检查到没有权限时的处理 -->
+	<beans:bean id="accessDeniedHandler" class="com.security.AjaxAccessDeniedHandlerImpl">
+		<beans:property name="errorPage" value="/error/denied.jsp" />
+	</beans:bean> 
+</beans:beans>

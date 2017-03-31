@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="funds">
+
+	<!-- 查询基金经理人员信息 -->
+	<select id="getFundManagers" resultType="fundManagers"  parameterType="fundManagers">
+	    SELECT * FROM fund_managers
+	    <where>
+	    	<if test="id!=null"> and id=#{id} </if>
+	    	<if test="ename!=null and ename!=''"> and ename like concat(concat('%',#{ename}),'%') </if>
+   	    	<if test="cname!=null and cname!=''"> and cname like concat(concat('%',#{cname}),'%') </if>
+   	    	<if test="ctypes != null and ctypes.length !=0">
+	    		and ctype in <foreach item="ct" collection="ctypes" open="(" separator="," close=")"> #{ct}</foreach>
+	    	</if>
+   	    </where>
+	</select>
+	
+	<!-- 添加基金经理人员信息 -->
+	<insert id="addFundManagers" parameterType="fundManagers">
+<!-- 		<selectKey resultType="java.lang.Integer" keyProperty="id"> -->
+<!-- 	      SELECT LAST_INSERT_ID() AS ID -->
+<!-- 	    </selectKey> -->
+		<selectKey order="BEFORE" resultType="java.lang.Integer" keyProperty="id">
+			SELECT fund_id.nextval FROM DUAL
+	    </selectKey>
+		INSERT INTO fund_managers (id, ename, cname, ctype, itime, otime, resume)
+		VALUES (#{id}, #{ename}, #{cname}, #{ctype}, #{itime}, #{otime}, #{resume})
+	</insert>
+	
+	<!-- 修改基金经理人员信息 -->
+	<update id="editFundManagers" parameterType="fundManagers">
+		UPDATE fund_managers
+			<set>
+				<if test="ename != null"> ename=#{ename}, </if>
+   	    		<if test="cname != null"> cname=#{cname}, </if>
+   	    		<if test="ctype != null"> ctype=#{ctype}, </if>
+   	    		<if test="itime != null"> itime=#{itime}, </if>
+   	    		<if test="otime != null"> otime=#{otime}, </if>
+   	    		<if test="resume != null"> resume=#{resume}, </if>
+			</set>
+		WHERE id=#{id}
+	</update>
+	
+	<!-- 删除基金经理人员信息 -->
+	<delete id="delFundManagers">
+		DELETE FROM fund_managers WHERE id=#{id}
+	</delete>
+	
+	<!-- 查询基金产品信息 -->
+	<select id="getFundInfo" resultType="fundInfo"  parameterType="fundInfo">
+	    SELECT fi.*, fm.cname uname FROM fund_info fi left join fund_managers fm on fm.id=fi.userid
+	    <where>
+	    	<if test="id!=null"> and fi.id=#{id} </if>
+	    	<if test="userid!=null and userid!=''"> and fi.userid=#{userid} </if>
+	    	<if test="fcode!=null and fcode!=''"> and fi.fcode like concat(concat('%',#{fcode}),'%') </if>
+   	    	<if test="fname!=null and fname!=''"> and fi.fname like concat(concat('%',#{fname}),'%') </if>
+   	    	<if test="uname!=null and uname!=''"> and fm.cname like concat(concat('%',#{uname}),'%') </if>
+   	    	<if test="ids != null and ids.length !=0">
+    			and fi.id in <foreach item="ct" collection="ids" open="(" separator="," close=")"> #{ct}</foreach>
+			</if>
+   	    </where>
+	</select>
+
+	<!-- 添加基金产品信息 -->
+	<insert id="addFundInfo" parameterType="fundInfo">
+		<selectKey order="BEFORE" resultType="java.lang.Integer" keyProperty="id">
+			SELECT fund_id.nextval FROM DUAL
+	    </selectKey>
+		INSERT INTO fund_info (id, fcode, fname)
+		VALUES (#{id}, #{fcode}, #{fname})
+	</insert>
+	
+	<!-- 修改基金产品信息 -->
+	<update id="editFundInfo" parameterType="fundInfo">
+		UPDATE fund_info
+			<set>
+				<if test="fcode != null"> fcode=#{fcode}, </if>
+   	    		<if test="fname != null"> fname=#{fname}, </if>
+   	    		<if test="userid != null"> userid=#{userid}, </if>
+			</set>
+			<where>
+				<if test="id != null"> and id=#{id} </if>
+				<if test="ids != null and ids.length !=0">
+	    			and id in <foreach item="ct" collection="ids" open="(" separator="," close=")"> #{ct}</foreach>
+				</if>
+			</where>
+	</update>
+	
+	<!-- 根据基金管理者ID移除基金管理者对应基金的关系 -->
+	<update id="editFundInfoByUid" parameterType="Integer">
+		UPDATE fund_info set userid=null where userid=#{userid}
+	</update>
+	
+	<!-- 删除基金产品信息 -->
+	<delete id="delFundInfo">
+		DELETE FROM fund_info WHERE id=#{id}
+	</delete>
+</mapper>
+

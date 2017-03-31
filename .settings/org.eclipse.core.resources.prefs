@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//src/main/resources/conf.properties=UTF-8
+encoding//src/main/resources/log4j.properties=UTF-8
+encoding//src/main/webapp/WEB-INF/admin/index.jsp=UTF-8
+encoding//src/main/webapp/common/footer.html=UTF-8
+encoding//src/main/webapp/common/header.jsp=UTF-8
+encoding//src/main/webapp/demo/index.jsp=UTF-8
+encoding//src/main/webapp/error/faild.jsp=UTF-8
+encoding/<project>=UTF-8

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  
+</body>
+<script src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+   var locationUrl = window.location.href;//分享出去的页面链接
+	var pageTitle = '分享文案标题';
+	var pageDescription = '分享文案描述';
+//	//var title = "微信分享测试标题";//分享文案标题
+//	//var desc = "微信分享测试描述";//分享文案描述
+	var pageShareImage = 'http://7xtg7m.com1.z0.glb.clouddn.com/201606011103_information-01.jpg';//分享图片
+
+		$.ajax({
+		  type: 'GET',
+		  url: 'http://180.76.147.91:8080/sxb/tools/reqjssdk.php?callback=callback&url='+encodeURIComponent(locationUrl),
+		  dataType: 'jsonp',
+		  jsonp: "callback",
+		  jsonpCallback:"callback",
+		  timeout: 300,
+		  success: function(data) {
+			  alert(encodeURIComponent(locationUrl));
+// 			  alert(data.appId + "  " + data.url);
+			  function isNullObj(obj){	//判断obj是否为空
+					for(var i in data){
+						if(obj.hasOwnProperty(i)){
+							return false;
+						}
+					}
+					return true;
+				}
+
+
+				if (typeof data !== "object" || isNullObj(data) == true) {	//判断是否是obj或为空
+					return;
+				}
+
+				wx.config({
+					debug: true,
+					appId: data.appId,
+					timestamp: data.timestamp,
+					nonceStr: data.nonceStr,
+					signature: data.signature,
+					jsApiList: [
+						"onMenuShareTimeline", "onMenuShareAppMessage", "onMenuShareQQ", "onMenuShareWeibo"	// 所有要调用的 API 都要加到这个列表中
+					]
+				});
+
+				wx.ready(function () {
+					// 在这里调用 API
+					setWxData(pageTitle, pageDescription, locationUrl, pageShareImage);
+					alert(112);
+				});
+
+				wx.error(function(res){
+				    // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+					alert(res);
+				});
+				
+				function setWxData(pageTitle, pageDescription, locationUrl, pageShareImage) {
+					//分享到朋友圈
+					wx.onMenuShareTimeline({
+						title: pageTitle,
+						link: locationUrl,
+						imgUrl: pageShareImage,
+						success: function () {
+						},
+						cancel: function () {
+						}
+					});
+					//分享给朋友
+					wx.onMenuShareAppMessage({
+						title: pageTitle,
+						desc: pageDescription,
+						link: locationUrl,
+						imgUrl: pageShareImage,
+						type: '',
+						dataUrl: '',
+						success: function () {
+						},
+						cancel: function () {
+						}
+					});
+					//分享到QQ
+					wx.onMenuShareQQ({
+						title: pageTitle,
+						desc: pageDescription,
+						link: locationUrl,
+						imgUrl: pageShareImage,
+						success: function () {
+						},
+						cancel: function () {
+						}
+					});
+					//分享到腾讯微博
+					wx.onMenuShareWeibo({
+						title: pageTitle,
+						desc: pageDescription,
+						link: locationUrl,
+						imgUrl: pageShareImage,
+						success: function () {
+						},
+						cancel: function () {
+						}
+					});
+				}
+		  }
+		});
+</script>
+</html>

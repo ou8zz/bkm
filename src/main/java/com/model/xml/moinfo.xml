@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="moinfo">
+
+	<!-- 查询信息 -->
+	<select id="getMoinfo" resultType="moinfo"  parameterType="moinfo">
+	    SELECT * FROM mo_info
+	    <where>
+		    <if test="ctype!=null"> and ctype=#{ctype} </if>
+		    <if test="id!=null"> and id=#{id} </if>
+	  	    <if test="cname!=null and cname!=''"> and cname like concat(concat('%',#{cname}),'%') </if>
+	    </where>
+	</select>
+	
+	<!-- 添加信息 -->
+	<insert id="addMoinfo" parameterType="moinfo">
+		<selectKey order="BEFORE" resultType="java.lang.Integer" keyProperty="id">
+			SELECT moinfo_id.nextval FROM DUAL
+	    </selectKey>
+		INSERT INTO mo_info (id, cname, orgtype, addr, contacts, cnumber, ctype)
+		VALUES (#{id}, #{cname}, #{orgtype}, #{addr}, #{contacts}, #{cnumber}, #{ctype})
+	</insert>
+	
+	<!-- 修改信息 -->
+	<update id="editMoinfo" parameterType="moinfo">
+		UPDATE mo_info
+			<set>
+   	    		<if test="cname != null"> cname=#{cname}, </if>
+   	    		<if test="orgtype != null"> orgtype=#{orgtype}, </if>
+   	    		<if test="addr != null"> addr=#{addr}, </if>
+   	    		<if test="contacts != null"> contacts=#{contacts}, </if>
+   	    		<if test="cnumber != null"> cnumber=#{cnumber}, </if>
+			</set>
+		WHERE id=#{id}
+	</update>
+	
+	<!-- 删除信息 -->
+	<delete id="delMoinfo">
+		DELETE FROM mo_info WHERE id=#{id}
+	</delete>
+	
+</mapper>
+

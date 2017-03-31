@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="section">
+	
+	<select id="getSectionConfig" resultType="section"  parameterType="section">
+	    SELECT * FROM section_config
+	    <where>
+	    	<if test="id!=null"> and id=#{id} </if>
+	    	<if test="title!=null and title!=''"> and title like concat(concat('%',#{title}),'%') </if>
+   	    	<if test="content!=null and content!=''"> and content like concat(concat('%',#{content}),'%') </if>
+   	    </where>
+   	    order by node
+	</select>
+
+	<select id="getPrevNode" resultType="Integer" parameterType="Integer">
+		<![CDATA[ 
+			select max(sc.node) from section_config sc where sc.node<#{next}
+		]]>
+	</select>
+	
+	<select id="getNextNode" resultType="Integer" parameterType="Integer">
+		<![CDATA[ 
+			select min(sc.node) from section_config sc where sc.node>#{prev}
+		]]>
+	</select>
+
+	<insert id="addSectionConfig" parameterType="section">
+		<selectKey order="BEFORE" resultType="java.lang.Integer" keyProperty="id">
+			SELECT section_id.nextval FROM DUAL
+	    </selectKey>
+		INSERT INTO section_config (id, node, title, content)
+		VALUES (#{id}, #{id}*10000, #{title}, #{content})
+	</insert>
+	
+	<update id="editSectionConfig" parameterType="section">
+		UPDATE section_config
+			<set>
+				<if test="node != null"> node=#{node}, </if>
+				<if test="title != null"> title=#{title}, </if>
+   	    		<if test="content != null"> content=#{content}, </if>
+			</set>
+		WHERE id=#{id}
+	</update>
+	
+	<delete id="delSectionConfig">
+		DELETE FROM section_config WHERE id=#{id}
+	</delete>
+</mapper>
+

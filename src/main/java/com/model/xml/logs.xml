@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="logs">
+	
+	<select id="getLogs" resultType="logs"  parameterType="logs">
+	    SELECT * FROM logs
+	    <where>
+	    	<if test="id!=null"> and id=#{id} </if>
+	    	<if test="cid!=null"> and cid=#{cid} </if>
+	    	<if test="userid!=null"> and userid=#{userid} </if>
+	    	<if test="cmode!=null"> and cmode=#{cmode} </if>
+	    	<if test="uname!=null and uname!=''"> and uname like concat(concat('%',#{uname}),'%') </if>
+	    	<if test="cfunc!=null and cfunc!=''"> and cfunc like concat(concat('%',#{cfunc}),'%') </if>
+	    	<if test="title!=null and title!=''"> and title like concat(concat('%',#{title}),'%') </if>
+   	    	<if test="startTime!=null||endTime!=null"> and ctime between #{startTime} and #{endTime} </if>
+   	    	<if test="cmodes!=null and cmodes.length!=0">
+   	    		and cmode in <foreach collection="cmodes" item="c" open="(" separator="," close=")"> #{c} </foreach>
+   	    	</if>
+   	    </where>
+   	    order by ctime desc
+	</select>
+
+	<insert id="addLogs" parameterType="logs">
+		<selectKey order="BEFORE" resultType="java.lang.Integer" keyProperty="id">
+			SELECT logs_id.nextval FROM DUAL
+	    </selectKey>
+		INSERT INTO logs (id, ctime, cmode, cfunc, userid, uname, title, cid, content)
+		VALUES (#{id}, #{ctime}, #{cmode}, #{cfunc}, #{userid}, #{uname}, #{title}, #{cid}, #{content})
+	</insert>
+	
+</mapper>
+

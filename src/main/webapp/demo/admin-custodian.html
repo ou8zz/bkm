@@ -1,0 +1,497 @@
+﻿<!doctype html>
+<html class="no-js fixed-layout">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>机构信息维护-托管人信息维护</title>
+  <meta name="description" content="这是一个 index 页面">
+  <meta name="keywords" content="index">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="assets/i/favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+  <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+
+<header class="am-topbar am-topbar-inverse admin-header">
+  <div class="am-topbar-brand">
+  <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:swcmenu();">
+          <span class="am-icon-home am-icon-lg"></span> 
+        </a>
+     <strong>机构信息维护及产品文档管理系统</strong><small></small>
+  </div>
+
+  <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+  <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
+    <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
+     
+      <li class="am-dropdown" data-am-dropdown>
+        <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+          <span class="am-icon-users"></span> 管理员 <span class="am-icon-caret-down"></span>
+        </a>
+        <ul class="am-dropdown-content">
+          <li><a href="#"><span class="am-icon-user"></span> 资料</a></li>
+          <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
+          <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
+        </ul>
+      </li>
+      <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="am-cf admin-main">
+  <!-- sidebar start -->
+	<div class="admin-sidebar am-offcanvas" id="admin-offcanvas"></div>
+	<!-- sidebar end -->
+
+  <div class="admin-content">
+			<div class="am-cf am-padding">
+				<div class="am-fl am-cf">
+					<strong class="am-text-primary am-text-lg">机构信息维护</strong>  /  <small>托管人信息维护</small>
+				</div>
+			</div>
+				
+			<div class="am-g">
+        <div class="am-u-sm-12 am-u-md-6">
+          <div class="am-btn-toolbar">
+            <div class="am-btn-group am-btn-group-xs">
+              <button type="button" class="am-btn am-btn-default" onClick="addUser(this);"><span class="am-icon-plus"></span> 新增</button>
+              <button type="button" class="am-btn am-btn-default"><span class="am-icon-trash-o"></span> 删除</button>
+            </div>
+          </div>
+        </div>
+    <!--    <div class="am-u-sm-12 am-u-md-3">
+          <div class="am-form-group">
+            <select data-am-selected="{btnSize: 'sm'}">
+              <option value="1">人员类型</option>
+              <option value="option1">基金经理</option>
+              <option value="option2">基金经理助理</option>
+            </select>
+          </div>
+        </div> -->
+        <div class="am-u-sm-12 am-u-md-3">
+          <div class="am-input-group am-input-group-sm">
+            <input type="text" class="am-form-field" placeholder="托管人名称">
+          <span class="am-input-group-btn">
+            <button class="am-btn am-btn-default" type="button">搜索</button>
+          </span>
+          </div>
+        </div>
+      </div>
+
+        <div class="am-g">
+        <div class="am-u-sm-12">
+          <form class="am-form">
+            <table class="am-table am-table-striped am-table-hover table-main">
+              <thead>
+              <tr>
+                <th width="28" class="table-check"></th>
+                <th width="48" class="table-id">ID</th>
+                <th width="263" class="table-title">托管人名称</th>
+                <th width="289" class="table-type">地址</th>
+                <th width="156" class="table-title">联系电话</th>
+				<th width="79" class="table-title">联系人</th>
+                <th width="172" class="table-set">操作</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td></td>
+                <td>1</td>
+                <td>中国民生银行股份有限公司</td>
+                <td><span class="am-hide-sm-only">北京市西城区复兴门内大街 2 号</span></td>
+                <td class="am-hide-sm-only">010-58560666</td>
+				<td class="am-hide-sm-only">赵天杰</td>
+                <td>
+                  <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                      <button type="button" class="am-btn am-btn-default am-btn-xs am-text-secondary" onClick="addUser(1);"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                      <button type="button" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+			  <tr>
+                <td></td>
+                <td>2</td>
+                <td>中国农业银行股份有限公司</td>
+                <td><span class="am-hide-sm-only">北京市西城区金融街7号英蓝国际……</span></td>
+                <td class="am-hide-sm-only">010-88091156-8020</td>
+				<td class="am-hide-sm-only">王玲</td>
+                <td>
+                  <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                      <button type="button" class="am-btn am-btn-default am-btn-xs am-text-secondary" onClick="addUser(1);"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                      <button type="button" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+			  <tr>
+                <td></td>
+                <td>3</td>
+                <td>中国建设银行股份有限公司</td>
+                <td>上海市浦东新区浦东南路256号华……</td>
+                <td class="am-hide-sm-only">021-51150756</td>
+				<td class="am-hide-sm-only">邱文勋</td>
+                <td>
+                  <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                      <button type="button" class="am-btn am-btn-default am-btn-xs am-text-secondary" onClick="addUser(1);"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                      <button type="button" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+			  <tr>
+                <td></td>
+                <td>4</td>
+                <td>中国交通银行股份有限公司</td>
+                <td>上海市浦东新区浦东南路256号华……</td>
+                <td class="am-hide-sm-only">010-57092619</td>
+				<td class="am-hide-sm-only">穆婷</td>
+                <td>
+                  <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                      <button type="button" class="am-btn am-btn-default am-btn-xs am-text-secondary" onClick="addUser(1);"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                      <button type="button" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+			  <tr>
+                <td></td>
+                <td>5</td>
+                <td>中国招商银行股份有限公司</td>
+                <td>上海市浦东新区浦东南路256号华……</td>
+                <td class="am-hide-sm-only">0755-83198888</td>
+				<td class="am-hide-sm-only">邓炯鹏</td>
+                <td>
+                  <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                      <button type="button" class="am-btn am-btn-default am-btn-xs am-text-secondary" onClick="addUser(1);"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                      <button type="button" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+			  <tr>
+                <td></td>
+                <td>6</td>
+                <td>中国民生银行股份有限公司</td>
+                <td>上海市浦东新区浦东南路256号华……</td>
+                <td class="am-hide-sm-only">021-60897840</td>
+				<td class="am-hide-sm-only">朱晓超</td>
+                <td>
+                  <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                      <button type="button" class="am-btn am-btn-default am-btn-xs am-text-secondary" onClick="addUser(1);"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                      <button type="button" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+			  <tr>
+                <td></td>
+                <td>7</td>
+                <td>中国广发银行股份有限公司</td>
+                <td>上海市浦东新区浦东南路256号华……</td>
+                <td class="am-hide-sm-only">020-89629099</td>
+				<td class="am-hide-sm-only">肖雯</td>
+                <td>
+                  <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                      <button type="button" class="am-btn am-btn-default am-btn-xs am-text-secondary" onClick="addUser(1);"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                      <button type="button" class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+			  
+              </tbody>
+            </table>
+            <div class="am-cf">
+              共 10 条记录
+              <div class="am-fr">
+                <ul class="am-pagination">
+                  <li class="am-disabled"><a href="#">«</a></li>
+                  <li class="am-active"><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">5</a></li>
+                  <li><a href="#">»</a></li>
+                </ul>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+		<!--	<footer class="admin-content-footer">
+				<hr>
+				<p class="am-padding-left">© 2016 Ccfund.com.cn All Rights Reserved.
+					</p>
+			</footer> -->
+		</div>
+		<!-- content end -->
+
+</div>
+
+
+
+<div id="addForm">
+   <div class="am-tabs am-margin" data-am-tabs>
+      <ul class="am-tabs-nav am-nav am-nav-tabs">
+        <li  class="am-active"><a href="#tab1" id="aat1">基本信息</a></li>
+      <!--  <li ><a href="#tab2" id="aat2">管理组合</a></li> -->
+      </ul>
+
+      <div class="am-tabs-bd">
+        <div class="am-tab-panel am-fade am-in am-active" id="tab1">
+        	<form class="am-form">
+            <div class="am-g am-margin-top-sm">
+              <div class="am-u-sm-6 am-u-md-3 am-text-right">机构名称</div>
+              <div class="am-u-sm-8 am-u-md-6 am-u-end"><input type="text" class="am-input-sm" placeholder="中国民生银行股份有限公司"></div>
+            </div>
+            <div class="am-g am-margin-top-sm">
+              <div class="am-u-sm-6 am-u-md-3 am-text-right">机构简称</div>
+              <div class="am-u-sm-8 am-u-md-6 am-u-end"><input type="text" class="am-input-sm" placeholder="民生银行"></div>
+            </div>
+            <div class="am-g am-margin-top-sm">
+              <div class="am-u-sm-6 am-u-md-3 am-text-right"> 机构注册地址</div>
+              <div class="am-u-sm-6 am-u-md-8 am-u-end"><input type="text" class="am-input-sm" value="北京市西城区复兴门内大街2号"></div>
+              </div>
+            <div class="am-g am-margin-top-sm">
+              <div class="am-u-sm-6 am-u-md-3 am-text-right"> 机构办公地址</div>
+              <div class="am-u-sm-6 am-u-md-8 am-u-end"><input type="text" class="am-input-sm" value="北京市西城区复兴门内大街2号"></div>
+              </div>
+            <div class="am-g am-margin-top-sm">
+              <div class="am-u-sm-6 am-u-md-3 am-text-right">邮编</div>
+              <div class="am-u-sm-8 am-u-md-6 am-u-end"><input type="text" class="am-input-sm" placeholder="100000">
+            </div>
+            </div>
+            <div class="am-g am-margin-top-sm">
+              <div class="am-u-sm-6 am-u-md-3 am-text-right">法定代表人</div>
+              <div class="am-u-sm-8 am-u-md-6 am-u-end"><input type="text" class="am-input-sm" value="洪崎">
+              </div>
+            </div>
+            <div class="am-g am-margin-top-sm">
+              <div class="am-u-sm-6 am-u-md-3 am-text-right">成立时间</div>
+              <div class="am-u-sm-8 am-u-md-6 am-u-end"><input type="text" class="am-input-sm" value="1996 年 2 月 7 日
+
+"></div></div>
+            <div class="am-g am-margin-top-sm">
+              <div class="am-u-sm-6 am-u-md-3 am-text-right">业务批准文号</div>
+              <div class="am-u-sm-8 am-u-md-6 am-u-end"><input type="text" class="am-input-sm" value="证监基金字[2004]101号"></div>
+            </div>
+            <div class="am-g am-margin-top-sm">
+              <div class="am-u-sm-6 am-u-md-3 am-text-right">组织形式  </div>
+              <div class="am-u-sm-8 am-u-md-6 am-u-end"><input type="text" class="am-input-sm" value="股份有限公司（上市）
+"></div>
+            </div>
+            <div class="am-g am-margin-top-sm">
+              <div class="am-u-sm-6 am-u-md-3 am-text-right">注册资本  </div>
+              <div class="am-u-sm-8 am-u-md-6 am-u-end"><input type="text" class="am-input-sm" value="28,365,585,227 元人民币"></div>
+            </div>
+            <div class="am-g am-margin-top-sm">
+              <div class="am-u-sm-6 am-u-md-3 am-text-right">存续期间  </div>
+              <div class="am-u-sm-8 am-u-md-6 am-u-end"><input type="text" class="am-input-sm" value="持续经营"></div>
+            </div>
+            <div class="am-g am-margin-top-sm">
+              <div class="am-u-sm-6 am-u-md-3 am-text-right">联系电话  </div>
+              <div class="am-u-sm-8 am-u-md-6 am-u-end"><input type="text" class="am-input-sm" value="010-58560666"></div>
+            </div>
+            <div class="am-g am-margin-top-sm">
+              <div class="am-u-sm-6 am-u-md-3 am-text-right">联系人  </div>
+              <div class="am-u-sm-8 am-u-md-6 am-u-end"><input type="text" class="am-input-sm" value="赵天杰"></div>
+            </div>
+            <div class="am-g am-margin-top-sm">
+              <div class="am-u-sm-6 am-u-md-3 am-text-right">公司网址  </div>
+              <div class="am-u-sm-8 am-u-md-6 am-u-end"><input type="text" class="am-input-sm" value=" "></div>
+            </div>
+            <div class="am-g am-margin-top-sm">
+              <div class="am-u-sm-6 am-u-md-3 am-text-right">机构简介  </div>
+              <div class="am-u-sm-6 am-u-md-8 am-u-end">
+                <textarea rows="10">
+中国民生银行于 1996 年 1 月 12 日在北京正式成立，是我国首家主要由非公有制企业入股的全国性股份制商业银行，同时又是严格按照《公司法》和《商业银行法》建立的规范的股份制金融企业。多种经济成份在中国金融业的涉足和实现规范的现代企业制度，使中国民生银行有别于国有银行和其他商业银行，而为国内外经济界、金融界所关注。中国民生银行成立十余年来，业务不断拓展，规模不断扩大，效益逐年递增，并保持了良好的资产质量。
+2000 年 12 月 19 日，中国民生银行 A 股股票（600016）在上海证券交易所挂牌上市。
+2003 年 3 月 18 日，中国民生银行 40 亿可转换公司债券在上交所正式挂牌交易。2004 年11 月 8 日，中国民生银行通过银行间债券市场成功发行了 58 亿元人民币次级债券，成为中国第一家在全国银行间债券市场成功私募发行次级债券的商业银行。2005 年 10 月 26 日，民生银行成功完成股权分置改革，成为国内首家完成股权分置改革的商业银行，为中国资本市场股权分置改革提供了成功范例。
+中国民生银行自上市以来，按照“团结奋进，开拓创新，培育人才；严格管理，规范行为，敬业守法；讲究质量，提高效益，健康发展”的经营发展方针，在改革发展与管理等方面进行了有益探索，先后推出了“大集中”科技平台、“两率”考核机制、“三卡”工
+程、独立评审制度、八大基础管理系统、集中处理商业模式及事业部改革等制度创新，实
+长城新视野混合型证券投资基金招募说明书20现了低风险、快增长、高效益的战略目标，树立了充满生机与活力的崭新的商业银行形象。
+2007 年 11 月，民生银行获得 2007 第一财经金融品牌价值榜十佳中资银行称号，同时荣获《21 世纪经济报道》等机构评选的“最佳贸易融资银行奖”。
+2007 年 12 月，民生银行荣获《福布斯》颁发的第三届“亚太地区最大规模上市企业50 强”奖项。
+2008 年 7 月，民生银行荣获“2008 年中国最具生命力百强企业”第三名 。
+在《2008 中国商业银行竞争力评价报告》中民生银行核心竞争力排名第 6 位，在公司治理和流程银行两个单项评价中位列第一。
+2009 年 6 月，民生银行在 “2009 年中国本土银行网站竞争力评测活动”中获 2009年中国本土银行网站“最佳服务质量奖”。
+2009 年 9 月，在大连召开的第二届中国中小企业融资论坛上，中国民生银行被评为“2009 中国中小企业金融服务十佳机构”。在“第十届中国优秀财经证券网站评选”中，民生银行荣膺“最佳安全性能奖”和“2009 年度最佳银行网站”两项大奖。
+2009 年 11 月 21 日，在第四届“21 世纪亚洲金融年会”上，民生银行被评为“2009年•亚洲最佳风险管理银行”。
+2009 年 12 月 9 日,在由《理财周报》主办的“2009 年第二届最受尊敬银行评选暨 2009年第三届中国最佳银行理财产品评选”中，民生银行获得了“2009 年中国最受尊敬银行”、“最佳服务私人银行”、“2009 年最佳零售银行”多个奖项。
+2010 年 2 月 3 日，在“卓越 2009 年度金融理财排行榜”评选活动中，中国民生银行一流的电子银行产品和服务获得了专业评测公司、网友和专家的一致好评，荣获卓越 2009年度金融理财排行榜“十佳电子银行”奖。
+2010 年 10 月，在经济观察报主办的“2009 年度中国最佳银行评选”中，民生银行获得评委会奖——“中国银行业十年改革创新奖”。这一奖项是评委会为表彰在公司治理、激励机制、风险管理、产品创新、管理架构、商业模式六个方面创新表现卓著的银行而特别设立的。
+2011 年 12 月，在由中国金融认证中心（CFCA）联合近 40 家成员行共同举办的 2011中国电子银行年会上，民生银行荣获“2011 年中国网上银行最佳网银安全奖”。这是继 2009年、2010 年荣获“中国网上银行最佳网银安全奖”后，民生银行第三次获此殊荣，是第三方权威安全认证机构对民生银行网上银行安全性的高度肯定。
+2012 年 6 月 20 日，在国际经济高峰论坛上,民生银行贸易金融业务以其 2011-2012 年
+长城新视野混合型证券投资基金招募说明书21度的出色业绩和产品创新最终荣获“2012 年中国卓越贸易金融银行”奖项。这也是民生银行继 2010 年荣获英国《金融时报》“中国银行业成就奖—最佳贸易金融银行奖”之后第三次获此殊荣。
+2012 年 11 月 29 日，民生银行在《The Asset》杂志举办的 2012 年度 AAA 国家奖项评选中获得“中国最佳银行-新秀奖”。
+2013 年度,民生银行荣获中国投资协会股权和创业投资专业委员会年度中国优秀股权和创业投资中介机构“最佳资金托管银行”及由 21 世纪传媒颁发的 2013 年 PE/VC 最佳金融服务托管银行奖。
+2013 年荣获中国内部审计协会民营企业内部审计优秀企业。在第八届“21 世纪亚洲金融年会”上，民生银行荣获“2013•亚洲最佳投资金融服务银行”大奖。
+在“2013 第五届卓越竞争力金融机构评选”中，民生银行荣获“2013 卓越竞争力品牌建设银行”奖。
+在中国社科院发布的《中国企业社会责任蓝皮书（2013）》中，民生银行荣获“中国企业上市公司社会责任指数第一名”、“中国民营企业社会责任指数第一名”、“中国银行业社会责任指数第一名”。
+在 2013 年第十届中国最佳企业公民评选中，民生银行荣获“2013 年度中国最佳企业公民大奖”。
+2013 年还获得年度品牌金博奖“品牌贡献奖”。
+</textarea>
+              </div></div>
+          	</form>
+        </div>
+<!--
+        <div class="am-tab-panel am-fade" id="tab2">
+        	<table class="am-table am-table-striped am-table-hover table-main">
+              <thead>
+              <tr>
+                <th class="table-check"></th>
+                <th class="table-id">ID</th>
+                <th class="table-title">组合代码</th>
+                <th class="table-type">组合名称</th>
+                <th class="table-set">操作</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td></td>
+                <td>1</td>
+                <td>张算</td>
+                <td>zhangsun</td>
+                <td class="am-hide-sm-only">风控部</td>
+                <td class="am-hide-sm-only">普通角色</td>
+                <td>
+                  <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                      <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                      <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>2</td>
+                <td>王大锤</td>
+                <td>wangdacui</td>
+                <td class="am-hide-sm-only">办公室</td>
+                <td class="am-hide-sm-only">普通角色</td>
+                <td>
+                  <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                      <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                      <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>3</td>
+                <td>李古</td>
+                <td>ligu</td>
+                <td class="am-hide-sm-only">稽核部</td>
+                <td class="am-hide-sm-only">管理员</td>
+                <td>
+                  <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                      <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                      <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>4</td>
+                <td>王爱华</td>
+                <td>wangaihua</td>
+                <td class="am-hide-sm-only">营销部</td>
+                <td class="am-hide-sm-only">普通角色</td>
+                <td>
+                  <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                      <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                      <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>4</td>
+                <td>王数</td>
+                <td>wangsu</td>
+                <td class="am-hide-sm-only">市场部</td>
+                <td class="am-hide-sm-only">普通角色</td>
+                <td>
+                  <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                      <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
+                      <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+        </div> -->
+      </div>
+    </div>
+	<div class="am-margin">
+      <button type="button" class="am-btn am-btn-primary am-btn-xs">提交保存</button>
+      <button type="button" class="am-btn am-btn-primary am-btn-xs">放弃保存</button>
+    </div>
+</div>
+
+<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/layer/layer.js"></script>
+<script type="text/javascript">
+var ht;
+// addForm
+function addUser(u) {
+var addForm = $("#addForm");
+if(ht==undefined) {
+	ht = addForm.html();
+	addForm.html('');
+}
+layer.open({
+	title: '新增信息',
+	type:1,
+	fix: false, //不固定
+	maxmin: true,
+	area: ['700px', '600px'], //宽高
+	content: ht
+});
+}
+</script>
+</body>
+</html>

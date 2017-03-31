@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN"
+"http://jetty.mortbay.org/configure.dtd">
+  
+  <!--
+	Jetty提交数据时报java.lang.IllegalStateException: Form too large270468>200000
+	限制了post 提交数据大小。200000大约为2M大小。
+	如果Tomcat服务器配置server.xml中的maxPostSize=0即可不检查post提交数据大小
+  -->  
+  <Configure id="WebAppContext" class="org.eclipse.jetty.webapp.WebAppContext">  
+          <Set name="maxFormContentSize" type="int">600000</Set>  
+  </Configure>  

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ztree">
+	<cache /> <!-- 开启缓存,使用默认配置,缓存所有select, 所有操作sql中配置flushCache="true"刷新缓存 -->
+	
+	<!-- 首页菜单加载SQL -->
+	<select id="getZtreeByUserId" resultType="ztree" parameterType="Integer">
+	    select distinct z.id, z.name, z.title, z.node, z.ico, z.url as url, z.parentid as pId
+	    from ztree z 
+		left join grouptree gt on z.id=gt.ztreeid
+		left join usergroup ug on gt.groupid=ug.gid
+		where ug.userid=#{userid}
+   	    order by z.node
+	</select>
+
+	<!-- ztree菜单SQL -->
+	<select id="getZtrees" resultType="ztree" parameterType="Integer">
+	    select z.id, z.name, z.title, z.node, z.ico, z.url as url, z.parentid as pId
+	    from ztree z
+	    <where>
+	    	<if test="id != null and id != ''"> and z.id = #{id} </if>
+	    	<if test="name != null and name != ''"> and z.name like concat(concat('%',#{name}),'%') </if>
+	    	<if test="node != null and node != ''"> and z.node like concat(concat('%',#{node}),'%') </if>
+	    	<if test="url != null and url != ''"> and z.url like concat(concat('%',#{url}),'%') </if>
+	    </where>
+   	    order by z.node
+	</select>
+	
+	<!-- ztree菜单SQL仅用于记录日志使用 -->
+	<select id="getZtreesByLog" resultType="String" parameterType="ugroup">
+	    select z.name from ztree z
+	    <where>
+	    	<if test="zids != null and zids.length !=0">
+	    		and z.id in <foreach item="zid" collection="zids" open="(" separator="," close=")"> #{zid}</foreach>
+	    	</if>
+	    </where>
+   	    order by z.node
+	</select>
+	
+	<!-- ztree角色配置菜单SQL -->
+	<select id="getRoleZtrees" resultType="ztree" parameterType="Integer">
+	    select z.id, z.name, z.title, z.node, z.ico, z.url as url, z.parentid as pId, g.groupid as checked, '' as target, 'true' as open
+	    from ztree z left join grouptree g on z.id=g.ztreeid and g.groupid=#{id}
+   	    order by z.node
+	</select>
+	
+	<!-- ztree角色查询菜单SQL -->
+	<select id="getRoleUserZtrees" resultType="ztree" parameterType="Integer" flushCache="true">
+	    select z.id, z.name, z.title, z.node, z.ico, z.url as url, z.parentid as pId, '' as target, 'true' as open
+	    from ztree z join grouptree g on z.id=g.ztreeid and g.groupid=#{id}
+   	    order by z.node
+	</select>
+	
+	<!-- getIco -->
+	<select id="getIco" resultType="ztree" parameterType="ztree">
+	    SELECT * FROM ico
+	</select>
+	
+	<!-- 用于排序 -->
+	<select id="getPrevNode" resultType="Integer" parameterType="Integer">
+		<![CDATA[ select max(t.node) from ztree t where t.node < ${node} ]]>
+	</select>
+	
+	<!-- 用于排序 -->
+	<select id="getNextNode" resultType="Integer" parameterType="Integer">
+		<![CDATA[ select min(t.node) from ztree t where t.node > ${node} ]]>
+	</select>
+	
+	<!-- add ztree -->
+	<insert id="addZtree" parameterType="ztree" flushCache="true">
+		<selectKey order="BEFORE" resultType="java.lang.Integer" keyProperty="id">
+			SELECT ztree_id.nextval FROM DUAL
+	    </selectKey>
+		insert into ztree (id, parentid, name, title, node, ico, url)
+		values (#{id}, #{pId,jdbcType=NUMERIC}, #{name}, #{title}, #{id}*10000, #{ico,jdbcType=VARCHAR}, #{url})
+	</insert>
+	
+	<!-- update ztree -->
+	<update id="editZtree" parameterType="ztree" flushCache="true">
+		update ztree 
+		<set>
+			url=#{url, jdbcType=VARCHAR},
+			<if test="name!=null and name!=''"> name=#{name, jdbcType=VARCHAR}, </if>
+			<if test="title!=null and title!=''"> title=#{title, jdbcType=VARCHAR}, </if>
+			<if test="ico!=null and ico!=''"> ico=#{ico, jdbcType=VARCHAR}, </if>
+		</set>
+	    where id=#{id}
+	</update>
+	
+	<!-- update ztree sequence -->
+	<update id="editZtreeSequence" parameterType="ztree" flushCache="true">
+		update ztree 
+		<set>
+			parentid=#{pId, jdbcType=NUMERIC},
+			<if test="node!=null"> node=#{node, jdbcType=NUMERIC}, </if> 
+		</set>
+	    where id=#{id}
+	</update>
+	
+	<!-- delete ztree -->
+	<delete id="delZtree" parameterType="Integer" flushCache="true">
+		delete from ztree where id=#{id}
+	</delete>
+	
+	<!-- 这俩个SQL放在这儿是为了在更新角色菜单后刷新首页菜单缓存 -->
+	<!-- delRoleZtree -->
+	<delete id="delRoleZtree" parameterType="Integer" flushCache="true">
+		delete from grouptree where groupid=#{groupId}
+	</delete>
+	
+	<!-- saveRoleZtree 
+		因为h2不支持#{}标签（报错，具体原因不知）所以使用${}通用h2和oracle
+	-->
+	<insert id="saveRoleZtree" parameterType="ugroup" flushCache="true">
+		insert into grouptree (groupid, ztreeid)
+		<foreach item="zid" collection="zids" open="" separator="union all" close="">
+			select ${id}, ${zid} from dual
+		</foreach>
+	</insert>
+</mapper>
+

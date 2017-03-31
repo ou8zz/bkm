@@ -1,0 +1,2679 @@
+<!doctype html>
+<html class="no-js fixed-layout">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>机构信息维护及产品文档管理系统</title>
+  <meta name="description" content="这是一个 index 页面">
+  <meta name="keywords" content="index">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="assets/i/favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+  <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+
+<header class="am-topbar am-topbar-inverse admin-header">
+  <div class="am-topbar-brand">
+     <strong>机构信息维护及产品文档管理系统</strong><small></small>
+  </div>
+
+  <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+  <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
+    <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
+     
+      <li class="am-dropdown" data-am-dropdown>
+        <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+          <span class="am-icon-users"></span> 管理员 <span class="am-icon-caret-down"></span>
+        </a>
+        <ul class="am-dropdown-content">
+          <li><a href="#"><span class="am-icon-user"></span> 资料</a></li>
+          <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
+          <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
+        </ul>
+      </li>
+      <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="am-cf admin-main">
+  <!-- sidebar start -->
+  <div class="admin-sidebar am-offcanvas" id="admin-offcanvas"></div>
+  <!-- sidebar end -->
+
+  <!-- content start -->
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">首页</strong> / <small>专户报告</small></div>
+      </div>
+
+ 	  <div class="am-g">
+        
+        <div class="am-u-sm-12 am-u-md-3">
+          <div class="am-input-group am-input-group-sm">
+            <input type="text" class="am-form-field">
+          <span class="am-input-group-btn">
+            <button class="am-btn am-btn-default" type="button">搜索</button>
+          </span>
+          </div>
+        </div>
+      </div>
+	  
+      <div class="am-g">
+        <div class="am-u-sm-12">
+          <table class="am-table am-table-bd am-table-striped admin-content-table">
+            <thead>
+            <tr>
+              <th>ID</th><th>产品代码</th><th>产品名称</th><th>合同</th><th>托管协议</th><th>招募说明书摘要</th><th>招募说明书</th><th>发售公告</th><th>成立公告</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><td>1</td><td>000615</td><td>长城工资宝</td>
+			<td><span class="am-badge am-badge-success">2</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onclick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onclick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-success">3</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onclick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onclick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-success">2</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onclick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onclick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-success">1</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onclick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onclick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-success">5</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onclick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onclick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+				<td><span class="am-badge">0</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onclick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onclick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+            </tr>
+			<tr><td>2</td><td>000615</td><td>长城工资宝</td>
+			<td><span class="am-badge am-badge-success">2</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onclick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onclick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-success">2</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onclick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onclick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-success">2</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onclick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onclick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-success">1</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onclick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onclick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-success">3</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onclick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onclick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+				<td><span class="am-badge">0</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onclick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onclick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+            </tr>
+            <tr><td>3</td><td>000615</td><td>长城工资宝</td>
+			<td><span class="am-badge am-badge-success">4</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onclick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onclick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-success">1</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onclick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onclick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-success">1</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onclick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onclick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-success">1</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onclick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onclick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+			<td><span class="am-badge am-badge-success">1</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onclick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onclick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+				<td><span class="am-badge">0</span>
+			 <div class="am-dropdown" data-am-dropdown>
+                  <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                  <ul class="am-dropdown-content">	
+                    <li><a href="#" onclick="tj()">1. 提交情况</a></li>
+					<li><a href="#" onclick="cc()">2. 报告预览</a></li>
+                  </ul>
+                </div>
+			</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      
+      </div>
+    </div>
+
+
+
+    <footer class="admin-content-footer">
+      <hr>
+      <p class="am-padding-left">© 2016 Ccfund.com.cn All Rights Reserved.</p>
+    </footer>
+  </div>
+  <!-- content end -->
+
+</div>
+
+<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+
+
+
+<div id="ml" class="" tabindex="-1">
+ <div class="am-panel-group" id="accordion">
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	<div style="text-align:right; float:right;"> 2016-06-03 10:10:09  <span class="am-badge am-badge-success"> 已提交</span> <a class="am-badge am-badge-secondary"> 退回修改 </a> <a class="am-badge am-badge-success"> 已阅 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-1'}">
+       一、绪言(点击预览)
+      </h4>
+	 
+    </div>
+    <div id="do-not-say-1" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+        <p align="left">&nbsp;</p>
+<p>本招募说明书依据《中华人民共和国证券投资基金法》（以下简称“《基金法》”）、《证券  投资基金信息披露管理办法》（以下简称“《信息披露办法》”）、《公开募集证券投资基金运作  管理办法》（以下简称“《运作办法》”）、《证券投资基金销售管理办法》（以下简称“《销售办  法》”）等有关法律法规及《长城新视野混合型证券投资基金基金合同》（以下简称“基金合  同”）编写。 <br />
+  本招募说明书阐述了长城新视野混合型证券投资基金的投资目标、策略、风险、费率  等与投资者投资决策有关的全部必要事项，投资者在做出投资决策前应仔细阅读本招募说 明书。 <br />
+  基金管理人承诺本招募说明书不存在任何虚假记载、误导性陈述或者重大遗漏，并对 其真实性、准确性、完整性承担法律责任。本基金是根据本招募说明书所载明的资料申请  募集的。本基金管理人没有委托或授权任何其他人提供未在本招募说明书中载明的信息，  或对本招募说明书做出任何解释或者说明。 <br />
+  本招募说明书根据本基金的基金合同编写，并经中国证监会注册。基金合同是约定基 金当事人之间权利、义务的法律文件。基金投资者自依基金合同取得基金份额，即成为基  金份额持有人和本基金合同的当事人，其持有基金份额的行为本身即表明其对基金合同的 承认和接受，并按照《基金法》、基金合同及其他规定享有权利、承担义务。基金投资者  欲了解基金份额持有人的权利和义务，应详细查阅本基金基金合同。 </p>
+      </div>
+    </div>
+  </div>
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	<div style="text-align:right; float:right;"> 2016-06-03 10:10:09  <span class="am-badge am-badge-success"> 已提交</span> <a class="am-badge am-badge-secondary"> 退回修改 </a> <a class="am-badge am-badge-success"> 已阅 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-2'}">
+        二、释义(点击预览)
+      </h4>
+    </div>
+    <div id="do-not-say-2" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+<p align="center">第二部分  释义 </p>
+<p align="left">&nbsp;</p>
+<p align="left">在本招募说明书中，除非文意另有所指，下列词语或简称具有如下含义： </p>
+<p align="left">1、基金或本基金：指长城新视野混合型证券投资基金 </p>
+<p align="left">2、基金管理人：指长城基金管理有限公司 </p>
+<p align="left">3、基金托管人：指中国民生银行股份有限公司 </p>
+<p align="left">4、基金合同或本基金合同：指《长城新视野混合型证券投资基金基金合同》及对本基 金合同的任何有效修订和补充 <br />
+  5、托管协议：指基金管理人与基金托管人就本基金签订之《长城新视野混合型证券投  资基金托管协议》及对该托管协议的任何有效修订和补充 <br />
+  6、招募说明书：指《长城新视野混合型证券投资基金招募说明书》及其定期的更新 </p>
+<p align="left">7、基金份额发售公告：指《长城新视野混合型证券投资基金基金份额发售公告》 </p>
+<p align="left">8、法律法规：指中国现行有效并公布实施的法律、行政法规、规范性文件、司法解释、 行政规章以及其他对基金合同当事人有约束力的决定、决议、通知等 <br />
+  9、《基金法》：指《中华人民共和国证券投资基金法》及颁布机关对其不时做出的修订 </p>
+<p align="left">10、《销售办法》：指《证券投资基金销售管理办法》及颁布机关对其不时做出的修订 </p>
+<p align="left">11、《信息披露办法》：指《证券投资基金信息披露管理办法》及颁布机关对其不时做  出的修订 <br />
+  12、《运作办法》：指《公开募集证券投资基金运作管理办法》及颁布机关对其不时做出  的修订 <br />
+  13、中国证监会：指中国证券监督管理委员会 </p>
+<p align="left">14、银行业监督管理机构：指中国人民银行和/或中国银行业监督管理委员会 </p>
+<p align="left">15、基金合同当事人：指受基金合同约束，根据基金合同享有权利并承担义务的法律主  体，包括基金管理人、基金托管人和基金份额持有人 <br />
+  16、个人投资者：指依据有关法律法规规定可投资于证券投资基金的自然人 </p>
+<p align="left">17、机构投资者：指依法可以投资证券投资基金的、在中华人民共和国境内合法登记并  存续或经有关政府部门批准设立并存续的企业法人、事业法人、社会团体或其他组织 <br />
+  18、合格境外机构投资者：指符合《合格境外机构投资者境内证券投资管理办法》及相  关法律法规规定可以投资于在中国境内依法募集的证券投资基金的中国境外的机构投资者 <br />
+  19、投资人：指个人投资者、机构投资者和合格境外机构投资者以及法律法规或中国证 监会允许购买证券投资基金的其他投资人的合称 <br />
+  20、基金份额持有人：指依基金合同和招募说明书合法取得基金份额的投资人 </p>
+<br clear="all" />
+<div>
+  <p align="left">&nbsp;</p>
+  <p align="left">21、基金销售业务：指基金管理人或销售机构宣传推介基金，发售基金份额，办理基金 </p>
+  <p align="center">份额的申购、赎回、转换、非交易过户、转托管及定期定额投资等业务。 </p>
+  <p>22、销售机构：指长城基金管理有限公司以及符合《销售办法》和中国证监会规定的其  他条件，取得基金销售业务资格并与基金管理人签订了基金销售服务代理协议，代为办理 基金销售业务的机构 <br />
+    23、直销机构：指长城基金管理有限公司 </p>
+  <p>24、代销机构：指符合《销售办法》和中国证监会规定的其他条件，取得基金代销业务 资格并与基金管理人签订了基金销售服务代理协议，代为办理基金销售业务的机构 <br />
+    25、基金销售网点：指直销机构的直销中心及代销机构的代销网点 26、登记业务：指  基金登记、存管、过户、清算和结算业务，具体内容包括投资人基金账户的建立和管理、 基金份额登记、基金销售业务的确认、清算和结算、代理发放红利、建立并保管基金份额  持有人名册和办理非交易过户等 <br />
+    27、登记机构：指办理登记业务的机构。基金的登记机构为长城基金管理有限公司或接 受长城基金管理有限公司委托代为办理登记业务的机构 <br />
+    28、基金账户：指登记机构为投资人开立的、记录其持有的、基金管理人所管理的基金 份额余额及其变动情况的账户 <br />
+    29、基金交易账户：指销售机构为投资人开立的、记录投资人通过该销售机构买卖基金  的基金份额变动及结余情况的账户 <br />
+    30、基金合同生效日：指基金募集达到法律法规规定及基金合同规定的条件，基金管理 人向中国证监会办理基金备案手续完毕，并获得中国证监会书面确认的日期 <br />
+    31、基金合同终止日：指基金合同规定的基金合同终止事由出现后，基金财产清算完毕， 清算结果报中国证监会备案并予以公告的日期 <br />
+    32、基金募集期：指自基金份额发售之日起至发售结束之日止的期间，最长不得超过三 个月 <br />
+    33、存续期：指基金合同生效至终止之间的不定期期限 </p>
+  <p align="left">34、工作日：指上海证券交易所、深圳证券交易所的正常交易日 </p>
+  <p align="left">35、T  日：指销售机构在规定时间受理投资人申购、赎回或其他业务申请的开放日 </p>
+  <p align="left">36、T+n 日：指自 T 日起第 n 个工作日(不包含 T 日)</p>
+  <p align="left">37、开放日：指为投资人办理基金份额申购、赎回或其他业务的工作日 </p>
+  <p align="left">38、开放时间：指开放日基金接受申购、赎回或其他交易的时间段 </p>
+  <p>39、《业务规则》：指长城基金管理有限公司开放式基金业务规则，是规范基金管理人所  管理的开放式证券投资基金登记方面的业务规则，由基金管理人和投资人共同遵守 </p>
+</div>
+<br clear="all" />
+<p align="left">&nbsp;</p>
+<p align="left">40、认购：指在基金募集期内，投资人申请购买基金份额的行为 </p>
+<p>41、申购：指基金合同生效后，投资人根据基金合同和招募说明书的规定申请购买基金 份额的行为 <br />
+  42、赎回：指基金合同生效后，基金份额持有人按基金合同规定的条件要求将基金份额 兑换为现金的行为 <br />
+  43、基金转换：指基金份额持有人按照本基金合同和基金管理人届时有效公告规定的条  件，申请将其持有基金管理人管理的、某一基金的基金份额转换为基金管理人管理的其他 基金基金份额的行为 <br />
+  44、转托管：指基金份额持有人在本基金的不同销售机构之间实施的变更所持基金份额 销售机构的操作 <br />
+  45、定期定额投资计划：指投资人通过有关销售机构提出申请，约定每期申购日、扣款  金额及扣款方式，由销售机构于每期约定扣款日在投资人指定银行账户内自动完成扣款及 基金申购申请的一种投资方式 <br />
+  46、巨额赎回：指本基金单个开放日，基金净赎回申请(赎回申请份额总数加上基金转 换中转出申请份额总数后扣除申购申请份额总数及基金转换中转入申请份额总数后的余额) 超过上一开放日基金总份额的 10%<br />
+  47、元：指人民币元 </p>
+<p>48、基金收益：指基金投资所得红利、股息、债券利息、买卖证券价差、银行存款利息、 已实现的其他合法收入及因运用基金财产带来的成本和费用的节约 <br />
+  49、基金资产总值：指基金拥有的各类有价证券、银行存款本息、基金应收申购款及其 他资产的价值总和 <br />
+  50、基金资产净值：指基金资产总值减去基金负债后的价值 </p>
+<p align="left">51、基金份额净值：指计算日基金资产净值除以计算日基金份额总数 </p>
+<p>52、基金资产估值：指计算评估基金资产和负债的价值，以确定基金资产净值和基金份 额净值的过程 <br />
+  53、指定媒介：指中国证监会指定的用以进行信息披露的报刊、互联网网站及其他媒介 </p>
+54、不可抗力：指本合同当事人不能预见、不能避免且不能克服的客观事件
+
+
+      </div>
+    </div>
+  </div>
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">三、基金管理人</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">五、相关服务机构</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">六、基金的募集</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">七、基金备案与《基金合同》的生效</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">八、基金份额的申购与赎回</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">九、基金的投资管理</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">十、基金的财产</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">十一、基金资产的估值</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">十二、基金的收益分配</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">十三、基金的费用与税收</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">十四、基金的会计与审计</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">十五、基金的信息披露</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">十六、风险揭示</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">十七、基金合同的变更、终止与基金财产的清算</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">十八、基金合同的内容摘要</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">十九、基金托管协议的内容摘要</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">二十、对基金份额持有人的服务</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">二十一、招募说明书的存放及查阅方式</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  <div class="am-panel am-panel-default">
+    <div class="am-panel-hd">
+	  <div style="text-align:right; float:right;"> <span class="am-badge">未提交</span> <a class="am-badge am-badge-secondary"> 邮件提醒 </a></div>
+      <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">二十二、备查文件</h4>
+    </div>
+    <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+      <div class="am-panel-bd">
+      未提交
+      </div>
+    </div>
+  </div>
+  
+  
+  
+</div>
+</div>
+
+<div id="cl" style="padding: 10px;">
+  
+  <p align="center">目  录 </p>
+  <p align="left">&nbsp;</p>
+  <p>一、绪言....................................................................................................................... 4 <br>
+  二、释义....................................................................................................................... 5<br> 
+  三、基金管理人........................................................................................................... 8 <br>
+  四、基金托管人.........................................................................................................  19 <br>
+  五、相关服务机构..................................................................................................... 25<br>  
+  六、基金的募集.........................................................................................................  27 <br>
+  七、基金备案与《基金合同》的生效..................................................................... 30  <br>
+  八、基金份额的申购与赎回..................................................................................... 31<br> 
+  九、基金的投资管理................................................................................................. 39<br>  
+  十、基金的财产.........................................................................................................  45<br> 
+  十一、基金资产的估值............................................................................................. 46<br> 
+  十二、基金的收益分配............................................................................................. 50<br> 
+  十三、基金的费用与税收......................................................................................... 51<br> 
+  十四、基金的会计与审计......................................................................................... 53 <br>
+  十五、基金的信息披露............................................................................................. 54<br> 
+  十六、风险揭示.........................................................................................................  59<br> 
+  十七、基金合同的变更、终止与基金财产的清算................................................. 61 <br>
+  十八、基金合同的内容摘要..................................................................................... 63 <br>
+  十九、基金托管协议的内容摘要............................................................................. 75 <br>
+  二十、对基金份额持有人的服务............................................................................. 90<br> 
+  二十一、招募说明书的存放及查阅方式................................................................. 91  <br>
+  二十二、备查文件..................................................................................................... 92</p>
+  <p>&nbsp;</p>
+  <p align="left">第一部分  绪言 </p>
+<p align="left">&nbsp;</p>
+<p>本招募说明书依据《中华人民共和国证券投资基金法》（以下简称“《基金法》”）、《证券  投资基金信息披露管理办法》（以下简称“《信息披露办法》”）、《公开募集证券投资基金运作  管理办法》（以下简称“《运作办法》”）、《证券投资基金销售管理办法》（以下简称“《销售办  法》”）等有关法律法规及《长城新视野混合型证券投资基金基金合同》（以下简称“基金合  同”）编写。 <br />
+  本招募说明书阐述了长城新视野混合型证券投资基金的投资目标、策略、风险、费率  等与投资者投资决策有关的全部必要事项，投资者在做出投资决策前应仔细阅读本招募说 明书。 <br />
+  基金管理人承诺本招募说明书不存在任何虚假记载、误导性陈述或者重大遗漏，并对 其真实性、准确性、完整性承担法律责任。本基金是根据本招募说明书所载明的资料申请  募集的。本基金管理人没有委托或授权任何其他人提供未在本招募说明书中载明的信息，  或对本招募说明书做出任何解释或者说明。 <br />
+  本招募说明书根据本基金的基金合同编写，并经中国证监会注册。基金合同是约定基 金当事人之间权利、义务的法律文件。基金投资者自依基金合同取得基金份额，即成为基  金份额持有人和本基金合同的当事人，其持有基金份额的行为本身即表明其对基金合同的 承认和接受，并按照《基金法》、基金合同及其他规定享有权利、承担义务。基金投资者  欲了解基金份额持有人的权利和义务，应详细查阅本基金基金合同。 </p>
+<p align="center">第二部分  释义 </p>
+<p align="left">&nbsp;</p>
+<p align="left">在本招募说明书中，除非文意另有所指，下列词语或简称具有如下含义： </p>
+<p align="left">1、基金或本基金：指长城新视野混合型证券投资基金 </p>
+<p align="left">2、基金管理人：指长城基金管理有限公司 </p>
+<p align="left">3、基金托管人：指中国民生银行股份有限公司 </p>
+<p align="left">4、基金合同或本基金合同：指《长城新视野混合型证券投资基金基金合同》及对本基 金合同的任何有效修订和补充 <br />
+  5、托管协议：指基金管理人与基金托管人就本基金签订之《长城新视野混合型证券投  资基金托管协议》及对该托管协议的任何有效修订和补充 <br />
+  6、招募说明书：指《长城新视野混合型证券投资基金招募说明书》及其定期的更新 </p>
+<p align="left">7、基金份额发售公告：指《长城新视野混合型证券投资基金基金份额发售公告》 </p>
+<p align="left">8、法律法规：指中国现行有效并公布实施的法律、行政法规、规范性文件、司法解释、 行政规章以及其他对基金合同当事人有约束力的决定、决议、通知等 <br />
+  9、《基金法》：指《中华人民共和国证券投资基金法》及颁布机关对其不时做出的修订 </p>
+<p align="left">10、《销售办法》：指《证券投资基金销售管理办法》及颁布机关对其不时做出的修订 </p>
+<p align="left">11、《信息披露办法》：指《证券投资基金信息披露管理办法》及颁布机关对其不时做  出的修订 <br />
+  12、《运作办法》：指《公开募集证券投资基金运作管理办法》及颁布机关对其不时做出  的修订 <br />
+  13、中国证监会：指中国证券监督管理委员会 </p>
+<p align="left">14、银行业监督管理机构：指中国人民银行和/或中国银行业监督管理委员会 </p>
+<p align="left">15、基金合同当事人：指受基金合同约束，根据基金合同享有权利并承担义务的法律主  体，包括基金管理人、基金托管人和基金份额持有人 <br />
+  16、个人投资者：指依据有关法律法规规定可投资于证券投资基金的自然人 </p>
+<p align="left">17、机构投资者：指依法可以投资证券投资基金的、在中华人民共和国境内合法登记并  存续或经有关政府部门批准设立并存续的企业法人、事业法人、社会团体或其他组织 <br />
+  18、合格境外机构投资者：指符合《合格境外机构投资者境内证券投资管理办法》及相  关法律法规规定可以投资于在中国境内依法募集的证券投资基金的中国境外的机构投资者 <br />
+  19、投资人：指个人投资者、机构投资者和合格境外机构投资者以及法律法规或中国证 监会允许购买证券投资基金的其他投资人的合称 <br />
+  20、基金份额持有人：指依基金合同和招募说明书合法取得基金份额的投资人 </p>
+<br clear="all" />
+<div>
+  <p align="left">&nbsp;</p>
+  <p align="left">21、基金销售业务：指基金管理人或销售机构宣传推介基金，发售基金份额，办理基金 </p>
+  <p align="center">份额的申购、赎回、转换、非交易过户、转托管及定期定额投资等业务。 </p>
+  <p>22、销售机构：指长城基金管理有限公司以及符合《销售办法》和中国证监会规定的其  他条件，取得基金销售业务资格并与基金管理人签订了基金销售服务代理协议，代为办理 基金销售业务的机构 <br />
+    23、直销机构：指长城基金管理有限公司 </p>
+  <p>24、代销机构：指符合《销售办法》和中国证监会规定的其他条件，取得基金代销业务 资格并与基金管理人签订了基金销售服务代理协议，代为办理基金销售业务的机构 <br />
+    25、基金销售网点：指直销机构的直销中心及代销机构的代销网点 26、登记业务：指  基金登记、存管、过户、清算和结算业务，具体内容包括投资人基金账户的建立和管理、 基金份额登记、基金销售业务的确认、清算和结算、代理发放红利、建立并保管基金份额  持有人名册和办理非交易过户等 <br />
+    27、登记机构：指办理登记业务的机构。基金的登记机构为长城基金管理有限公司或接 受长城基金管理有限公司委托代为办理登记业务的机构 <br />
+    28、基金账户：指登记机构为投资人开立的、记录其持有的、基金管理人所管理的基金 份额余额及其变动情况的账户 <br />
+    29、基金交易账户：指销售机构为投资人开立的、记录投资人通过该销售机构买卖基金  的基金份额变动及结余情况的账户 <br />
+    30、基金合同生效日：指基金募集达到法律法规规定及基金合同规定的条件，基金管理 人向中国证监会办理基金备案手续完毕，并获得中国证监会书面确认的日期 <br />
+    31、基金合同终止日：指基金合同规定的基金合同终止事由出现后，基金财产清算完毕， 清算结果报中国证监会备案并予以公告的日期 <br />
+    32、基金募集期：指自基金份额发售之日起至发售结束之日止的期间，最长不得超过三 个月 <br />
+    33、存续期：指基金合同生效至终止之间的不定期期限 </p>
+  <p align="left">34、工作日：指上海证券交易所、深圳证券交易所的正常交易日 </p>
+  <p align="left">35、T  日：指销售机构在规定时间受理投资人申购、赎回或其他业务申请的开放日 </p>
+  <p align="left">36、T+n 日：指自 T 日起第 n 个工作日(不包含 T 日)</p>
+  <p align="left">37、开放日：指为投资人办理基金份额申购、赎回或其他业务的工作日 </p>
+  <p align="left">38、开放时间：指开放日基金接受申购、赎回或其他交易的时间段 </p>
+  <p>39、《业务规则》：指长城基金管理有限公司开放式基金业务规则，是规范基金管理人所  管理的开放式证券投资基金登记方面的业务规则，由基金管理人和投资人共同遵守 </p>
+</div>
+<br clear="all" />
+<p align="left">&nbsp;</p>
+<p align="left">40、认购：指在基金募集期内，投资人申请购买基金份额的行为 </p>
+<p>41、申购：指基金合同生效后，投资人根据基金合同和招募说明书的规定申请购买基金 份额的行为 <br />
+  42、赎回：指基金合同生效后，基金份额持有人按基金合同规定的条件要求将基金份额 兑换为现金的行为 <br />
+  43、基金转换：指基金份额持有人按照本基金合同和基金管理人届时有效公告规定的条  件，申请将其持有基金管理人管理的、某一基金的基金份额转换为基金管理人管理的其他 基金基金份额的行为 <br />
+  44、转托管：指基金份额持有人在本基金的不同销售机构之间实施的变更所持基金份额 销售机构的操作 <br />
+  45、定期定额投资计划：指投资人通过有关销售机构提出申请，约定每期申购日、扣款  金额及扣款方式，由销售机构于每期约定扣款日在投资人指定银行账户内自动完成扣款及 基金申购申请的一种投资方式 <br />
+  46、巨额赎回：指本基金单个开放日，基金净赎回申请(赎回申请份额总数加上基金转 换中转出申请份额总数后扣除申购申请份额总数及基金转换中转入申请份额总数后的余额) 超过上一开放日基金总份额的 10%<br />
+  47、元：指人民币元 </p>
+<p>48、基金收益：指基金投资所得红利、股息、债券利息、买卖证券价差、银行存款利息、 已实现的其他合法收入及因运用基金财产带来的成本和费用的节约 <br />
+  49、基金资产总值：指基金拥有的各类有价证券、银行存款本息、基金应收申购款及其 他资产的价值总和 <br />
+  50、基金资产净值：指基金资产总值减去基金负债后的价值 </p>
+<p align="left">51、基金份额净值：指计算日基金资产净值除以计算日基金份额总数 </p>
+<p>52、基金资产估值：指计算评估基金资产和负债的价值，以确定基金资产净值和基金份 额净值的过程 <br />
+  53、指定媒介：指中国证监会指定的用以进行信息披露的报刊、互联网网站及其他媒介 </p>
+54、不可抗力：指本合同当事人不能预见、不能避免且不能克服的客观事件
+
+
+一、基金管理人情况
+
+1.名称：长城基金管理有限公司
+
+2.住所：深圳市福田区益田路 6009 号新世界商务中心 41 层
+
+3.办公地址：深圳市福田区益田路 6009 号新世界商务中心 40-41 层
+
+4.法定代表人：杨光裕
+
+5.组织形式：有限责任公司
+
+6.设立日期：2001 年 12 月 27 日
+
+7.电话：0755-23982338	传真：0755-23982328
+
+8.联系人：袁江天
+
+9.管理基金情况：目前管理久嘉证券投资基金、长城久恒灵活配置混合型证券投资基 金、长城久泰沪深 300 指数证券投资基金、长城货币市场证券投资基金、长城消费增值混 合型证券投资基金、长城安心回报混合型证券投资基金、长城久富核心成长混合型证券投 资基金(LOF)、长城品牌优选混合型证券投资基金、长城稳健增利债券型证券投资基金、 长城双动力混合型证券投资基金、长城景气行业龙头灵活配置混合型证券投资基金、长城 中小盘成长混合型证券投资基金、长城积极增利债券型证券投资基金、长城久兆中小板
+300 指数分级证券投资基金、长城优化升级混合型证券投资基金、长城保本混合型证券投 资基金、长城岁岁金理财债券型证券投资基金、长城久利保本混合型证券投资基金、长城 增强收益定期开放债券型证券投资基金、长城医疗保健混合型证券投资基金、长城淘金一 年期理财债券型证券投资基金、长城工资宝货币市场基金、长城久鑫保本混合型证券投资 基金、长城久盈纯债分级债券型证券投资基金、长城稳固收益债券型证券投资基金、长城 新兴产业灵活配置混合型证券投资基金、长城环保主题灵活配置混合型证券投资基金、长 城改革红利灵活配置混合型证券投资基金、长城久惠保本混合型证券投资基金、长城久祥 保本混合型证券投资基金、长城新策略灵活配置混合型证券投资基金、长城久安保本混合 型证券投资基金、长城新优选混合型证券投资基金等三十三只基金。
+10.客户服务电话：400-8868-666
+
+11.注册资本：壹亿伍仟万元
+
+12.股权结构：
+
+持股单位	占总股本比例
+长城证券股份有限公司	47.059%
+ 
+
+
+东方证券股份有限公司	17.647%
+中原信托有限公司	17.647%
+北方国际信托股份有限公司	17.647%
+合计	100%
+
+二、基金管理人主要人员情况
+
+1.董事、监事及高管人员介绍
+
+（1）董事 杨光裕先生，董事长，硕士。曾任江西省审计厅办公室主任，长城证券股份有限公司
+副总裁。 熊科金先生，董事、总经理，硕士。曾任中国银行江西信托投资公司证券业务部负责
+人，中国东方信托投资公司南昌证券营业部总经理、公司证券总部负责人，华夏证券有限 公司江西管理总部总经理，中国银河证券有限责任公司基金部负责人、银河基金管理有限 公司筹备组负责人，银河基金管理有限公司副总经理、总经理。
+何伟先生，董事，硕士。现任长城证券股份有限公司总裁、党委副书记。曾任职于北 京兵器工业部计算机所、深圳蛇口工业区电子开发公司、深圳蛇口百佳超市有限公司等公 司，1993 年 2 月起历任君安证券有限公司投资二部经理、总裁办主任、公司总裁助理兼资 产管理公司常务副总经理、营业部总经理，国泰君安证券股份有限公司总裁助理，华富基 金管理有限公司（筹）拟任总经理，国泰君安证券股份有限公司总裁助理、公司副总裁。 范小新先生，董事，博士，高级经济师。现任长城证券股份有限公司副总经理、党委 委员、纪委书记。曾任重庆市对外经济贸易委员会副处长，西南技术进出口公司总经理助 理，重庆对外经贸委美国公司筹备组组长，中国机电产品进出口商会法律部副主任，华能
+资本服务有限公司总经理工作部副经理。 杨玉成先生，董事，硕士。现任东方证券股份有限公司副总裁、董事会秘书，东方金
+融控股（香港）有限公司董事长，上海东方证券资产管理有限公司董事。曾任上海财经大 学财政系教师，君安证券有限公司证券投资部总经理助理，上海大众科技创业（集团）股 份有限公司董事、董事会秘书、副总经理，上海申能资产管理有限公司董事、副总经理， 东方证券股份有限公司财务总监、副总经理，申能集团财务有限公司董事、总经理。
+姬宏俊先生，董事，硕士。现任中原信托有限公司副总裁。曾任河南省计划委员会老 干部处副处长、投资处副处长，发展计划委员会财政金融处副处长，国家开发银行河南省
+ 
+
+
+分行信贷一处副处长。
+
+金树良先生，董事，硕士。现任北方国际信托股份有限公司总经济师。曾任职于北京 大学经济学院国际经济系。1992 年 7 月起历任海南省证券公司副总裁、北京华宇世纪投资 有限公司副总裁、昆仑证券有限责任公司总裁、北方国际信托股份有限公司资产管理部总 经理及公司总经理助理兼资产管理部总经理、渤海财产保险股份有限公司常务副总经理及 总经理、北方国际信托股份有限公司总经理助理。
+王连洲先生，独立董事，现已退休。中国《证券法》、《信托法》、《证券投资基金法》 三部重要民商法律起草工作的主要组织者和参与者。曾在中国人民银行总行印制管理局工 作，1983 年调任全国人大财经委员会，历任办公室财金组组长、办公室副主任、经济法室 副主任、研究室负责人、巡视员。
+谢志华先生，独立董事，博士。现任北京工商大学副校长。曾任湖南国营大通湖农场 教师、湘西自治州商业学校教师、北京商学院（现北京工商大学）副院长、北京工商大学 校长助理。
+刘杉先生，独立董事，博士。现任中华工商时报社副总编辑，兼任北京工商大学教授、 中国人民大学信托与基金研究所研究员。曾任中华工商时报社海外部编辑、副主任、中华 工商时报财经新闻部主任，中国人民银行深圳分行金融早报社总编辑，中华工商时报社总 编辑助理。
+鄢维民先生，独立董事，学士。现任深圳市证券业协会常务副会长兼秘书长、深圳上 市公司协会副会长兼秘书长。曾任江西省社会科学院经济研究所发展室副主任，深圳市体 改委宏观调控处、企业处副处长，深圳市证券管理办公室公司审查处处长，招银证券公司 副总经理。
+（2）监事 吴礼信先生，监事会主席，会计师、中国注册会计师（非执业）。现任长城证券股份有
+限公司董事会秘书、财务总监。曾任安徽省地矿局三二六地质队会计主管，深圳中达信会 计师事务所审计一部部长，大鹏证券有限责任公司计财综合部经理，大鹏证券有限责任公 司资金结算部副总经理，第一创业证券有限责任公司计划财务部副总经理。2003 年进入长 城证券股份有限公司，任财务部总经理。
+曾广炜先生，监事，高级会计师。现任北方国际信托股份有限公司总经理助理兼风险 控制部总经理。曾任职于中国燕兴天津公司、天津开发区总公司、天津滨海新兴产业公司，
+2003 年 1 月起历任北方国际信托股份有限公司信托业务四部副总经理、证券投资部副总经
+ 
+
+
+理、财务中心总经理、风险控制部总经理。
+
+张令先生，监事，硕士。现任东方证券股份有限公司稽核总部总经理。历任中国纺织 机械股份有限公司财务会计、副科长、科长、副总会计师、上海浦发银行信托证券部科长、 副总经理、东方证券股份有限公司资金财务管理总部总经理。
+黄魁粉女士，监事，硕士。现任中原信托有限公司固有业务部总经理。2002 年 7 月 进入中原信托有限公司。曾在信托投资部、信托综合部、风险与合规管理部、信托理财服 务中心工作。
+袁江天先生，监事，博士。现任长城基金管理有限公司董事会秘书兼综合管理部总经 理。曾任职于广西国际信托投资公司投资管理部、国海（广西）证券有限责任公司投资银 行部、证券营业部、总裁办、北方国际信托投资股份有限公司博士后工作站。
+王燕女士，监事，硕士。现任长城基金管理有限公司财务经理、综合管理部副总经理。
+
+2007 年 5 月进入长城基金管理有限公司，曾在运行保障部登记结算室从事基金清算工作，
+
+2010 年 8 月进入综合管理部从事财务会计工作。 张静女士，监事，硕士。现任长城基金管理有限公司监察稽核部法务主管。曾任摩根
+士丹利华鑫基金管理有限公司监察稽核部监察稽核员。
+
+（3）高级管理人员 杨光裕先生，董事长，简历同上。 熊科金先生，董事、总经理，简历同上。
+彭洪波先生，副总经理兼运行保障部总经理、信息技术部总经理，硕士。曾就职于长 城证券股份有限公司，历任深圳东园路营业部电脑部经理，公司电子商务筹备组项目经理， 公司审计部技术主审。2002 年 3 月进入长城基金管理有限公司，历任监察稽核部业务主管、 部门副总经理、部门总经理、公司督察长兼监察稽核部总经理、公司总经理助理兼运行保 障部总经理。
+桑煜先生，副总经理兼市场开发部总经理、广州管理部总经理，学士。曾任职于中国 建设银行山东省分行、中国建设银行总行基金托管部。2002 年 8 月进入长城基金管理有限 公司，历任市场开发部业务主管、运行保障部副总经理、运行保障部总经理、市场开发部 总经理、综合管理部总经理、公司总经理助理。
+杨建华先生，副总经理、投资总监兼基金管理部总经理、基金经理，硕士。曾就职于 大庆石油管理局、华为技术有限公司、深圳和君创业有限公司、长城证券股份有限公司。
+2001 年 10 月进入长城基金管理有限公司工作，历任基金经理助理、“长城安心回报混合型
+ 
+
+
+证券投资基金”基金经理、“长城中小盘成长混合型证券投资基金”基金经理。
+
+卢盛春先生，副总经理兼机构理财部总经理，硕士。曾就职于中国人民银行江西省分 行、交通银行海南分行、海通证券股份有限公司、富国基金管理有限公司、西北证券有限 责任公司、华商基金管理有限公司（筹备组）。2003 年进入长城基金管理有限公司，历任 上海分公司总经理、北京分公司总经理、公司总经理助理。
+车君女士，督察长、监察稽核部总经理，硕士。曾任职于深圳本鲁克斯实业股份有限 公司，1993 年起先后在中国证监会深圳监管局市场处、机构监管处、审理执行处、稽查 一处、机构监管二处、党办等部门工作，历任副主任科员、主任科员、副处长、正处级调 研员等职务。
+2.本基金基金经理简历
+
+蔡旻先生，厦门大学金融工程专业经济学学士及硕士。2010 年进入长城基金管理有 限公司，曾任固定收益部债券研究员，“长城货币市场证券投资基金”基金经理助理。自
+2015 年 1 月至今任“长城岁岁金理财债券型证券投资基金”基金经理，自 2015 年 1 月至 今任“长城淘金一年期理财债券型证券投资基金”基金经理，自 2015 年 5 月至今任“长 城稳健增利债券型证券投资基金”基金经理，自 2016 年 3 月至今任“长城新优选混合型 证券投资基金”基金经理。
+3.本公司公募基金投资决策委员会成员的姓名和职务如下： 熊科金先生，投资决策委员会主任，公司董事、总经理。 杨建华先生，投资决策委员会执行委员，公司副总经理、投资总监兼基金管理部总经
+理、基金经理。 钟光正先生，投资决策委员会委员，公司固定收益部总经理、基金经理。 徐九龙先生，投资决策委员会委员，机构理财部专户投资总监。 吴文庆先生，投资决策委员会委员，公司研究部总经理、基金经理。
+4.上述人员之间不存在近亲属关系。 三、基金管理人的职责 根据《基金法》、《运作办法》及其他有关规定，基金管理人应履行以下职责：
+1、依法募集基金，办理或者委托经中国证监会认定的其他机构代为办理基金份额的发 售、申购、赎回和登记事宜；
+2、办理基金备案手续；
+
+3、自《基金合同》生效之日起,以诚实信用、谨慎勤勉的原则管理和运用基金财产；
+
+4、配备足够的具有专业资格的人员进行基金投资分析、决策，以专业化的经营方式管 理和运作基金财产；
+ 
+
+
+5、建立健全内部风险控制、监察与稽核、财务管理及人事管理等制度，保证所管理的
+
+基金财产和基金管理人的财产相互独立,对所管理的不同基金分别管理，分别记账，进行证 券投资；
+6、除依据《基金法》、《基金合同》及其他有关规定外,不得利用基金财产为自己及任 何第三人谋取利益，不得委托第三人运作基金财产；
+7、依法接受基金托管人的监督；
+
+8、采取适当合理的措施使计算基金份额认购、申购、赎回和注销价格的方法符合《基 金合同》等法律文件的规定，按有关规定计算并公告基金资产净值，确定基金份额申购、赎 回的价格；
+9、进行基金会计核算并编制基金财务会计报告；
+
+10、编制季度、半年度和年度基金报告；
+
+11、严格按照《基金法》、《基金合同》及其他有关规定，履行信息披露及报告义务；
+
+12、保守基金商业秘密，不泄露基金投资计划、投资意向等。除《基金法》、《基金合 同》及其他有关规定另有规定外，在基金信息公开披露前应予保密，不向他人泄露；
+13、按《基金合同》的约定确定基金收益分配方案，及时向基金份额持有人分配基金收 益；
+14、按规定受理申购与赎回申请，及时、足额支付赎回款项；
+
+15、依据《基金法》、《基金合同》及其他有关规定召集基金份额持有人大会或配合基 金托管人、基金份额持有人依法召集基金份额持有人大会；
+16、按规定保存基金财产管理业务活动的会计账册、报表、记录和其他相关资料15年以 上；
+17、确保需要向基金投资者提供的各项文件或资料在规定时间发出，并且保证投资者能 够按照《基金合同》规定的时间和方式，随时查阅到与基金有关的公开资料，并在支付合理 成本的条件下得到有关资料的复印件；
+18、组织并参加基金财产清算小组，参与基金财产的保管、清理、估价、变现和分配；
+
+19、面临解散、依法被撤销或者被依法宣告破产时，及时报告中国证监会并通知基金托 管人；
+20、因违反《基金合同》导致基金财产的损失或损害基金份额持有人合法权益时，应当 承担赔偿责任，其赔偿责任不因其退任而免除；
+21、监督基金托管人按法律法规和《基金合同》规定履行自己的义务，基金托管人违反
+ 
+
+
+《基金合同》造成基金财产损失时，基金管理人应为基金份额持有人利益向基金托管人追偿；
+
+22、当基金管理人将其义务委托第三方处理时，应当对第三方处理有关基金事务的行为 承担责任；
+23、以基金管理人名义，代表基金份额持有人利益行使诉讼权利或实施其他法律行为；
+
+24、基金管理人在募集期间未能达到基金的备案条件，《基金合同》不能生效，基金管 理人承担全部募集费用，将已募集资金并加计银行同期存款利息在基金募集期结束后30日内 退还基金认购人；
+25、执行生效的基金份额持有人大会的决议；
+
+26、建立并保存基金份额持有人名册；
+
+27、法律法规及中国证监会规定的和《基金合同》约定的其他义务。 四、基金管理人承诺
+1.基金管理人承诺
+
+基金管理人承诺不从事违反《证券法》、《基金法》、《运作办法》、《销售办法》、
+
+《信息披露办法》等法律法规的行为，并承诺建立健全的内部控制制度，采取有效措施，防 止违法行为的发生。
+2.基金管理人的禁止性行为
+
+（1）将其固有财产或者他人财产混同于基金财产从事证券投资；
+
+（2）不公平地对待其管理的不同基金财产；
+
+（3）利用基金财产为基金份额持有人以外的第三人牟取利益；
+
+（4）向基金份额持有人违规承诺收益或者承担损失；
+
+（5）依照法律、行政法规有关规定，由中国证监会规定禁止的其他行为。 五、基金经理承诺
+1.依照有关法律、法规和基金合同的规定，本着谨慎的原则为基金份额持有人谋取最大 利益；
+2.不利用职务之便为自己及其代理人、受雇人或任何第三人谋取利益；
+
+3.不违反现行有效的有关法律、法规、规章、基金合同和中国证监会的有关规定，不泄 漏在任职期间知悉的有关证券、基金的商业秘密、尚未依法公开的基金投资内容、基金投资 计划等信息；
+4.不从事损害基金财产和基金份额持有人利益的证券交易及其他活动。
+ 
+
+
+六、基金管理人的内部控制制度
+
+健全、完善的内部风险控制制度是规范公司行为，有效防范经营风险，实现公司持续、 稳健发展的主要保证，也是公司经营管理水平的重要标志。为此，公司建立高效运行、控 制严密、科学合理、切实有效的风险控制制度。
+1.风险控制的目标 公司风险控制的总体目标是建立一个决策科学、运营规范、管理高效和持续、稳定、
+健康发展的基金管理实体。具体目标是：
+
+（1）确保国家法律法规、行业规章和公司各项规章制度的贯彻执行；
+
+（2）建立符合现代企业制度要求的法人治理结构，形成科学合理的决策机制、执行机 制和监督机制；
+（3）不断提高基金管理的效率和效益，在有效控制风险的前提下，努力实现基金份额 持有人利益最大化；
+（4）努力将各种风险控制在规定的范围内，保障公司发展战略和经营目标的全面实施， 维护公司股东的合法权益；
+（5）建立有利于查错防弊、堵塞漏洞、消除隐患、保证业务稳健运行的风险控制制度。
+
+2.建立风险控制制度的原则 公司按照合法、合规、稳健的要求，制定明确的经营方针，建立合理的经营机制。在
+建立风险控制制度时应严格遵循以下原则：
+
+（1）全面性原则：风险控制制度应覆盖公司的各项业务、各个部门和各级人员，并渗 透到决策、执行、监督、反馈等各个经营环节；
+（2）审慎性原则：内部风险控制的核心是有效防范各种风险，公司组织体系的构成、 内部管理制度的建立都要以防范风险、审慎经营为出发点；
+（3）独立性原则：公司风险控制的检查、评价部门应当独立于风险控制的建立和执行 部门；风险控制委员会、合规审查委员会、督察长和监察稽核部应保持高度的独立性和权 威性，负责对公司各部门风险控制工作进行评价和检查；
+（4）有效性原则：风险控制制度应当符合国家法律法规和监管部门的规章，具有高度 的权威性，成为所有员工严格遵守的行动指南；执行风险控制制度不能存在任何例外，公 司任何员工不得拥有超越制度或违反规章的权力；
+（5）适时性原则：内部风险控制应随着公司经营战略、经营方针、经营理念等内部环 境的变化和国家法律、法规、政策制度等外部环境的改变及时进行相应的修改和完善；
+ 
+
+
+（6）防火墙原则：公司基金投资、研究策划、市场开发等相关部门，应当在空间上和
+
+制度上适当分离，以达到风险防范的目的。对因业务需要知悉内幕信息的人员，应制定严 格的批准程序。
+3.风险控制的主要内容
+
+（1）确立加强内部风险控制的指导思想，确定风险控制的目标和原则；
+
+（2）建立层次分明、权责明确的风险控制体系；
+
+（3）建立公司风险控制程序；
+
+（4）对公司内部风险进行全面、系统的评估，制定风险控制计划；
+
+（5）确定公司风险控制的路径和措施；
+
+（6）保障风险控制制度的持续性和有效性，制定可行的风险控制制度的评价和检查机 制。
+4.风险控制体系 公司根据基金管理的业务特点设置内部机构，并在此基础上建立层层递进、严密有效
+的多级风险防范体系：
+
+（1）一级风险防范 一级风险防范是指在公司董事会层面对公司的风险进行的预防和控制。 董事会下设风险控制与审计委员会，负责公司内部控制的监督、审查和公司的审计工
+作。对公司内部控制制度的有效性进行评价，对公司经营管理和基金业务运作的合法合规 性进行监督检查，协助董事会建立并有效维持公司内部控制系统，对公司经营中的风险进 行研究、分析和评估，并提出风险防范措施和建议，保证公司的规范健康发展。风险控制 与审计委员会的基本职能为：
+①协助董事会建立科学合理、控制严密、运行高效的内部控制组织体系和制度体系。
+
+②审查、评价公司基金投资管理制度、市场营销管理制度、风险管理制度等各项内部 控制制度的合法合规性、合理性和有效性。
+③检查和评价公司管理和资产经营、基金管理和资产经营中对国家有关法律法规、中 国证监会部门规章以及基金合同的遵守和执行情况，并出具评估意见或改正方案。
+④定期或不定期听取公司主要经营管理人员关于风险管理工作的汇报。
+
+⑤检查和评价公司各项内部控制制度的执行情况并提出改进意见。
+
+⑥评估公司管理和基金管理中存在或潜在的风险，检查和评价公司各项业务风险控制 工作的有效性，并提出改进意见。
+ 
+
+
+⑦检查公司会计政策、财务状况和财务报告程序，与外部审计机构进行交流。
+
+⑧对公司内部控制和风险管理工作进行考核。
+
+⑨董事会安排的其他事项。 公司设督察长。督察长作为风险控制与审计委员会的执行机构，对董事会负责，按照
+中国证监会的规定和风险控制与审计委员会的授权进行工作。
+
+（2）二级风险防范 二级风险防范是指在公司投资决策委员会和监察稽核部层次对公司的风险进行的预
+防和控制。 投资决策委员会在总经理的领导下，研究并制定公司基金资产的投资战略和投资策略，
+对基金的总体投资情况提出指导性意见，从而达到分散投资风险，提高基金资产的安全性 的目的。其在风险控制中主要职责为：
+①研究并确立公司的基金投资理念和投资方向；
+
+②决定基金资产在现金、债券和股票中的分配比例；
+
+③审核基金经理提出的投资组合方案，对其运作过程中的风险进行评估和控制；
+
+④批准基金经理拟订的投资原则，对基金经理做出投资授权；
+
+⑤对超出投资决策委员会执行委员及基金经理权限的投资项目作出决定。 监察稽核部在总经理的领导下，独立于公司各业务部门和各分支机构，对各岗位、各
+部门、各机构、各项业务中的风险控制情况实施监督。其在风险控制中主要职责是：
+
+①根据各项风险的产生环节，和相关的业务部门一起，共同制定对风险的事前防范和 事后审查方案；
+②就各部门内部风险控制制度的执行情况独立地履行检查、评价、报告及建议职能；
+
+③调查公司内部的违规案件，协助监管机构处理相关事宜；
+
+④对基金运作和公司内部管理进行日常监督与稽核，并向总经理汇报。
+
+（3）三级风险防范 三级风险防范是公司各部门对自身业务工作中的风险进行的自我检查和控制。 公司各部门根据经营计划、业务规则及本部门具体情况制定本部门的工作流程及风
+险控制措施，达到：
+
+①一线岗位双人双职双责，互相监督；直接与交易、资金、电脑系统、重要空白支票、 业务用章接触的岗位，实行双人负责；属于单人、单岗处理的业务，强化后续的监督机制；
+②相关部门、相关岗位之间相互监督制衡。关键部门和相关岗位之间建立重要业务
+ 
+
+
+凭据顺畅传递的渠道，各部门和岗位分别在自己的授权范围内承担各自的职责，将风险控
+
+制在最小范围内。
+
+5.基金管理人关于内部合规控制声明书
+
+（1）本公司承诺以上关于内部控制的披露真实、准确；
+
+（2）本公司承诺根据市场变化和公司发展不断完善内部风险控制制度。
+ 
+
+
+
+第四部分	基金托管人
+
+
+一、基本情况
+
+名称：中国民生银行股份有限公司（以下简称“中国民生银行”） 住所：北京市西城区复兴门内大街 2 号 办公地址：北京市西城区复兴门内大街 2 号
+法定代表人：洪崎 成立时间：1996 年 2 月 7 日 基金托管业务批准文号：证监基金字［2004］101 号 组织形式：股份有限公司（上市） 注册资本：28,365,585,227 元人民币 存续期间：持续经营
+电话：010-58560666
+
+联系人：赵天杰
+
+中国民生银行于 1996 年 1 月 12 日在北京正式成立，是我国首家主要由非公有制企业 入股的全国性股份制商业银行，同时又是严格按照《公司法》和《商业银行法》建立的规 范的股份制金融企业。多种经济成份在中国金融业的涉足和实现规范的现代企业制度，使 中国民生银行有别于国有银行和其他商业银行，而为国内外经济界、金融界所关注。中国 民生银行成立十余年来，业务不断拓展，规模不断扩大，效益逐年递增，并保持了良好的 资产质量。
+2000 年 12 月 19 日，中国民生银行 A 股股票（600016）在上海证券交易所挂牌上市。
+
+2003 年 3 月 18 日，中国民生银行 40 亿可转换公司债券在上交所正式挂牌交易。2004 年
+
+11 月 8 日，中国民生银行通过银行间债券市场成功发行了 58 亿元人民币次级债券，成为 中国第一家在全国银行间债券市场成功私募发行次级债券的商业银行。2005 年 10 月 26 日， 民生银行成功完成股权分置改革，成为国内首家完成股权分置改革的商业银行，为中国资 本市场股权分置改革提供了成功范例。
+中国民生银行自上市以来，按照“团结奋进，开拓创新，培育人才；严格管理，规范 行为，敬业守法；讲究质量，提高效益，健康发展”的经营发展方针，在改革发展与管理 等方面进行了有益探索，先后推出了“大集中”科技平台、“两率”考核机制、“三卡”工 程、独立评审制度、八大基础管理系统、集中处理商业模式及事业部改革等制度创新，实
+ 
+
+
+现了低风险、快增长、高效益的战略目标，树立了充满生机与活力的崭新的商业银行形象。
+
+2007 年 11 月，民生银行获得 2007 第一财经金融品牌价值榜十佳中资银行称号，同时 荣获《21 世纪经济报道》等机构评选的“最佳贸易融资银行奖”。
+2007 年 12 月，民生银行荣获《福布斯》颁发的第三届“亚太地区最大规模上市企业
+
+50 强”奖项。
+
+2008 年 7 月，民生银行荣获“2008 年中国最具生命力百强企业”第三名 。
+
+在《2008 中国商业银行竞争力评价报告》中民生银行核心竞争力排名第 6 位，在公司 治理和流程银行两个单项评价中位列第一。
+2009 年 6 月，民生银行在 “2009 年中国本土银行网站竞争力评测活动”中获 2009
+
+年中国本土银行网站“最佳服务质量奖”。
+
+2009 年 9 月，在大连召开的第二届中国中小企业融资论坛上，中国民生银行被评为 “2009 中国中小企业金融服务十佳机构”。在“第十届中国优秀财经证券网站评选”中， 民生银行荣膺“最佳安全性能奖”和“2009 年度最佳银行网站”两项大奖。
+2009 年 11 月 21 日，在第四届“21 世纪亚洲金融年会”上，民生银行被评为“2009
+
+年•亚洲最佳风险管理银行”。
+
+2009 年 12 月 9 日,在由《理财周报》主办的“2009 年第二届最受尊敬银行评选暨 2009 年第三届中国最佳银行理财产品评选”中，民生银行获得了“2009 年中国最受尊敬银行”、 “最佳服务私人银行”、“2009 年最佳零售银行”多个奖项。
+2010 年 2 月 3 日，在“卓越 2009 年度金融理财排行榜”评选活动中，中国民生银行 一流的电子银行产品和服务获得了专业评测公司、网友和专家的一致好评，荣获卓越 2009 年度金融理财排行榜“十佳电子银行”奖。
+2010 年 10 月，在经济观察报主办的“2009 年度中国最佳银行评选”中，民生银行获 得评委会奖——“中国银行业十年改革创新奖”。这一奖项是评委会为表彰在公司治理、激 励机制、风险管理、产品创新、管理架构、商业模式六个方面创新表现卓著的银行而特别 设立的。
+2011 年 12 月，在由中国金融认证中心（CFCA）联合近 40 家成员行共同举办的 2011 中国电子银行年会上，民生银行荣获“2011 年中国网上银行最佳网银安全奖”。这是继 2009 年、2010 年荣获“中国网上银行最佳网银安全奖”后，民生银行第三次获此殊荣，是第三 方权威安全认证机构对民生银行网上银行安全性的高度肯定。
+2012 年 6 月 20 日，在国际经济高峰论坛上,民生银行贸易金融业务以其 2011-2012 年
+ 
+
+
+度的出色业绩和产品创新最终荣获“2012 年中国卓越贸易金融银行”奖项。这也是民生银
+
+行继 2010 年荣获英国《金融时报》“中国银行业成就奖—最佳贸易金融银行奖”之后第三 次获此殊荣。
+2012 年 11 月 29 日，民生银行在《The Asset》杂志举办的 2012 年度 AAA 国家奖项评 选中获得“中国最佳银行-新秀奖”。
+2013 年度,民生银行荣获中国投资协会股权和创业投资专业委员会年度中国优秀股权 和创业投资中介机构“最佳资金托管银行”及由 21 世纪传媒颁发的 2013 年 PE/VC 最佳金 融服务托管银行奖。
+2013 年荣获中国内部审计协会民营企业内部审计优秀企业。
+
+在第八届“21 世纪亚洲金融年会”上，民生银行荣获“2013•亚洲最佳投资金融服务 银行”大奖。
+在“2013 第五届卓越竞争力金融机构评选”中，民生银行荣获“2013 卓越竞争力品牌 建设银行”奖。
+在中国社科院发布的《中国企业社会责任蓝皮书（2013）》中，民生银行荣获“中国企 业上市公司社会责任指数第一名”、“中国民营企业社会责任指数第一名”、“中国银行业社 会责任指数第一名”。
+在 2013 年第十届中国最佳企业公民评选中，民生银行荣获“2013 年度中国最佳企业 公民大奖”。
+2013 年还获得年度品牌金博奖“品牌贡献奖”。 二、主要人员情况 杨春萍：女，北京大学本科、硕士。资产托管部副总经理（主持工作）。曾就职于中国
+投资银行总行，意大利联合信贷银行北京代表处，中国民生银行金融市场部和资产托管部。 历任中国投资银行总行业务经理，意大利联合信贷银行北京代表处代表，中国民生银行金 融市场部处长、资产托管部总经理助理、副总经理、副总经理（主持工作）等职务。具有 近三十年的金融从业经历，丰富的外资银行工作经验，具有广阔的视野和前瞻性的战略眼 光。
+三、基金托管业务经营情况
+
+中国民生银行股份有限公司于 2004 年 7 月 9 日获得基金托管资格，成为《中华人 民共和国证券投资基金法》颁布后首家获批从事基金托管业务的银行。为了更好地发挥后 发优势，大力发展托管业务，中国民生银行股份有限公司资产托管部从成立伊始就本着充
+ 
+
+
+分保护基金持有人的利益、为客户提供高品质托管服务的原则，高起点地建立系统、完善
+
+制度、组织人员。资产托管部目前共有员工 57 人，平均年龄 36 岁，100%员工拥有大学 本科以上学历，80%以上员工具有硕士以上文凭。基金业务人员 100%都具有基金从业资格。 中国民生银行坚持以客户需求为导向，秉承“诚信、严谨、高效、务实”的经营理念， 依托丰富的资产托管经验、专业的托管业务服务和先进的托管业务平台，为境内外客户提 供安全、准确、及时、高效的专业托管服务。截至 2015 年 12 月末，中国民生银行已托管
+72 只证券投资基金，托管的证券投资基金总净值达到 2235.26 亿元。中国民生银行于 2007 年推出“托付民生•安享财富”托管业务品牌，塑造产品创新、服务专业、效益优异、流 程先进、践行社会责任的托管行形象，赢得了业界的高度认可和客户的广泛好评，深化了 与客户的战略合作。自 2010 年至今，中国民生银行荣获《金融理财》杂志颁发的“最具潜 力托管银行”、“最佳创新托管银行”和“金牌创新力托管银行”奖，荣获《21 世纪经济报 道》颁发的“最佳金融服务托管银行”奖。
+四、基金托管人的内部控制制度
+
+1. 内部风险控制目标 强化内部管理，保障国家的金融方针政策及相关法律法规贯彻执行，保证自觉合规依
+法经营，形成一个运作规范化、管理科学化、监控制度化的内控体系，保障业务正常运行， 维护基金份额持有人及基金托管人的合法权益。
+2. 内部风险控制组织结构 中国民生银行股份有限公司基金托管业务内部风险控制组织结构由中国民生银行股份
+有限公司稽核部、资产托管部内设稽核监督处及资产托管部各业务处室共同组成。总行稽 核部对各业务部门风险控制工作进行指导、监督。资产托管部内设独立、专职的内部监督 稽核处，负责拟定托管业务风险控制工作总体思路与计划，组织、指导、协调、监督各业 务处室风险控制工作的实施。各业务处室在各自职责范围内实施具体的风险控制措施。
+3. 内部风险控制原则
+
+(1)全面性原则：风险控制必须覆盖资产托管部的所有处室和岗位，渗透各项业务过程 和业务环节；风险控制责任应落实到每一业务部门和业务岗位，每位员工对自己岗位职责 范围内的风险负责。
+(2)独立性原则：资产托管部设立独立的稽核监督处，该处室保持高度的独立性和权威 性，负责对托管业务风险控制工作进行指导和监督。
+(3)相互制约原则：各处室在内部组织结构的设计上要形成一种相互制约的机制，建立
+ 
+
+
+不同岗位之间的制衡体系。
+
+(4)定性和定量相结合原则：建立完备的风险管理指标体系，使风险管理更具客观性和 操作性。
+(5)防火墙原则：托管部自身财务与基金财务严格分开；托管业务日常操作部门与行政、 研发和营销等部门严格分离。
+4. 内部风险控制制度和措施
+
+(1)制度建设：建立了明确的岗位职责、科学的业务流程、详细的操作手册、严格的人 员行为规范等一系列规章制度。
+(2)建立健全的组织管理结构：前后台分离，不同部门、岗位相互牵制。
+
+(3)风险识别与评估：稽核监督处指导业务处室进行风险识别、评估，制定并实施风险 控制措施。
+(4)相对独立的业务操作空间：业务操作区相对独立，实施门禁管理和音像监控。
+
+(5)人员管理：进行定期的业务与职业道德培训，使员工树立风险防范与控制理念，并 签订承诺书。
+(6)应急预案：制定完备的《应急预案》，并组织员工定期演练；建立异地灾备中心， 保证业务不中断。
+5. 资产托管部内部风险控制 中国民生银行股份有限公司从控制环境、风险评估、控制活动、信息沟通、监控等五
+个方面构建了托管业务风险控制体系。
+
+(1)坚持风险管理与业务发展同等重要的理念。托管业务是商业银行新兴的中间业务， 中国民生银行股份有限公司资产托管部从成立之日起就特别强调规范运作，一直将建立一 个系统、高效的风险防范和控制体系作为工作重点。随着市场环境的变化和托管业务的快 速发展，新问题新情况不断出现，中国民生银行股份有限公司资产托管部始终将风险管理 放在与业务发展同等重要的位置，视风险防范和控制为托管业务生存和发展的生命线。
+(2)实施全员风险管理。完善的风险管理体系需要从上至下每个员工的共同参与，只有 这样，风险控制制度和措施才会全面、有效。中国民生银行股份有限公司资产托管部实施 全员风险管理，将风险控制责任落实到具体业务处室和业务岗位，每位员工对自己岗位职 责范围内的风险负责。
+(3)建立分工明确、相互牵制的风险控制组织结构。托管部通过建立纵向双人制，横向 多处室制的内部组织结构，形成不同处室、不同岗位相互制衡的组织结构。
+ 
+
+
+(4)以制度建设作为风险管理的核心。中国民生银行股份有限公司资产托管部十分重视
+
+内部控制制度的建设，已经建立了一整套内部风险控制制度，包括业务管理办法、内部控 制制度、员工行为规范、岗位职责及涵括所有后台运作环节的操作手册。以上制度随着外 部环境和业务的发展还会不断增加和完善。
+(5)制度的执行和监督是风险控制的关键。制度执行比编写制度更重要，制度落实检查 是风险控制管理的有力保证。中国民生银行股份有限公司资产托管部内部设置专职稽核监 督处，依照有关法律规章，每两个月对业务的运行进行一次稽核检查。总行稽核部也不定 期对资产托管部进行稽核检查。
+(6)将先进的技术手段运用于风险控制中。在风险管理中，技术控制风险比制度控制风 险更加可靠，可将人为不确定因素降至最低。托管业务系统需求不仅从业务方面而且从风 险控制方面都要经过多方论证，托管业务技术系统具有较强的自动风险控制功能。
+五、基金托管人对基金管理人运作基金进行监督的方法和程序 根据《基金法》、《运作办法》、基金合同和有关法律法规的规定，对基金的投资对象、
+基金资产的投资组合比例、基金资产的核算、基金资产净值的计算、基金管理人报酬的计 提和支付、基金托管人报酬的计提和支付、基金申购资金的到账和赎回资金的划付、基金 收益分配等行为的合法性、合规性进行监督和核查。
+基金托管人发现基金管理人的违反《基金法》、《运作办法》、基金合同和有关法律法规 规定的行为，应及时以书面形式通知基金管理人限期纠正，基金管理人收到通知后应及时 核对确认并以书面形式对基金托管人发出回函。在限期内，基金托管人有权随时对通知事 项进行复查，督促基金管理人改正。基金管理人对基金托管人通知的违规事项未能在限期 内纠正的，基金托管人应报告中国证监会。基金托管人发现基金管理人有重大违规行为， 应立即报告中国证监会，同时通知基金管理人限期纠正。
+ 
+
+
+
+第五部分	相关服务机构
+
+
+（一）基金份额发售机构
+
+1.直销机构 名称：长城基金管理有限公司
+注册地址：深圳市福田区益田路 6009 号新世界商务中心 41 层 办公地址：深圳市福田区益田路 6009 号新世界商务中心 40-41 层 法定代表人：杨光裕
+成立时间：2001 年 12 月 27 日 电话：0755-23982338 传真：0755-23982328 联系人：黄念英 客户服务电话：400-8868-666 网站：www.ccfund.com.cn
+2.代销机构
+（1）中国民生银行股份有限公司 注册地址：北京市西城区复兴门内大街 2 号 办公地址：北京市西城区复兴门内大街 2 号 法定代表人：洪崎
+联系人：穆婷 联系电话：010-57092619 客服电话：95568 网址：www.cmbc.com.cn
+（2）其他代销机构情况详见本基金份额发售公告。 基金管理人可根据有关法律、法规的要求，选择符合要求的机构代理销售本基金，并
+及时公告。
+
+（二）基金注册登记机构 名称：长城基金管理有限公司
+注册地址：深圳市福田区益田路 6009 号新世界商务中心 41 层 法定代表人：杨光裕
+成立时间：2001 年 12 月 27 日 电话：0755-23982338 传真：0755-23982328
+ 
+
+
+联系人：张真珍
+客户服务电话：400-8868-666
+
+（三）律师事务所与经办律师 律师事务所名称：北京市中伦律师事务所 注册地址：北京市朝阳区建国门外大街甲 6 号 SK 大厦 36-37 层 负责人：张学兵
+电话：0755-33256666 传真：0755-33206888 联系人：李雅婷
+
+（四）会计师事务所和经办注册会计师 会计师事务所名称：安永华明会计师事务所（特殊普通合伙） 住所（办公地址）：北京市东城区东长安街 1 号东方广场安永大楼 17 层 01-12 室 执行事务合伙人：Ng Albert Kong Ping 吴港平
+电话：010-58153000 传真：010-85188298 联系人：李妍明
+ 
+
+
+六、基金的募集
+
+本基金由基金管理人依照《基金法》、《运作办法》、《销售办法》、《信息披露办法》等 有关法律、法规及基金合同募集。并经中国证券监督管理委员会 2015 年 11 月 19 日证监许 可[2015]2671 号文注册公开募集。
+
+（一）基金类别、运作方式及存续期间 基金类别：混合型证券投资基金 基金运作方式：契约型开放式 存续期间：不定期
+
+（二）募集方式和募集场所 本基金通过基金管理人的网上直销交易平台和设在深圳、北京、上海的直销机构，以
+及各代销机构的营业网点（具体名单见基金份额发售公告）公开发售。
+
+（三）募集期限 本基金的募集期限为自基金份额发售之日起不超过 3 个月。 本基金自 2016 年 4 月 11 日至 2016 年 4 月 29 日进行发售。
+基金管理人可根据基金销售情况在募集期限内适当延长或缩短基金发售时间，并及时 公告。
+
+（四）募集规模
+
+基金募集份额总额不少于 2 亿份，基金募集金额不少于 2 亿元。 基金管理人可根据基金发售情况对本基金的发售进行规模控制，具体规定见基金份额
+发售公告。
+
+(五)募集对象 符合法律法规规定的可投资于证券投资基金的个人投资者、机构投资者和合格境外机
+构投资者以及法律法规或中国证监会允许购买证券投资基金的其他投资人。
+
+(六) 基金份额初始面值
+
+本基金基金份额初始面值为人民币 1.00 元，按初始面值发售。
+
+（七）认购费用及认购份额的计算
+
+1.认购费用 本基金在认购时收取认购费用，投资者可以多次认购本基金，认购费率按每笔认购申
+请单独计算。
+ 
+
+
+本基金份额对通过直销柜台认购的养老金客户与除此之外的其他投资者实施差别的认
+购费率。具体如下：
+（1）认购费率
+
+认购金额(含认购费)	认购费率
+100 万元以下	1.2%
+100 万元(含)－300 万元	0.8%
+300 万元(含)－500 万元	0.4%
+500 万元以上(含)	每笔 1000 元
+注：上述认购费率适用于除通过本公司直销柜台认购的养老金客户以外的其他投资者。
+
+（2）特定认购费率
+
+认购金额(含认购费)	认购费率
+100 万元以下	0.24%
+100 万元(含)－300 万元	0.16%
+300 万元(含)－500 万元	0.08%
+500 万元以上(含)	每笔 1000 元
+注：上述特定认购费率适用于通过本公司直销柜台认购本基金份额的养老金客户，包 括基本养老基金与依法成立的养老计划筹集的资金及其投资运营收益形成的补充养老基金 等，具体包括：全国社会保障基金；可以投资基金的地方社会保障基金；企业年金单一计 划以及集合计划；企业年金理事会委托的特定客户资产管理计划；企业年金养老金产品。 如未来出现经养老基金监管部门认可的新的养老基金类型，本公司在法律法规允许的
+前提下可将其纳入养老金客户范围。
+
+本基金认购费由认购者承担，不列入基金财产。认购费用用于本基金的市场推广、销 售、注册登记等募集期间发生的各项费用。
+
+2.认购份额的计算 净认购金额＝认购金额/（1＋认购费率）
+（注：对于 500 万元(含)以上的认购，净认购金额＝认购金额－固定认购费金额） 认购费用＝认购金额－净认购金额 认购份额＝（净认购金额＋认购利息）/基金份额初始面值 认购份额的计算保留到小数点后 2 位，小数点 2 位以后的部分四舍五入，由此产生的
+收益或损失由基金财产承担。
+ 
+
+
+例：某投资者投资（非养老金客户）100,000元认购本基金，对应的认购费率为1.2%，
+
+若认购期内认购资金获得的利息为50元，基金份额初始面值为1.00元，则其可得到的基金份 额计算如下：
+净认购金额＝100,000/(1+1.2%)＝98,814.23元 认购费用＝100,000－98,814.23＝1,185.77元 认购份额＝(98,814.23+50)/1.00＝98,864.23份 即投资者投资100,000元认购本基金，加上认购资金在认购期内获得的利息，可得到
+98,864.23份本基金基金份额。
+
+（八）投资者对基金份额的认购
+
+1.本基金的认购时间安排、投资者认购应提交的文件和办理的手续请查阅本基金的基 金份额发售公告和各销售机构的相关业务规则。
+2. 认购原则
+（1）本基金认购以金额申请。
+（2）投资者认购前，需按销售机构规定的方式全额缴款。
+（3）投资者在募集期内可以多次认购基金份额，但已受理的认购申请不允许撤销。
+
+3. 认购金额限制
+（1）首次认购最低金额为 1000 元，追加认购最低金额为 1000 元。
+（2）认购期间单个投资者的累计认购金额没有限制。
+
+（九）认购的确认
+
+对于 T 日交易时间内受理的认购申请，注册登记机构将在 T+1 日就申请的有效性进行 确认。但对申请有效性的确认仅代表确实接受了投资者的认购申请，认购申请的成功确认 应以注册登记机构在本基金认购结束后的登记确认结果为准。投资者应在本基金成立后到 各销售网点或以其规定的其他合法方式查询最终确认情况。
+
+（十）募集资金利息的处理方式 有效认购款项在募集期间产生的利息将折算为基金份额归基金份额持有人所有，其中
+利息转份额以登记机构的记录为准。
+
+（十一）募集资金的保管 本基金合同生效前，投资人的认购款项只能存入专用账户，任何人不得动用。募集期
+间发生的信息披露费、会计师费和律师费等各项费用，不从基金财产中列支。
+ 
+
+
+
+七、基金备案与《基金合同》的生效
+
+(一)基金备案的条件
+
+本基金自基金份额发售之日起 3 个月内，在基金募集份额总额不少于 2 亿份，基金募 集金额不少于 2 亿元人民币且基金认购人数不少于 200 人的条件下，基金管理人依据法律 法规及招募说明书可以决定停止基金发售，并在 10 日内聘请法定验资机构验资，自收到验 资报告之日起 10 日内，向中国证监会办理基金备案手续。
+基金募集达到基金备案条件的，自基金管理人办理完毕基金备案手续并取得中国证监 会书面确认之日起，《基金合同》生效；否则《基金合同》不生效。基金管理人在收到中国 证监会确认文件的次日对《基金合同》生效事宜予以公告。基金管理人应将基金募集期间 募集的资金存入专门账户，在基金募集行为结束前，任何人不得动用。
+(二)基金合同不能生效时募集资金的处理方式 如果募集期限届满，未满足募集生效条件，基金管理人应当承担下列责任：
+1、以其固有财产承担因募集行为而产生的债务和费用。
+2、在基金募集期限届满后 30 日内返还投资者已缴纳的款项，并加计银行同期存款利 息。
+3、如基金募集失败，基金管理人、基金托管人及销售机构不得请求报酬。基金管理人、 基金托管人和销售机构为基金募集支付之一切费用应由各方各自承担。
+(三) 基金存续期内的基金份额持有人数量和资产规模
+《基金合同》生效后，连续 20 个工作日出现基金份额持有人数量不满 200 人或者基金 资产净值低于 5000 万元情形的，基金管理人应当在定期报告中予以披露；连续 60 个工作 日出现前述情形的，基金管理人应当向中国证监会报告并提出解决方案，如转换运作方式、 与其他基金合并或者终止基金合同等，并召开基金份额持有人大会进行表决。
+法律法规另有规定时，从其规定。
+ 
+
+
+
+八、基金份额的申购与赎回
+
+
+（一）申购和赎回场所
+
+本基金的申购与赎回将通过销售机构进行。具体的销售网点将由基金管理人在招募说 明书或其他相关公告中列明。基金管理人可根据情况变更或增减销售机构，并予以公告。 基金投资者应当在销售机构办理基金销售业务的营业场所或按销售机构提供的其他方式办 理基金份额的申购与赎回。
+
+(二)申购和赎回的开放日及时间
+
+1、开放日及开放时间 投资人在开放日办理基金份额的申购和赎回，具体办理时间为上海证券交易所、深圳
+证券交易所的正常交易日的交易时间，但基金管理人根据法律法规、中国证监会的要求或 本基金合同的规定公告暂停申购、赎回时除外。
+基金合同生效后，若出现新的证券交易市场、证券交易所交易时间变更或其他特殊情 况，基金管理人将视情况对前述开放日及开放时间进行相应的调整，但应在实施日前依照
+《信息披露办法》的有关规定在指定媒介上公告。
+2、申购、赎回开始日及业务办理时间 基金管理人自基金合同生效之日起不超过三个月开始办理申购，具体业务办理时间在
+申购开始公告中规定。 基金管理人自基金合同生效之日起不超过三个月开始办理赎回，具体业务办理时间在
+赎回开始公告中规定。 在确定申购开始与赎回开始时间后，基金管理人应在申购、赎回开放日前依照《信息
+披露办法》的有关规定在指定媒介上公告申购与赎回的开始时间。 基金管理人不得在基金合同约定之外的日期或者时间办理基金份额的申购或者赎回或
+者转换。投资人在基金合同约定之外的日期和时间提出申购、赎回或转换申请且登记机构 确认接受的，其基金份额申购、赎回价格为下一开放日基金份额申购、赎回的价格。
+
+（三）申购与赎回的原则
+
+1、“未知价”原则，即申购、赎回价格以申请当日收市后计算的基金份额净值为基准 进行计算；
+2、“金额申购、份额赎回”原则，即申购以金额申请，赎回以份额申请；
+3、当日的申购与赎回申请可以在基金管理人规定的时间以内撤销；
+
+4、赎回遵循“先进先出”原则，即按照投资人认购、申购的先后次序进行顺序赎回。 基金管理人可在法律法规允许的情况下，对上述原则进行调整。基金管理人必须在新
+规则开始实施前依照《信息披露办法》的有关规定在指定媒介上公告。
+ 
+
+
+（四）申购与赎回的程序
+
+1、申购和赎回的申请方式 投资人必须根据销售机构规定的程序，在开放日的具体业务办理时间内提出申购或赎
+回的申请。
+2、申购和赎回的成立和生效 投资人申购基金份额时，必须全额交付申购款项，投资人交付款项，申购申请即成立。
+投资人递交赎回申请，赎回申请即成立。 基金管理人应以交易时间结束前受理申购和赎回申请的当天作为申购或赎回申请日(T
+日)，在正常情况下，本基金登记机构在 T+1 日内对该交易的有效性进行确认。基金登记机 构确认基金份额时，申购申请即生效。基金登记机构确认赎回时，赎回申请即生效。T 日 提交的申请，投资人可在 T+2 日后(包括该日)到销售网点柜台或以销售机构规定的其他方 式查询申请的确认情况。
+3、赎回款项的支付
+投资人赎回申请成功后，基金管理人将在 T＋7 日(包括该日)内支付赎回款项。在发生 巨额赎回时，款项的支付办法参照本基金合同有关条款处理。遇交易所或交易市场数据传 输延迟、通讯系统故障、银行数据交换系统故障或其他非基金管理人及基金托管人所能控 制的因素影响业务处理流程，则赎回款顺延至上述情形消除后的下一个工作日划往基金份 额持有人银行账户。若申购不成功，则申购款项退还给投资人。
+
+(五)申购和赎回的数额限制
+
+1、本基金管理人规定，本基金单笔最低申购金额为 10 元，投资人通过销售机构申购 本基金时，当销售机构设定的最低申购金额高于该申购金额限制时，除需满足基金管理人 规定的最低申购金额限制外，还应遵循销售机构的业务规定；
+2、本基金不对单个投资人累计持有的基金份额上限进行限制；
+3、本基金单笔赎回份额不得低于 100 份，投资人全额赎回时不受该限制；
+4、本基金不对投资人每个基金交易账户的最低基金份额余额进行限制；
+
+5、基金管理人可在法律法规允许的情况下，调整上述规定申购金额和赎回份额的数量 限制。基金管理人必须在调整前依照《信息披露办法》的有关规定在指定媒介上公告并报 中国证监会备案。
+
+（六）申购和赎回的费用
+
+1、本基金的申购费用 本基金在申购时收取申购费用，投资者可以多次申购本基金，认购费率按每笔申购申
+请单独计算。
+ 
+
+
+本基金份额对通过直销柜台申购的养老金客户与除此之外的其他投资者实施差别的申
+购费率。具体如下：
+（1）申购费率
+
+A 类、C 类基金份额
+申购金额(含申购费)	申购费率
+100 万元以下	1.5%
+100 万元(含)－300 万元	1.0%
+300 万元(含)－500 万元	0.5%
+500 万元以上(含)	每笔 1000 元
+注：上述申购费率适用于除通过本公司直销柜台申购的养老金客户以外的其他投资者。
+
+（2）特定申购费率
+
+A 类、C 类基金份额
+申购金额(含申购费)	申购费率
+100 万元以下	0.3%
+100 万元(含)－300 万元	0.2%
+300 万元(含)－500 万元	0.1%
+500 万元以上(含)	每笔 1000 元
+注：上述特定申购费率适用于通过本公司直销柜台申购本基金份额的养老金客户，包 括基本养老基金与依法成立的养老计划筹集的资金及其投资运营收益形成的补充养老基金 等，具体包括：全国社会保障基金；可以投资基金的地方社会保障基金；企业年金单一计 划以及集合计划；企业年金理事会委托的特定客户资产管理计划；企业年金养老金产品。 如未来出现经养老基金监管部门认可的新的养老基金类型，本公司在法律法规允许的
+前提下可将其纳入养老金客户范围。 本基金申购费由申购者承担，不列入基金财产。申购费用用于本基金的市场推广、销
+售、注册登记等各项费用。
+
+2、本基金的赎回费用
+
+持续持有期（天）	赎回费率
+1－6	1.5%
+7－29	0.75%
+30－184	0.5%
+ 
+
+
+185－365	0.1%
+366 及以上	0
+赎回费用由赎回基金份额的基金份额持有人承担，在基金份额持有人赎回基金份额时 收取。对持续持有期少于 30 天的基金份额所收取的赎回费全额计入基金财产；对持续持有 期长于 30 天(含)但少于 92 天的基金份额所收取的赎回费的 75%计入基金财产，其余用于 支付注册登记费和其他必要的手续费；对持续持有期长于 92 天(含)但少于 185 天的基金份 额所收取的赎回费的 50%计入基金财产，其余用于支付注册登记费和其他必要的手续费； 对持续持有期长于 185 天(含)的份额所收取的赎回费的 25%计入基金财产，其余用于支付 注册登记费和其他必要的手续费。
+本基金 C 类基金份额的赎回费率如下表所示：
+
+持续持有期（天）	赎回费率
+1－29	0.5%
+30 及以上	0
+赎回费用由赎回 C 类基金份额的基金份额持有人承担，在基金份额持有人赎回 C 类基 金份额时收取。对 C 类基金份额持有人投资人收取的赎回费全额计入基金财产。
+3、基金管理人可以在基金合同约定的范围内调整费率或收费方式，基金管理人最迟应 于新的费率或收费方式实施日前 3 个工作日在至少一种指定媒介公告。
+4、基金管理人可以在不违背法律法规规定及《基金合同》约定的情形下根据市场情况 制定基金促销计划，针对特定地域范围、特定行业、特定职业的投资者以及以特定交易方 式（如网上交易、电话交易等）等进行基金交易的投资者定期或不定期地开展基金促销活 动。在基金促销活动期间，按相关监管部门要求履行相关手续后基金管理人可以适当调低 基金申购费率。
+
+（七）申购份额与赎回金额的计算
+
+1、申购份额的计算 净申购金额＝申购金额/（1＋申购费率）
+（注：对于 500 万元(含)以上的申购，净申购金额＝申购金额－固定申购费金额） 申购费用＝申购金额－净申购金额
+申购份额＝净申购金额/T 日基金份额净值
+
+例：某投资者投资（非养老金客户）100,000 元申购本基金，对应的申购费率为 1.5%， 若申购当日基金份额净值为 1.050 元，则其可得到的基金份额计算如下：
+净申购金额＝100,000/（1＋1.5%）＝98,522.17 元
+ 
+
+
+申购费用＝100,000－98,522.17＝1,477.83 元
+申购份额＝98,522.17/1.050＝93,830.64 份
+2、赎回金额的计算 赎回总金额＝赎回份数×赎回当日基金份额净值 赎回手续费＝赎回总金额×赎回费率 净赎回金额＝赎回总金额－赎回手续费
+A 类基金份额的赎回份额计算公式为：
+
+例：某投资者赎回其持有的本基金 50,000 份 A 类基金份额，持有期为 85 天，对应的 赎回费率为 0.5%，若赎回 A 类基金份额当日基金份额净值为 1.150 元，则其得到的赎回金 额计算如下：
+赎回总金额＝50,000×1.150＝57,500 元 赎回手续费＝57,500×0.5%＝287.50 元 净赎回金额＝57,500－287.50＝57,212.50 元
+即：投资人赎回本基金 50,000 份 A 类基金份额，持有期限为 85 天，假设赎回当日本 基金 A 类基金份额净值是 1.150 元，则其可得到的净赎回金额为 57,212.50 元。
+C 类基金份额的赎回份额计算公式为：
+例如：某投资人赎回本基金 50,000 份 C 类基金份额，持有时间为 20 天，对应的赎回 费率为 0.5%，假设赎回当日 C 类基金份额净值是 1.150 元，则其可得到的赎回金额为：
+赎回金额=50,000×1.150＝57,500 元 赎回费用=57,500×0.5%＝287.50 元 净赎回金额=57,500－287.50＝57,212.50 元
+即：投资人赎回本基金 50,000 份 C 类基金份额，持有期限为 20 天，假设赎回当日本 基金 C 类基金份额净值是 1.150 元，则其可得到的净赎回金额为 57,212.50 元。
+3、申购的有效份额为净申购金额除以当日的基金份额净值，有效份额单位为份，计算 结果均按四舍五入方法，保留到小数点后 2 位，由此产生的收益或损失由基金财产承担。
+4、赎回金额为按实际确认的有效赎回份额乘以当日基金份额净值并扣除相应的费用， 赎回金额单位为元，计算结果均按四舍五入方法，保留到小数点后 2 位，由此产生的收益 或损失由基金财产承担。
+
+（八）拒绝或暂停申购的情形 发生下列情况时，基金管理人可拒绝或暂停接受投资人的申购申请：
+1、因不可抗力导致基金无法正常运作。
+
+2、发生基金合同规定的暂停基金资产估值情况时，基金管理人可暂停接收投资人的申 购申请。
+ 
+
+
+3、证券交易所交易时间非正常停市，导致基金管理人无法计算当日基金资产净值。
+4、接受某笔或某些申购申请可能会影响或损害现有基金份额持有人利益时。
+5、基金资产规模过大，使基金管理人无法找到合适的投资品种，或其他可能对基金业 绩产生负面影响，从而损害现有基金份额持有人利益的情形。
+6、法律法规规定或中国证监会认定的其他情形。
+发生上述第 1、2、3、5、6 项暂停申购情形时，基金管理人应当根据有关规定在指定媒 介上刊登暂停申购公告。如果投资人的申购申请被拒绝，被拒绝的申购款项将退还给投资人。 在暂停申购的情况消除时，基金管理人应及时恢复申购业务的办理。
+
+（九）暂停赎回或延缓支付赎回款项的情形 发生下列情形时，基金管理人可暂停接受投资人的赎回申请或延缓支付赎回款项：
+1、因不可抗力导致基金管理人不能支付赎回款项。
+2、发生基金合同规定的暂停基金资产估值情况时，基金管理人可暂停接收投资人的赎 回申请或延缓支付赎回款项。
+3、证券交易所交易时间非正常停市，导致基金管理人无法计算当日基金资产净值。
+4、接受某笔或某些赎回申请可能会影响或损害现有基金份额持有人利益时。
+5、连续两个或两个以上开放日发生巨额赎回。
+6、法律法规规定或中国证监会认定的其他情形。 发生上述情形时，基金管理人应在当日报中国证监会备案，已确认的赎回申请，基金
+管理人应足额支付；如暂时不能足额支付，应将可支付部分按单个账户申请量占申请总量 的比例分配给赎回申请人，未支付部分可延期支付，并以后续开放日的基金份额净值为依 据计算赎回金额。若出现上述第 5 项所述情形，按基金合同的相关条款处理。基金份额持 有人在申请赎回时可事先选择将当日可能未获受理部分予以撤销。在暂停赎回的情况消除 时，基金管理人应及时恢复赎回业务的办理并公告。
+
+(十)巨额赎回的情形及处理方式
+
+1、巨额赎回的认定 若本基金单个开放日内的基金份额净赎回申请(赎回申请份额总数加上基金转换中转
+出申请份额总数后扣除申购申请份额总数及基金转换中转入申请份额总数后的余额)超过 前一开放日的基金总份额的 10%，即认为是发生了巨额赎回。
+2、巨额赎回的处理方式 当基金出现巨额赎回时，基金管理人可以根据基金当时的资产组合状况决定全额赎回
+或部分延期赎回。
+(1)全额赎回：当基金管理人认为有能力支付投资人的全部赎回申请时，按正常赎回 程序执行。
+ 
+
+
+(2)部分延期赎回：当基金管理人认为支付投资人的赎回申请有困难或认为因支付投
+资人的赎回申请而进行的财产变现可能会对基金资产净值造成较大波动时，基金管理人在 当日接受赎回比例不低于上一开放日基金总份额 10%的前提下，可对其余赎回申请延期办 理。对于当日的赎回申请，应当按单个账户赎回申请量占赎回申请总量的比例，确定当日 受理的赎回份额；对于未能赎回部分，投资人在提交赎回申请时可以选择延期赎回或取消 赎回。选择延期赎回的，将自动转入下一个开放日继续赎回，直到全部赎回为止；选择取 消赎回的，当日未获受理的部分赎回申请将被撤销。延期的赎回申请与下一开放日赎回申 请一并处理，无优先权并以下一开放日的基金份额净值为基础计算赎回金额，以此类推， 直到全部赎回为止。如投资人在提交赎回申请时未作明确选择，投资人未能赎回部分作自 动延期赎回处理。
+（3）暂停赎回：连续 2 日以上(含本数)发生巨额赎回，如基金管理人认为有必要，可 暂停接受基金的赎回申请；已经接受的赎回申请可以延缓支付赎回款项，但不得超过 20 个工作日，并应当在指定媒介上进行公告。
+3、巨额赎回的公告 当发生上述延期赎回并延期办理时，基金管理人应当通过邮寄、传真或者招募说明书
+规定的其他方式在 3 个交易日内通知基金份额持有人，说明有关处理方法，同时在指定媒 介上刊登公告。
+
+（十一）暂停申购或赎回的公告和重新开放申购或赎回的公告
+
+1、发生上述暂停申购或赎回情况的，基金管理人当日应立即向中国证监会备案，并在 规定期限内在指定媒介上刊登暂停公告。
+2、如发生暂停的时间为 1 日，基金管理人应于重新开放日，在指定媒介上刊登基金重 新开放申购或赎回公告，并公布最近 1 个开放日的基金份额净值。
+3、如发生暂停的时间超过 1 日但少于 2 周，暂停结束，基金重新开放申购或赎回时， 基金管理人应提前 2 日在指定媒介上刊登基金重新开放申购或赎回公告，并公告最近 1 个 开放日的基金份额净值。
+4、如发生暂停的时间超过 2 周，暂停期间，基金管理人应每 2 周至少刊登暂停公告 1 次。暂停结束，基金重新开放申购或赎回时，基金管理人应提前 2 日在指定媒介上连续刊 登基金重新开放申购或赎回公告，并公告最近 1 个开放日的基金份额净值。
+
+（十二）基金的转换 基金管理人可以根据相关法律法规以及本基金合同的规定决定开办本基金与基金管理
+人管理的其他基金之间的转换业务，基金转换可以收取一定的转换费，相关规则由基金管 理人届时根据相关法律法规及本基金合同的规定制定并公告，并提前告知基金托管人与相 关机构。
+ 
+
+
+（十三）基金的非交易过户
+
+基金的非交易过户是指基金登记机构受理继承、捐赠和司法强制执行等情形而产生的 非交易过户以及登记机构认可、符合法律法规的其他非交易过户。无论在上述何种情况下， 接受划转的主体必须是依法可以持有本基金基金份额的投资人。
+继承是指基金份额持有人死亡，其持有的基金份额由其合法的继承人继承；捐赠指基 金份额持有人将其合法持有的基金份额捐赠给福利性质的基金会或社会团体；司法强制执 行是指司法机构依据生效司法文书将基金份额持有人持有的基金份额强制划转给其他自然 人、法人或其他组织。办理非交易过户必须提供基金登记机构要求提供的相关资料，对于 符合条件的非交易过户申请按基金登记机构的规定办理，并按基金登记机构规定的标准收 费。
+
+（十四）基金的转托管 基金份额持有人可办理已持有基金份额在不同销售机构之间的转托管，基金销售机构
+可以按照规定的标准收取转托管费。
+
+（十五）定期定额投资计划 基金管理人可以为投资人办理定期定额投资计划，具体规则由基金管理人另行规定。
+投资人在办理定期定额投资计划时可自行约定每期扣款金额，每期扣款金额必须不低于基 金管理人在相关公告或更新的招募说明书中所规定的定期定额投资计划最低申购金额。
+
+(十六)基金的冻结和解冻 基金登记机构只受理国家有权机关依法要求的基金份额的冻结与解冻，以及登记机构
+认可、符合法律法规的其他情况下的冻结与解冻。
+ 
+
+
+九、基金的投资管理
+
+（一）投资目标
+
+本基金通过综合运用多种投资策略，在控制风险的前提下，追求超越业绩比较基准的 投资回报，力争实现基金资产的长期稳健增值。
+
+（二）投资范围 本基金的投资范围为具有良好流动性的金融工具，包括国内依法发行上市的股票（包
+括中小板、创业板及其他经中国证监会核准上市的股票）、债券（含国家债券、金融债券、 次级债券、中央银行票据、企业债券、中小企业私募债券、公司债券、中期票据、短期融 资券、可转换债券、分离交易可转债纯债、资产支持证券等）、权证、货币市场工具以及 法律法规或中国证监会允许基金投资的其他金融工具(但须符合中国证监会相关规定)。
+本基金投资组合中股票投资比例为基金资产的 0%-30%；本基金现金或者到期日在一 年以内的政府债券的投资比例合计不低于基金资产净值的 5%。
+
+如法律法规或监管机构以后允许基金投资其他品种，基金管理人在履行适当程序后， 可以将其纳入投资范围。
+
+（三）投资策略
+
+1、资产配置策略 本基金为混合型证券投资基金，将依据市场情况灵活进行基金的大类资产配置。在资
+本市场深入分析的基础上，本基金将参考基金流动性要求，以使基金资产的风险和收益在 股票、债券及短期金融工具中实现最佳匹配。
+2、债券投资策略 在大类资产配置基础上，本基金通过综合分析宏观经济形势、财政政策、货币政策、
+债券市场券种供求关系及资金供求关系，主动判断市场利率变化趋势，确定和动态调整固 定收益类资产的平均久期及债券资产配置。本基金具体债券投资策略包括久期管理策略、 收益率曲线策略、个券选择策略、可转换债券投资策略、中小企业私募债投资策略、债券 回购杠杆策略等。
+3、股票投资策略 本基金采用自上而下与自下而上相结合的选股策略，从宏观经济转型、政策制度导向、
+产业的升级与变革等多个角度，前瞻性地判断下一阶段可能涌现出的领域和板块，同时从 定性和定量的角度，自下而上地分析上市公司的基本面情况和估值水平，精选具有投资价 值的个股。
+ 
+
+
+（1）定性分析
+
+本基金通过传统的定性分析手段，关注上市公司的主营业务可持续发展能力、竞争优 势、管理能力三个方面：
+主营业务可持续发展能力：主要考察上市公司在细分行业中所处的竞争地位、产品定 价能力，是否具有相对成本优势、从事主营业务的历史，以及主营业务在市场不同经济周 期中的发展状况。
+竞争优势：主要考察上市公司在商业模式、科技创新能力、品牌、经营效率等方面是 否具有竞争对手在中长期时间内难以模仿的相对优势。
+管理能力：主要考察上市公司经营独立性、管理层对股东的责任感、管理层长效约束 与激励机制的建立、管理层长远眼光和战略能力，以及能够对外部环境变化迅速作出反应。 通过对上市公司及其业务的分析，判断其受益于我国经济结构转型的程度、成长潜力
+和成长的可持续性，从中挑选出具有持续成长能力的上市公司。
+
+（2）定量分析 通过对估值方法的选择和估值倍数的比较，选择股价相对低估的股票。就估值方法而
+言，基于行业的特点确定对股价最有影响力的关键估值方法（包括 PE、PEG、PB、PS、 EV/EBITDA 等），通过与国内同行业其它公司估值水平以及国外同行业公司相对估值水平 等进行估值比较，找出价值被相对低估的公司。
+4、中小企业私募债券投资策略 基金投资中小企业私募债券，基金管理人将根据审慎原则，制定严格的投资决策流程、
+风险控制制度和信用风险、流动性风险处置预案，并经董事会批准，以防范信用风险、流 动性风险等各种风险。
+本基金投资于单只中小企业私募债的比例不得超过本基金资产净值的 10%。未来法律 法规或监管部门取消上述限制，如适用于本基金，基金管理人在履行适当程序后，本基金 投资不再受相关限制。
+在中小企业私募债选择时，本基金将采用公司内部债券信用评级系统对信用评级进行 持续跟踪，防范信用风险。在此基础上，本基金重点关注中小企业私募债的发行要素、担 保机构等发行信息对债项进行增信。
+本基金将根据相关法律法规要求披露中小企业私募债的投资情况。
+
+5、权证投资策略 本基金在进行权证投资时将在严格控制风险的前提下谋取最大的收益，以不改变投资
+ 
+
+
+组合的风险收益特征为首要条件，运用有关数量模型进行估值和风险评估，谨慎投资。
+
+6、资产支持证券投资策略 对于资产支持证券，本基金将综合考虑市场利率、发行条款、标的资产的构成、质量
+及提前偿还率等因素，研究资产支持证券的收益和风险匹配情况，在严格控制风险的基础 上选择投资对象，追求稳定收益。
+
+（四）投资限制
+1、组合限制 基金的投资组合应遵循以下限制：
+（1）本基金投资组合中股票投资比例为基金资产的 0%-30%；
+（2）保持不低于基金资产净值 5%的现金或者到期日在一年以内的政府债券；
+（3）本基金持有一家公司发行的证券，其市值不超过基金资产净值的 10%；
+（4）本基金管理人管理的全部基金持有一家公司发行的证券，不超过该证券的 10%；
+（5）本基金持有的全部权证，其市值不得超过基金资产净值的 3%；
+
+（6）本基金管理人管理的全部基金持有的同一权证，不得超过该权证的 10%；
+（7）本基金在任何交易日买入权证的总金额，不得超过上一交易日基金资产净值的
+0.5%；
+（8）本基金投资于同一原始权益人的各类资产支持证券的比例，不得超过基金资产净 值的 10%；
+（9）本基金持有的全部资产支持证券，其市值不得超过基金资产净值的 20%；
+（10）本基金持有的同一(指同一信用级别)资产支持证券的比例，不得超过该资产支 持证券规模的 10%；
+（11）本基金管理人管理的全部基金投资于同一原始权益人的各类资产支持证券，不 得超过其各类资产支持证券合计规模的 10%；
+（12）本基金应投资于信用级别评级为 BBB 以上(含 BBB)的资产支持证券。基金持有 资产支持证券期间，如果其信用等级下降、不再符合投资标准，应在评级报告发布之日起
+3 个月内予以全部卖出；
+（13）基金财产参与股票发行申购，本基金所申报的金额不超过本基金的总资产，本 基金所申报的股票数量不超过拟发行股票公司本次发行股票的总量；
+（14）本基金总资产不得超过基金净资产的 140%；
+（15）本基金持有单只中小企业私募债券，其市值不得超过该基金资产净值的 10%；
+（16）法律法规及中国证监会规定的其他投资比例限制。 因证券市场波动、上市公司合并、基金规模变动等基金管理人之外的因素致使基金投
+资比例不符合上述规定投资比例的，基金管理人应当在 10 个交易日内进行调整，但中国证
+ 
+
+
+监会规定的特殊情形除外。
+基金管理人应当自基金合同生效之日起六个月内使基金的投资组合比例符合基金合同 的有关约定。在上述期间内，本基金的投资范围、投资策略应当符合基金合同的约定。基 金托管人对基金的投资的监督与检查自本基金合同生效之日起开始。
+法律法规或监管部门取消上述限制，如适用于本基金，基金管理人在履行适当程序后， 则本基金投资不再受相关限制。
+2、禁止行为 为维护基金份额持有人的合法权益，基金财产不得用于下列投资或者活动：
+（1）承销证券；
+（2）违反规定向他人贷款或者提供担保；
+（3）从事承担无限责任的投资；
+（4）买卖其他基金份额，但是国务院证券监督管理机构另有规定的除外；
+
+（5）向其基金管理人、基金托管人出资；
+（6）从事内幕交易、操纵证券交易价格及其他不正当的证券交易活动；
+（7）依照法律法规有关规定，由中国证监会规定禁止的其他活动。 运用基金财产买卖基金管理人、基金托管人及其控股股东、实际控制人或者与其有其
+他重大利害关系的公司发行的证券或承销期内承销的证券，或者从事其他重大关联交易的， 应当符合基金的投资目标和投资策略，遵循基金份额持有人利益优先的原则，防范利益冲 突，建立健全内部审批机制和评估机制，按照市场公平合理价格执行。相关交易必须事先 得到基金托管人的同意，并按法律法规予以披露。重大关联交易应提交基金管理人董事会 审议，并经过三分之二以上的独立董事通过。基金管理人董事会应至少每半年对关联交易 事项进行审查。
+法律法规或监管部门取消上述限制，如适用于本基金，则本基金投资不再受相关限制。
+
+（五）业绩比较基准
+
+本基金的业绩比较基准为：15%×中证 800 指数收益率+85%×中债综合财富指数收益率。 中证 800 指数综合反映沪深证券市场内大中小市值公司的整体状况，适合作为本基金
+股票部分的业绩比较基准。中债综合财富指数由中央国债登记结算有限责任公司编制和维 护，综合反映了债券市场整体价格和回报情况，是目前市场上较为权威的反映债券市场整 体走势的基准指数之一。
+本基金是混合型证券投资基金，股票投资范围为 0-30%。本基金对中证 800 指数收益 率和中债综合财富指数分别赋予 15%和 85%的权重符合本基金的投资特性。
+如果今后法律法规发生变化，或者有更权威的、更能为市场普遍接受的业绩比较基准
+ 
+
+
+推出，或者是市场上出现更加适合用于本基金的业绩比较基准时，经与基金托管人协商一
+
+致，本基金可在报中国证监会备案后变更业绩比较基准并及时公告。本基金由于上述原因 变更业绩比较基准，不需召开基金持有人大会通过。
+（六）风险收益特征 本基金的长期平均风险和预期收益率低于股票型基金，高于债券型基金、货币市场基
+金，属于中等风险、中等收益的基金产品。
+
+（七）投资决策依据及程序
+1、决策依据
+
+（1）国家有关法律、法规和基金合同的规定；
+（2）《长城基金管理有限公司章程》的有关规定；
+（3）《长城基金管理有限公司投资管理制度》的有关规定；
+（4）宏观经济环境、国家政策和市场周期分析；
+（5）上市公司财务品质和管理能力，以及对公司盈利增长能力的预测。
+
+2、投资决策程序
+（1）研究部定期对宏观经济、市场、行业、投资品种和投资策略等提出分析报告， 为投资决策委员会和基金经理提供投资决策依据；对于可能对证券市场造成重大影响的突 发事件，及时提出评估意见及决策建议；
+（2）研究部负责建立和维护公司各级股票库，并提供重点股票的投资价值分析报告； 在公司各级股票库的基础上，基金经理负责建立符合本基金合同规定和投资需求的股票投 资备选库；
+（3）固定收益部负责建立和维护公司固定收益投资对象库，提供各券种的基本面情 况及投资要点分析；
+（4）在对经济形势和市场运作态势进行讨论分析后，基金经理拟定下一阶段股票、 债券及短期金融工具的投资比例，做出资产配置提案和重点证券投资方案，报投资决策委 员会讨论；
+（5）投资决策委员会在基金经理上报的资产配置提案的基础上，讨论并确定下一阶 段的资产配置和重点证券投资决定，会议决定以书面形式下达给基金经理；
+（6）根据投资决策委员会确定的资产配置决议和重点证券投资决定，基金经理负责 在股票投资备选库和固定收益投资对象库中选择拟投资的个券制定投资组合方案；
+（7）在基金经理权限内的投资，由基金经理自主实施；超过基金经理权限的，须经 投资决策委员会执行委员或投资决策委员会批准后方可实施；
+（8）金融工程小组负责开发基金投资组合的分析评价体系及其他辅助分析统计工具， 对本基金投资组合进行定期跟踪分析，为基金经理和投资决策委员会提供决策支持。
+ 
+
+
+（八）基金管理人代表基金行使股东或债权人权利的处理原则及方法
+
+1、不谋求对上市公司的控股，不参与所投资上市公司的经营管理。
+
+2、有利于基金资产的安全与增值。
+
+3、基金管理人按照国家有关规定代表基金独立行使股东权利，保护基金份额持有人的 利益。
+4、基金管理人按照国家有关规定代表基金独立行使债权人权利，保护基金份额持有人 的利益。
+ 
+
+
+
+十、基金的财产
+
+(一)基金资产总值 基金资产总值是指购买的各类证券及票据价值、银行存款本息和基金应收的申购基金款
+以及其他投资所形成的价值总和。 (二)基金资产净值 基金资产净值是指基金资产总值减去基金负债后的价值。 (三)基金财产的账户
+基金托管人根据相关法律法规、规范性文件为本基金开立资金账户、证券账户以及投资 所需的其他专用账户。开立的基金专用账户与基金管理人、基金托管人、基金销售机构和基 金登记机构自有的财产账户以及其他基金财产账户相独立。
+(四)基金财产的保管和处分 本基金财产独立于基金管理人、基金托管人和基金销售机构的财产，并由基金托管人保
+管。基金管理人、基金托管人、基金登记机构和基金销售机构以其自有的财产承担其自身的 法律责任，其债权人不得对本基金财产行使请求冻结、扣押或其他权利。除依法律法规和《基 金合同》的规定处分外，基金财产不得被处分。
+基金管理人、基金托管人因依法解散、被依法撤销或者被依法宣告破产等原因进行清算 的，基金财产不属于其清算财产。基金管理人管理运作基金财产所产生的债权，不得与其固 有资产产生的债务相互抵销；基金管理人管理运作不同基金的基金财产所产生的债权债务不 得相互抵销。
+ 
+
+
+
+十一、基金资产的估值
+
+（一）估值日 本基金的估值日为本基金相关的证券交易场所的交易日以及国家法律法规规定需要对
+外披露基金净值的非交易日。
+（二）估值对象 基金所拥有的股票、权证、债券和银行存款本息、应收款项、其它投资等资产及负债。
+（三）估值方法
+
+1、证券交易所上市的有价证券的估值
+（1）交易所上市的权益类品种（包括股票、权证等），以其估值日在证券交易所挂牌的 市价（收盘价）估值；估值日无交易的，且最近交易日后经济环境未发生重大变化或证券发 行机构未发生影响证券价格的重大事件的，以最近交易日的市价（收盘价）估值；如最近交 易日后经济环境发生了重大变化或证券发行机构发生影响证券价格的重大事件的，可参考类 似投资品种的现行市价及重大变化因素，调整最近交易市价，确定公允价格。
+（2）交易所上市的固定收益类品种，可以采用由第三方估值机构提供的价格数据进行 估值，第三方估值机构根据以下原则确定公允价值：对于存在活跃市场的情况下，应以活跃 市场上未经调整的报价作为计量日的公允价值；对于活跃市场报价未能代表计量日公允价值 的情况下，应对市场报价进行调整以确认计量日的公允价值；对于不存在市场活动或市场活 动很少的情况下，则应采用估值技术确定其公允价值。
+（3）交易所上市不存在活跃市场的有价证券，采用估值技术确定公允价值。交易所上 市的资产支持证券，采用估值技术确定公允价值，在估值技术难以可靠计量公允价值的情况 下，按成本估值。
+2、处于未上市期间的有价证券应区分如下情况处理：
+（1）送股、转增股、配股和公开增发的新股，按估值日在证券交易所挂牌的同一股票 的估值方法估值；该日无交易的，以最近一日的市价（收盘价）估值；
+（2）首次公开发行未上市的股票、债券和权证，采用估值技术确定公允价值，在估值 技术难以可靠计量公允价值的情况下，按成本估值。
+（3）首次公开发行有明确锁定期的股票，同一股票在交易所上市后，按交易所上市的 同一股票的估值方法估值；非公开发行有明确锁定期的股票，按监管机构或行业协会有关规 定确定公允价值。
+3、全国银行间债券市场交易的债券、资产支持证券等固定收益品种，采用估值技术确 定公允价值。
+4、同一债券同时在两个或两个以上市场交易的，按债券所处的市场分别估值。
+5、中小企业私募债采用估值技术确定公允价值，在估值技术难以可靠计量公允价值的
+ 
+
+
+情况下，按成本估值。
+6、如有确凿证据表明按上述方法进行估值不能客观反映其公允价值的，基金管理人可 根据具体情况与基金托管人商定后，按最能反映公允价值的价格估值。
+7、相关法律法规以及监管部门有强制规定的，从其规定。如有新增事项，按国家最新 规定估值。
+如基金管理人或基金托管人发现基金估值违反基金合同订明的估值方法、程序及相关法 律法规的规定或者未能充分维护基金份额持有人利益时，应立即通知对方，共同查明原因， 双方协商解决。
+根据有关法律法规，基金资产净值计算和基金会计核算的义务由基金管理人承担。本基 金的基金会计责任方由基金管理人担任，因此，就与本基金有关的会计问题，如经相关各方 在平等基础上充分讨论后，仍无法达成一致的意见，按照基金管理人对基金资产净值的计算 结果对外予以公布。
+（四）估值程序
+1、基金份额净值是按照每个工作日闭市后，基金资产净值除以当日基金份额的余额数 量计算，精确到0.001元，小数点后第四位四舍五入。国家另有规定的，从其规定。
+每个工作日计算基金资产净值及基金份额净值，并按规定公告。
+2、基金管理人应每个工作日对基金资产估值。但基金管理人根据法律法规或本基金合 同的规定暂停估值时除外。基金管理人每个工作日对基金资产估值后，将基金份额净值结果 发送基金托管人，经基金托管人复核无误后，由基金管理人对外公布。
+（五）估值错误的处理 基金管理人和基金托管人将采取必要、适当、合理的措施确保基金资产估值的准确性、
+及时性。当基金份额净值小数点后3位以内(含第3位)发生估值错误时，视为基金份额净值错 误。
+本基金合同的当事人应按照以下约定处理：
+1、估值错误类型 本基金运作过程中，如果由于基金管理人或基金托管人、或登记机构、或销售机构、或
+投资人自身的过错造成估值错误，导致其他当事人遭受损失的，过错的责任人应当对由于该 估值错误遭受损失当事人(“受损方”)的直接损失按下述“估值错误处理原则”给予赔偿， 承担赔偿责任。
+上述估值错误的主要类型包括但不限于：资料申报差错、数据传输差错、数据计算差错、 系统故障差错、下达指令差错等。
+2、估值错误处理原则
+（1）估值错误已发生，但尚未给当事人造成损失时，估值错误责任方应及时协调各方， 及时进行更正，因更正估值错误发生的费用由估值错误责任方承担；由于估值错误责任方未
+ 
+
+
+及时更正已产生的估值错误，给当事人造成损失的，由估值错误责任方对直接损失承担赔偿
+责任；若估值错误责任方已经积极协调，并且有协助义务的当事人有足够的时间进行更正而 未更正，则其应当承担相应赔偿责任。估值错误责任方应对更正的情况向有关当事人进行确 认，确保估值错误已得到更正。
+（2）估值错误的责任方对有关当事人的直接损失负责，不对间接损失负责，并且仅对 估值错误的有关直接当事人负责，不对第三方负责。
+（3）因估值错误而获得不当得利的当事人负有及时返还不当得利的义务。但估值错误 责任方仍应对估值错误负责。如果由于获得不当得利的当事人不返还或不全部返还不当得利 造成其他当事人的利益损失(“受损方”)，则估值错误责任方应赔偿受损方的损失，并在其 支付的赔偿金额的范围内对获得不当得利的当事人享有要求交付不当得利的权利；如果获得 不当得利的当事人已经将此部分不当得利返还给受损方，则受损方应当将其已经获得的赔偿 额加上已经获得的不当得利返还的总和超过其实际损失的差额部分支付给估值错误责任方。
+（4）估值错误调整采用尽量恢复至假设未发生估值错误的正确情形的方式。
+3、估值错误处理程序 估值错误被发现后，有关的当事人应当及时进行处理，处理的程序如下：
+（1）查明估值错误发生的原因，列明所有的当事人，并根据估值错误发生的原因确定 估值错误的责任方；
+（2）根据估值错误处理原则或当事人协商的方法对因估值错误造成的损失进行评估；
+（3）根据估值错误处理原则或当事人协商的方法由估值错误的责任方进行更正和赔偿 损失；
+（4）根据估值错误处理的方法，需要修改基金登记机构交易数据的，由基金登记机构 进行更正，并就估值错误的更正向有关当事人进行确认。
+4、基金份额净值估值错误处理的方法如下：
+（1）基金份额净值计算出现错误时，基金管理人应当立即予以纠正，通报基金托管人， 并采取合理的措施防止损失进一步扩大。
+（2）错误偏差达到基金份额净值的0.25%时，基金管理人应当通报基金托管人并报中国 证监会备案；错误偏差达到基金份额净值的0.5%时，基金管理人应当公告。
+（3）前述内容如法律法规或监管机关另有规定的，从其规定处理。
+（六）暂停估值的情形
+1、基金投资所涉及的证券交易市场遇法定节假日或因其他原因暂停营业时；
+2、因不可抗力致使基金管理人、基金托管人无法准确评估基金资产价值时；
+
+3、中国证监会和基金合同认定的其它情形。
+（七）基金净值的确认 用于基金信息披露的基金资产净值和基金份额净值由基金管理人负责计算，基金托管人
+ 
+
+
+负责进行复核。基金管理人应于每个开放日交易结束后计算当日的基金资产净值和基金份额
+净值并发送给基金托管人。基金托管人对净值计算结果复核确认后发送给基金管理人，由基 金管理人对基金净值予以公布。
+（八）特殊情况的处理
+1、基金管理人或基金托管人按估值方法的第6项进行估值时，所造成的误差不作为基金 资产估值错误处理。
+2、由于证券交易场所及其登记结算公司发送的数据错误，或由于其他不可抗力原因， 基金管理人和基金托管人虽然已经采取必要、适当、合理的措施进行检查，但是未能发现该 错误的，由此造成的基金资产估值错误，基金管理人和基金托管人可以免除赔偿责任。但基 金管理人和基金托管人应当积极采取必要的措施减轻或消除由此造成的影响。
+ 
+
+
+
+十二、基金的收益分配
+
+（一）基金利润的构成 基金利润指基金利息收入、投资收益、公允价值变动收益和其他收入扣除相关费用后的
+余额，基金已实现收益指基金利润减去公允价值变动收益后的余额。
+（二）基金可供分配利润 基金可供分配利润指截至收益分配基准日基金未分配利润与未分配利润中已实现收益
+的孰低数。
+
+（三）基金收益分配原则
+1、在符合有关基金分红条件的前提下，本基金每年收益分配次数最多为6次，每次收益 分配比例不得低于该次可供分配利润的10%，若《基金合同》生效不满3个月可不进行收益分 配；
+2、本基金收益分配方式为现金分红；基金份额持有人可以事先选择将所获分配的现金 收益，按照基金合同有关基金份额申购的约定转为基金份额；基金份额持有人事先未做出选 择的，基金管理人应当支付现金；
+3、基金收益分配后基金份额净值不能低于面值；即基金收益分配基准日的基金份额净 值减去每单位基金份额收益分配金额后不能低于面值；
+4、A 类基金份额和C类基金份额之间由于A类基金份额不收取而C类基金份额收取销售服 务费将导致在可供分配利润上有所不同；本基金同一类别的每份基金份额享有同等分配权；
+5、法律法规或监管机关另有规定的，从其规定。
+（四）收益分配方案 基金收益分配方案中应载明截止收益分配基准日的可供分配利润、基金收益分配对象、
+分配时间、分配数额及比例、分配方式等内容。
+（五）收益分配方案的确定、公告与实施 本基金收益分配方案由基金管理人拟定，并由基金托管人复核，在2个工作日内在指定
+媒介公告并报中国证监会备案。 基金红利发放日距离收益分配基准日（即可供分配利润计算截止日）的时间不得超过15
+个工作日。
+（六）基金收益分配中发生的费用 基金收益分配时所发生的银行转账或其他手续费用由投资者自行承担。当投资者的现金
+红利小于一定金额，不足于支付银行转账或其他手续费用时，基金登记机构可将基金份额持 有人的现金红利自动转为基金份额。红利再投资的计算方法，依照《业务规则》执行。
+ 
+
+
+
+十三、基金的费用与税收
+
+一、基金费用的种类
+
+1、基金管理人的管理费；
+2、基金托管人的托管费；
+3、基金销售服务费；
+4、《基金合同》生效后与基金相关的信息披露费用；
+5、《基金合同》生效后与基金相关的会计师费、律师费和诉讼费；
+
+6、基金份额持有人大会费用；
+7、基金的证券交易费用；
+8、基金的银行汇划费用；
+9、按照国家有关规定和《基金合同》约定，可以在基金财产中列支的其他费用。 二、基金费用计提方法、计提标准和支付方式
+1、基金管理人的管理费 本基金的管理费按前一日基金资产净值的0.6%年费率计提。管理费的计算方法如下： H＝E×0.6%÷当年天数
+H为每日应计提的基金管理费 E为前一日的基金资产净值 基金管理费每日计提，逐日累计至每个月月末，按月支付。经基金管理人与基金托管人
+核对一致后，由基金托管人于次月首日起2-5个工作日内从基金财产中一次性支付给基金管 理人。
+2、基金托管人的托管费 本基金的托管费按前一日基金资产净值的0.15%年费率计提。托管费的计算方法如下： H＝E×0.15%÷当年天数
+H为每日应计提的基金托管费 E为前一日的基金资产净值 基金托管费每日计提，逐日累计至每个月月末，按月支付。经基金管理人与基金托管人
+核对一致后，由基金托管人于次月首日起2-5个工作日内从基金财产中一次性支付给基金托 管人。
+
+3、C 类份额的基金销售服务费 基金销售服务费用于支付销售机构佣金、基金的营销费用以及基金份额持有人服务费
+等。
+
+本基金 A 类基金份额不收取销售服务费，C 类基金份额的销售服务费年费率为 0.5%。
+ 
+
+
+销售服务费计提的计算公式如下：
+
+H=E×0.5%÷当年天数
+
+H 为 C 类基金份额每日应计提的销售服务费
+
+E 为 C 类基金份额前一日的基金资产净值 基金销售服务费每日计提，逐日累计至每个月月末，按月支付。经基金管理人与基金托
+管人核对一致后，由基金托管人于次月首日起2-5个工作日内按照指定的账户路径进行资金 支付。
+上述“一、基金费用的种类中第4－8项费用”，根据有关法规及相应协议规定，按费用 实际支出金额列入当期费用，由基金托管人从基金财产中支付。
+三、不列入基金费用的项目 下列费用不列入基金费用：
+1、基金管理人和基金托管人因未履行或未完全履行义务导致的费用支出或基金财产的 损失；
+2、基金管理人和基金托管人处理与基金运作无关的事项发生的费用；
+3、《基金合同》生效前的相关费用；
+4、其他根据相关法律法规及中国证监会的有关规定不得列入基金费用的项目。 四、基金税收 基金财产投资的相关税收，由基金份额持有人承担，基金管理人或者其他扣缴义务人按
+照国家有关税收征收的规定代扣代缴。
+ 
+
+
+
+十四、基金的会计与审计
+
+
+（一）基金会计政策
+
+1、基金管理人为本基金的基金会计责任方；
+
+2、基金的会计年度为公历年度的 1 月 1 日至 12 月 31 日；基金首次募集的会计年度按 如下原则：如果《基金合同》生效少于 2 个月，可以并入下一个会计年度；
+3、基金核算以人民币为记账本位币，以人民币元为记账单位；
+
+4、会计制度执行国家有关会计制度；
+
+5、本基金独立建账、独立核算；
+
+6、基金管理人及基金托管人各自保留完整的会计账目、凭证并进行日常的会计核算， 按照有关规定编制基金会计报表；
+7、基金托管人每月与基金管理人就基金的会计核算、报表编制等进行核对并以书面方 式确认。
+（二）基金的年度审计
+
+1、基金管理人聘请与基金管理人、基金托管人相互独立的具有证券从业资格的会计师 事务所及其注册会计师对本基金的年度财务报表进行审计。
+2、会计师事务所更换经办注册会计师，应事先征得基金管理人同意。
+
+3、基金管理人认为有充足理由更换会计师事务所，须通报基金托管人。更换会计师事 务所需在 2 个工作日内在指定媒介公告并报中国证监会备案。
+ 
+
+
+
+十五、基金的信息披露
+
+
+（一）本基金的信息披露应符合《基金法》、《运作办法》、《信息披露办法》、《基金合 同》及其他有关规定。
+（二）信息披露义务人 本基金信息披露义务人包括基金管理人、基金托管人、召集基金份额持有人大会的基
+金份额持有人等法律法规和中国证监会规定的自然人、法人和其他组织。 本基金信息披露义务人按照法律法规和中国证监会的规定披露基金信息，并保证所披
+露信息的真实性、准确性和完整性。 本基金信息披露义务人应当在中国证监会规定时间内，将应予披露的基金信息通过中
+国证监会指定的媒介披露，并保证基金投资者能够按照《基金合同》约定的时间和方式查 阅或者复制公开披露的信息资料。
+（三）本基金信息披露义务人承诺公开披露的基金信息，不得有下列行为：
+
+1、虚假记载、误导性陈述或者重大遗漏；
+
+2、对证券投资业绩进行预测；
+
+3、违规承诺收益或者承担损失；
+
+4、诋毁其他基金管理人、基金托管人或者基金销售机构；
+
+5、登载任何自然人、法人或者其他组织的祝贺性、恭维性或推荐性的文字；
+
+6、中国证监会禁止的其他行为。
+
+（四）本基金公开披露的信息应采用中文文本。如同时采用外文文本的，基金信息披 露义务人应保证两种文本的内容一致。两种文本发生歧义的，以中文文本为准。
+本基金公开披露的信息采用阿拉伯数字；除特别说明外，货币单位为人民币元。
+
+（五）公开披露的基金信息 公开披露的基金信息包括：
+1、基金招募说明书、《基金合同》、基金托管协议
+
+(1)《基金合同》是界定《基金合同》当事人的各项权利、义务关系，明确基金份额持 有人大会召开的规则及具体程序，说明基金产品的特性等涉及基金投资者重大利益的事项 的法律文件。
+(2)基金招募说明书应当最大限度地披露影响基金投资者决策的全部事项，说明基金认 购、申购和赎回安排、基金投资、基金产品特性、风险揭示、信息披露及基金份额持有人 服务等内容。《基金合同》生效后，基金管理人在每 6 个月结束之日起 45 日内，更新招募
+ 
+
+
+说明书并登载在网站上，将更新后的招募说明书摘要登载在指定媒介上；基金管理人在公
+
+告的 15 日前向主要办公场所所在地的中国证监会派出机构报送更新的招募说明书，并就有 关更新内容提供书面说明。
+(3)基金托管协议是界定基金托管人和基金管理人在基金财产保管及基金运作监督等 活动中的权利、义务关系的法律文件。
+基金募集申请经中国证监会注册后，基金管理人在基金份额发售的 3 日前，将基金招 募说明书、《基金合同》摘要登载在指定媒介上；基金管理人、基金托管人应当将《基金合 同》、基金托管协议登载在网站上。
+2、基金份额发售公告 基金管理人应当就基金份额发售的具体事宜编制基金份额发售公告，并在披露招募说
+明书的当日登载于指定媒介上。
+
+3、《基金合同》生效公告 基金管理人应当在收到中国证监会确认文件的次日在指定媒介上登载《基金合同》生
+效公告。
+
+4、基金资产净值、基金份额净值
+
+《基金合同》生效后，在开始办理基金份额申购或者赎回前，基金管理人应当至少每 周公告一次基金资产净值和基金份额净值。
+在开始办理基金份额申购或者赎回后，基金管理人应当在每个开放日的次日，通过网 站、基金份额发售网点以及其他媒介，披露开放日的基金份额净值和基金份额累计净值。
+基金管理人应当公告半年度和年度最后一个市场交易日基金资产净值和基金份额净值。 基金管理人应当在前款规定的市场交易日的次日，将基金资产净值、基金份额净值和基金 份额累计净值登载在指定媒介上。
+5、基金份额申购、赎回价格 基金管理人应当在《基金合同》、招募说明书等信息披露文件上载明基金份额申购、赎
+回价格的计算方式及有关申购、赎回费率，并保证投资者能够在基金份额发售网点查阅或 者复制前述信息资料。
+6、基金定期报告，包括基金年度报告、基金半年度报告和基金季度报告 基金管理人应当在每年结束之日起 90 日内，编制完成基金年度报告，并将年度报告正
+文登载于网站上，将年度报告摘要登载在指定媒介上。基金年度报告的财务会计报告应当 经过审计。
+基金管理人应当在上半年结束之日起 60 日内，编制完成基金半年度报告，并将半年度
+ 
+
+
+报告正文登载在网站上，将半年度报告摘要登载在指定媒介上。
+
+基金管理人应当在每个季度结束之日起 15 个工作日内，编制完成基金季度报告，并将 季度报告登载在指定媒介上。
+《基金合同》生效不足 2 个月的，基金管理人可以不编制当期季度报告、半年度报告 或者年度报告。
+基金定期报告在公开披露的第 2 个工作日，分别报中国证监会和基金管理人主要办公 场所所在地中国证监会派出机构备案。报备应当采用电子文本或书面报告方式。
+7、临时报告
+
+本基金发生重大事件，有关信息披露义务人应当在 2 日内编制临时报告书，予以公告， 并在公开披露日分别报中国证监会和基金管理人主要办公场所所在地的中国证监会派出机 构备案。
+前款所称重大事件，是指可能对基金份额持有人权益或者基金份额的价格产生重大影 响的下列事件：
+(1)基金份额持有人大会的召开； (2)终止《基金合同》； (3)转换基金运作方式； (4)更换基金管理人、基金托管人；
+(5)基金管理人、基金托管人的法定名称、住所发生变更； (6)基金管理人股东及其出资比例发生变更； (7)基金募集期延长；
+(8)基金管理人的董事长、总经理及其他高级管理人员、基金经理和基金托管人基金托 管部门负责人发生变动；
+(9)基金管理人的董事在一年内变更超过百分之五十；
+
+(10)基金管理人、基金托管人基金托管部门的主要业务人员在一年内变动超过百分之 三十；
+(11)涉及基金财产、基金管理业务、基金托管业务的诉讼或者仲裁； (12)基金管理人、基金托管人受到监管部门的调查； (13)基金管理人及其董事、总经理及其他高级管理人员、基金经理受到严重行政处罚，
+基金托管人及其基金托管部门负责人受到严重行政处罚；
+
+(14)重大关联交易事项；
+
+(15)基金收益分配事项；
+ 
+
+
+(16)管理费、托管费等费用计提标准、计提方式和费率发生变更；
+
+(17)基金份额净值计价错误达基金份额净值百分之零点五；
+
+(18)基金改聘会计师事务所； (19)变更基金销售机构； (20)更换基金登记机构； (21)本基金开始办理申购、赎回；
+(22)本基金申购、赎回费率及其收费方式发生变更； (23)本基金发生巨额赎回并延期支付； (24)本基金连续发生巨额赎回并暂停接受赎回申请； (25)本基金暂停接受申购、赎回申请后重新接受申购、赎回； (26)中国证监会规定的其他事项。
+8、中小企业私募债投资 基金管理人应在基金招募说明书的显著位置披露投资中小企业私募债券的流动性风险
+和信用风险，说明投资中小企业私募债券对基金总体风险的影响。本基金投资中小企业私 募债券后两个交易日内，基金管理人应在中国证监会指定媒介披露所投资中小企业私募债 券的名称、数量、期限、收益率等信息，并在季度报告、半年度报告、年度报告等定期报 告和招募说明书（更新）等文件中披露中小企业私募债券的投资情况。
+9、资产支持证券投资 基金管理人应在基金年报及半年报中披露基金所持有的资产支证券总额、资产支持证
+券市值占基金净资产的比例和报告期内所有的资产支持证券明细。基金管理人应在基金季 度报告中披露基金所持有的资产支证券总额、资产支持证券市值占基金净资产的比例和报 告期末按市值占基金净资产比例大小排序前 10 名资产支持证券明细。
+10、澄清公告 在《基金合同》存续期限内，任何公共媒介中出现的或者在市场上流传的消息可能对
+基金份额价格产生误导性影响或者引起较大波动的，相关信息披露义务人知悉后应当立即 对该消息进行公开澄清，并将有关情况立即报告中国证监会。
+11、基金份额持有人大会决议 基金份额持有人大会决定的事项，应当依法报国务院证券监督管理机构备案，并予以
+公告。
+
+12、中国证监会规定的其他信息。
+
+（六）信息披露事务管理
+ 
+
+
+基金管理人、基金托管人应当建立健全信息披露管理制度，指定专人负责管理信息披
+
+露事务。 基金信息披露义务人公开披露基金信息，应当符合中国证监会相关基金信息披露内容
+与格式准则的规定。 基金托管人应当按照相关法律法规、中国证监会的规定和《基金合同》的约定，对基
+金管理人编制的基金资产净值、基金份额净值、基金份额申购赎回价格、基金定期报告和 定期更新的招募说明书等公开披露的相关基金信息进行复核、审查，并向基金管理人出具 书面文件或者盖章确认。
+基金管理人、基金托管人应当在指定媒介中选择披露信息的报刊。 基金管理人、基金托管人除依法在指定媒介上披露信息外，还可以根据需要在其他公
+共媒介披露信息，但是其他公共媒介不得早于指定媒介披露信息，并且在不同媒介上披露 同一信息的内容应当一致。
+为基金信息披露义务人公开披露的基金信息出具审计报告、法律意见书的专业机构， 应当制作工作底稿，并将相关档案至少保存到《基金合同》终止后 15 年。
+（七）信息披露文件的存放与查阅 招募说明书公布后，应当分别置备于基金管理人、基金托管人和基金销售机构的住所，
+供公众查阅、复制。 基金定期报告公布后，应当分别置备于基金管理人和基金托管人的住所，以供公众查
+阅、复制。
+ 
+
+
+十六、风险揭示
+
+
+
+本基金为混合型证券投资基金，其面临的投资风险主要包括以下几个：
+
+（一）市场风险 广义的市场风险指与利率、股票价格、商品价格等相关的风险，主要与不同市场的供
+需情况紧密联系。狭义的市场风险主要指股票价格波动风险。
+
+（二）信用风险 信用风险指由于交易对手或债务人无法按照约定交割资产而导致基金资产损失的风险，
+主要指违约风险。本基金的信用风险分析主要针对债券资产，具体包括以下几个方面：
+
+1、债券发行人出现违约，无法支付到期本息引起的损失；
+
+2、交易对手出现违约或违规投资操作而引起的损失。
+
+（三）流动性风险 流动性风险指金融资产变现的难易程度。一些情况下，市场无法有效执行交易头寸需
+要，将使得金融资产无法在价格平稳变动的基础上被购入或者卖出。本基金面临的流动性 风险来自两个方面：
+1、大额赎回：本基金属于开放式混合型基金，在交易过程中，有发生集中大额赎回的 可能性。集中大额赎回可能导致基金资产变现难度加剧，从而产生流动性风险；甚至可能 由于大额出售个券引致个券价格出现大幅波动，从而对基金资产净值产生影响。
+2、特殊的市场情形：在特殊市场情形下，如市场资金紧张时，市场整体流动性降低， 将可能导致个券的变现能力减弱，从而产生流动性风险。
+（四）操作风险 操作风险指由于我司信息系统、投资运作系统或其他外部事件导致的操作失灵或失误
+带来基金资产损失的风险。这一风险主要来自于计算机系统失灵（如病毒、软件错误）、人 为失误和公司以外的不可控因素。
+（五）模型风险 模型风险指投资估值模型的参数错误或模型运用不当带来的基金资产损失风险。在利
+用定价模型对金融资产，尤其是金融衍生产品进行定价的过程中，容易出现模型风险。
+
+（六）法律/合同风险 法律/合同风险指合同签约的一方无法履行合同规定的义务，造成另外一方损失时可能
+发生的法律诉讼风险。
+ 
+
+
+（七）通货膨胀风险
+
+通货膨胀风险指物价水平上升导致本基金的名义收益率在剔除通货膨胀因素影响后降 低的风险。在本基金运作过程中，通货膨胀风险也表现为物价水平上升导致中、短期固定 收益证券或者回购交易的实际收益率远低于名义收益率的情况。
+（八）不可抗力风险 战争、自然灾害等不可抗力的出现将会严重影响证券市场的运行，可能导致基金资产
+的损失，影响基金收益水平，从而带来风险；金融市场危机、行业竞争、托管行违约等超 出基金管理人自身控制能力之外的风险，也可能导致基金或基金持有人的利益受损。
+ 
+
+
+
+十七、基金合同的变更、终止与基金财产的清算
+
+
+（一）《基金合同》的变更
+
+1、变更基金合同涉及法律法规规定或本合同约定应经基金份额持有人大会决议通过的 事项的，应召开基金份额持有人大会决议通过。对于可不经基金份额持有人大会决议通过的 事项，由基金管理人和基金托管人同意后变更并公告，并报中国证监会备案。
+2、关于《基金合同》变更的基金份额持有人大会决议自完成备案手续后生效，自决议 生效后两日内在指定媒介公告。
+（二）《基金合同》的终止事由 有下列情形之一的，《基金合同》应当终止：
+1、基金份额持有人大会决定终止的；
+
+2、基金管理人、基金托管人职责终止，在6个月内没有新基金管理人、新基金托管人承 接的；
+3、《基金合同》约定的其他情形；
+
+4、相关法律法规和中国证监会规定的其他情况。
+
+（三）基金财产的清算
+
+1、基金财产清算小组：自出现《基金合同》终止事由之日起30个工作日内成立清算小 组，基金管理人组织基金财产清算小组并在中国证监会的监督下进行基金清算。
+2、基金财产清算小组组成：基金财产清算小组成员由基金管理人、基金托管人、具有 从事证券相关业务资格的注册会计师、律师以及中国证监会指定的人员组成。基金财产清算 小组可以聘用必要的工作人员。
+3、基金财产清算小组职责：基金财产清算小组负责基金财产的保管、清理、估价、变 现和分配。基金财产清算小组可以依法进行必要的民事活动。
+4、基金财产清算程序：
+
+（1）《基金合同》终止情形出现时，由基金财产清算小组统一接管基金；
+
+（2）对基金财产和债权债务进行清理和确认；
+
+（3）对基金财产进行估值和变现；
+
+（4）制作清算报告；
+
+（5）聘请会计师事务所对清算报告进行外部审计，聘请律师事务所对清算报告出具法 律意见书；
+（6）将清算报告报中国证监会备案并公告。
+
+（7）对基金财产进行分配；
+
+5、基金财产清算的期限为6个月。
+ 
+
+
+（四）清算费用
+
+清算费用是指基金财产清算小组在进行基金清算过程中发生的所有合理费用，清算费用 由基金财产清算小组优先从基金财产中支付。
+（五）基金财产清算剩余资产的分配 依据基金财产清算的分配方案，将基金财产清算后的全部剩余资产扣除基金财产清算费
+用、交纳所欠税款并清偿基金债务后，按基金份额持有人持有的基金份额比例进行分配。
+
+（六）基金财产清算的公告 清算过程中的有关重大事项须及时公告；基金财产清算报告经会计师事务所审计并由律
+师事务所出具法律意见书后报中国证监会备案并公告。基金财产清算公告于基金财产清算报 告报中国证监会备案后5个工作日内由基金财产清算小组进行公告。
+（七）基金财产清算账册及文件的保存 基金财产清算账册及有关文件由基金托管人保存15年以上。
+ 
+
+
+
+十八、基金合同的内容摘要
+
+
+（一）基金管理人、基金托管人和基金份额持有人的权利、义务
+
+1、根据《基金法》、《运作办法》及其他有关规定，基金管理人的权利包括但不限于：
+
+（1）依法募集资金；
+
+（2）自《基金合同》生效之日起，根据法律法规和《基金合同》独立运用并管理基金 财产；
+（3）依照《基金合同》收取基金管理费以及法律法规规定或中国证监会批准的其他费 用；
+（4）销售基金份额；
+
+（5）按照规定召集基金份额持有人大会；
+
+（6）依据《基金合同》及有关法律规定监督基金托管人，如认为基金托管人违反了《基 金合同》及国家有关法律规定，应呈报中国证监会和其他监管部门，并采取必要措施保护 基金投资者的利益；
+（7）在基金托管人更换时，提名新的基金托管人；
+
+（8）选择、更换基金销售机构，对基金销售机构的相关行为进行监督和处理；
+
+（9）担任或委托其他符合条件的机构担任基金登记机构办理基金登记业务并获得《基 金合同》规定的费用；
+（10）依据《基金合同》及有关法律规定决定基金收益的分配方案；
+
+（11）在《基金合同》约定的范围内，拒绝或暂停受理申购与赎回申请；
+
+（12）依照法律法规为基金的利益对被投资公司行使股东权利，为基金的利益行使因 基金财产投资于证券所产生的权利；
+（13）在法律法规允许的前提下，为基金的利益依法为基金进行融资；
+
+（14）以基金管理人的名义，代表基金份额持有人的利益行使诉讼权利或者实施其他 法律行为；
+（15）选择、更换律师事务所、会计师事务所、证券经纪商或其他为基金提供服务的 外部机构；
+（16）在符合有关法律、法规的前提下，制订和调整有关基金认购、申购、赎回、转 换和非交易过户的业务规则；
+ 
+
+
+（17）法律法规及中国证监会规定的和《基金合同》约定的其他权利。
+
+2、根据《基金法》、《运作办法》及其他有关规定，基金管理人的义务包括但不限于：
+（1）依法募集资金，办理或者委托经中国证监会认定的其他机构代为办理基金份额的 发售、申购、赎回和登记事宜；
+（2）办理基金备案手续；
+
+（3）自《基金合同》生效之日起，以诚实信用、谨慎勤勉的原则管理和运用基金财产；
+（4）配备足够的具有专业资格的人员进行基金投资分析、决策，以专业化的经营方式 管理和运作基金财产；
+（5）建立健全内部风险控制、监察与稽核、财务管理及人事管理等制度，保证所管理 的基金财产和基金管理人的财产相互独立,对所管理的不同基金分别管理，分别记账，进行 证券投资；
+（6）除依据《基金法》、《基金合同》及其他有关规定外，不得利用基金财产或利用职 务之便为自己及任何第三人谋取利益，不得委托第三人运作基金财产；
+（7）依法接受基金托管人的监督；
+
+（8）不得侵占、挪用基金财产；
+（9）采取适当合理的措施使计算基金份额认购、申购、赎回和注销价格的方法符合《基 金合同》等法律文件的规定，按有关规定计算并公告基金资产净值，确定基金份额申购、赎 回的价格；
+（10）进行基金会计核算并编制基金财务会计报告；
+
+（11）编制季度、半年度和年度基金报告；
+（12）严格按照《基金法》、《基金合同》及其他有关规定，履行信息披露及报告义务；
+（13）保守基金商业秘密，不泄露基金投资计划、投资意向等。除《基金法》、《基金合 同》及其他有关规定另有规定外，在基金信息公开披露前应予保密，不向他人泄露，不得利 用该信息从事或者明示、暗示他人从事相关的交易活动；
+（14）按《基金合同》的约定确定基金收益分配方案，及时向基金份额持有人分配基金 收益；
+（15）按规定受理申购与赎回申请，及时、足额支付赎回款项；
+（16）依据《基金法》、《基金合同》及其他有关规定召集基金份额持有人大会或配合基 金托管人、基金份额持有人依法召集基金份额持有人大会；
+（17）按规定保存基金财产管理业务活动的会计账册、报表、记录和其他相关资料15
+年以上；
+（18）确保需要向基金投资者提供的各项文件或资料在规定时间发出，并且保证投资者 能够按照《基金合同》规定的时间和方式，随时查阅到与基金有关的公开资料，并在支付合 理成本的条件下得到有关资料的复印件；
+ 
+
+
+（19）组织并参加基金财产清算小组,参与基金财产的保管、清理、估价、变现和分配；
+（20）面临解散、依法被撤销或者被依法宣告破产时，及时报告中国证监会并通知基金 托管人；
+（21）因违反《基金合同》导致基金财产的损失或损害基金份额持有人合法权益时，应 当承担赔偿责任，其赔偿责任不因其退任而免除；
+（22）监督基金托管人按法律法规和《基金合同》规定履行自己的义务，基金托管人违 反《基金合同》造成基金财产损失时，基金管理人应为基金份额持有人利益向基金托管人追 偿；
+（23）当基金管理人将其义务委托第三方处理时，应当对第三方处理有关基金事务的行 为承担责任；
+（24）以基金管理人名义，代表基金份额持有人利益行使诉讼权利或实施其他法律行为；
+（25）基金管理人在募集期间未能达到基金的备案条件，《基金合同》不能生效，基金 管理人承担全部募集费用，将已募集资金并加计银行同期存款利息在基金募集期结束后30 日内退还基金认购人；
+（26）执行生效的基金份额持有人大会的决议；
+（27）建立并保存基金份额持有人名册；
+（28）法律法规及中国证监会规定的和《基金合同》约定的其他义务。
+
+3、根据《基金法》、《运作办法》及其他有关规定，基金托管人的权利包括但不限于：
+（1）自《基金合同》生效之日起，依法律法规和《基金合同》的规定安全保管基金财 产；
+（2）依《基金合同》约定获得基金托管费以及法律法规规定或监管部门批准的其他费 用；
+（3）监督基金管理人对本基金的投资运作，如发现基金管理人有违反《基金合同》及 国家法律法规行为，对基金财产、其他当事人的利益造成重大损失的情形，应呈报中国证监 会，并采取必要措施保护基金投资者的利益；
+（4）根据相关市场规则，为基金开设证券账户、为基金办理证券交易资金清算。
+
+（5）提议召开或召集基金份额持有人大会；
+（6）在基金管理人更换时，提名新的基金管理人；
+（7）法律法规及中国证监会规定的和《基金合同》约定的其他权利。
+4、根据《基金法》、《运作办法》及其他有关规定，基金托管人的义务包括但不限于：
+（1）以诚实信用、勤勉尽责的原则持有并安全保管基金财产；
+
+（2）设立专门的基金托管部门，具有符合要求的营业场所，配备足够的、合格的熟悉 基金托管业务的专职人员，负责基金财产托管事宜；
+（3）建立健全内部风险控制、监察与稽核、财务管理及人事管理等制度，确保基金财
+ 
+
+
+产的安全，保证其托管的基金财产与基金托管人自有财产以及不同的基金财产相互独立；对
+所托管的不同的基金分别设置账户，独立核算，分账管理，保证不同基金之间在账户设置、 资金划拨、账册记录等方面相互独立；
+（4）除依据《基金法》、《基金合同》及其他有关规定外，不得利用基金财产或者利用 职务之便为自己及任何第三人谋取利益，不得委托第三人托管基金财产；
+（5）不得侵占、挪用基金财产；
+（6）保管由基金管理人代表基金签订的与基金有关的重大合同及有关凭证；
+
+（7）按规定开设基金财产的资金账户和证券账户,按照《基金合同》的约定，根据基金 管理人的投资指令，及时办理清算、交割事宜；
+（8）保守基金商业秘密，除《基金法》、《基金合同》及其他有关规定另有规定外，在 基金信息公开披露前予以保密，不得向他人泄露，不得利用该信息从事或者明示、暗示他人 从事相关的交易活动；
+（9）复核、审查基金管理人计算的基金资产净值、基金份额申购、赎回价格；
+（10）办理与基金托管业务活动有关的信息披露事项；
+（11）对基金财务会计报告、季度、半年度和年度基金报告出具意见，说明基金管理人 在各重要方面的运作是否严格按照《基金合同》的规定进行；如果基金管理人有未执行《基 金合同》规定的行为，还应当说明基金托管人是否采取了适当的措施；
+（12）保存基金托管业务活动的记录、账册、报表和其他相关资料15年以上；
+（13）建立并保存基金份额持有人名册；
+（14）按规定制作相关账册并与基金管理人核对；
+（15）依据基金管理人的指令或有关规定向基金份额持有人支付基金收益和赎回款项；
+
+（16）依据《基金法》、《基金合同》及其他有关规定，召集基金份额持有人大会或配合 基金份额持有人依法召集基金份额持有人大会；
+（17）按照法律法规和《基金合同》的规定监督基金管理人的投资运作；
+（18）参加基金财产清算小组，参与基金财产的保管、清理、估价、变现和分配；
+（19）面临解散、依法被撤销或者被依法宣告破产时，及时报告中国证监会和银行监管 机构，并通知基金管理人；
+（20）因违反《基金合同》导致基金财产损失时，应承担赔偿责任，其赔偿责任不因其 退任而免除；
+（21）按规定监督基金管理人按法律法规和《基金合同》规定履行自己的义务，基金管 理人因违反《基金合同》造成基金财产损失时，应为基金份额持有人利益向基金管理人追偿；
+（22）执行生效的基金份额持有人大会的决定；
+（23）法律法规及中国证监会规定的和《基金合同》约定的其他义务。
+5、根据《基金法》、《运作办法》及其他有关规定，基金份额持有人的权利包括但不限
+ 
+
+
+于：
+（1）分享基金财产收益；
+（2）参与分配清算后的剩余基金财产；
+
+（3）依法申请赎回其持有的基金份额；
+（4）按照规定要求召开基金份额持有人大会或者召集基金份额持有人大会；
+（5）出席或者委派代表出席基金份额持有人大会，对基金份额持有人大会审议事项行 使表决权；
+（6）查阅或者复制公开披露的基金信息资料；
+（7）监督基金管理人的投资运作；
+（8）对基金管理人、基金托管人、基金销售机构损害其合法权益的行为依法提起诉讼 或仲裁；
+（9）法律法规及中国证监会规定的和《基金合同》约定的其他权利。
+
+6、根据《基金法》、《运作办法》及其他有关规定，基金份额持有人的义务包括但不限 于：
+（1）认真阅读并遵守《基金合同》；
+（2）了解所投资基金产品，了解自身风险承受能力，自行承担投资风险；
+（3）关注基金信息披露，及时行使权利和履行义务；
+
+（4）缴纳基金认购、申购、赎回款项及法律法规和《基金合同》所规定的费用；
+（5）在其持有的基金份额范围内，承担基金亏损或者《基金合同》终止的有限责任；
+（6）不从事任何有损基金及其他《基金合同》当事人合法权益的活动；
+（7）执行生效的基金份额持有人大会的决定；
+
+（8）返还在基金交易过程中因任何原因获得的不当得利；
+（9）法律法规及中国证监会规定的和《基金合同》约定的其他义务。
+
+（二）基金份额持有人大会召集、议事及表决的程序和规则 基金份额持有人大会由基金份额持有人组成，基金份额持有人的合法授权代表有权代表
+基金份额持有人出席会议并表决。基金份额持有人持有的每一基金份额拥有平等的投票权。 本基金份额持有人大会不设日常机构。
+1、召开事由
+（1）当出现或需要决定下列事由之一的，应当召开基金份额持有人大会：
+1）决定修改基金合同的重要内容或者提前终止《基金合同》，但《基金合同》另有约定 的除外；
+2）更换基金管理人；
+3）更换基金托管人；
+ 
+
+
+4）转换基金运作方式；
+5）提高基金管理人、基金托管人的报酬标准或销售服务费，但根据法律法规的要求提 高该等标准或费率的除外；
+6）变更基金类别；
+7）本基金与其他基金的合并；
+8）变更基金投资目标、范围或策略（法律法规、中国证监会和《基金合同》另有规定 的除外）；
+9）变更基金份额持有人大会程序；
+10）基金管理人或基金托管人要求召开基金份额持有人大会；
+11）单独或合计持有本基金总份额10%以上（含10%）基金份额的基金份额持有人（以基 金管理人收到提议当日的基金份额计算，下同）就同一事项书面要求召开基金份额持有人大 会；
+12）对基金当事人权利和义务产生重大影响的其他事项；
+13）法律法规、《基金合同》或中国证监会规定的其他应当召开基金份额持有人大会的 事项。
+（2）以下情况可由基金管理人和基金托管人协商后修改，不需召开基金份额持有人大 会：
+1）调低基金管理费、基金托管费、销售服务费和其他应由基金承担的费用；
+2）法律法规要求增加的基金费用的收取；
+3）在法律法规和《基金合同》规定的范围内调整本基金的申购费率、调低赎回费率；
+4）因相应的法律法规发生变动而应当对《基金合同》进行修改；
+
+5）对《基金合同》的修改对基金份额持有人利益无实质性不利影响或修改不涉及《基 金合同》当事人权利义务关系发生变化；
+6）按照法律法规和《基金合同》规定不需召开基金份额持有人大会的以外的其他情形。
+2、会议召集人及召集方式
+（1）除法律法规规定或《基金合同》另有约定外，基金份额持有人大会由基金管理人 召集；
+（2）基金管理人未按规定召集或不能召集时，由基金托管人召集；
+（3）基金托管人认为有必要召开基金份额持有人大会的，应当向基金管理人提出书面 提议。基金管理人应当自收到书面提议之日起 10日内决定是否召集，并书面告知基金托管 人。基金管理人决定召集的，应当自出具书面决定之日起60日内召开；基金管理人决定不召 集，基金托管人仍认为有必要召开的，应当由基金托管人自行召集。
+（4）代表基金份额10%以上（含10%）的基金份额持有人就同一事项书面要求召开基金 份额持有人大会，应当向基金管理人提出书面提议。基金管理人应当自收到书面提议之日起
+ 
+
+
+10日内决定是否召集，并书面告知提出提议的基金份额持有人代表和基金托管人。基金管理
+人决定召集的，应当自出具书面决定之日起60日内召开；基金管理人决定不召集，代表基金 份额10%以上（含10%）的基金份额持有人仍认为有必要召开的，应当向基金托管人提出书面 提议。基金托管人应当自收到书面提议之日起10日内决定是否召集，并书面告知提出提议的 基金份额持有人代表和基金管理人；基金托管人决定召集的，应当自出具书面决定之日起60 日内召开。
+（5）代表基金份额10%以上（含10%）的基金份额持有人就同一事项要求召开基金份额 持有人大会，而基金管理人、基金托管人都不召集的，单独或合计代表基金份额10%以上（含
+10%）的基金份额持有人有权自行召集，并至少提前30日报中国证监会备案。基金份额持有 人依法自行召集基金份额持有人大会的，基金管理人、基金托管人应当配合，不得阻碍、干 扰。
+（6）基金份额持有人会议的召集人负责选择确定开会时间、地点、方式和权益登记日。
+
+3、召开基金份额持有人大会的通知时间、通知内容、通知方式
+（1）召开基金份额持有人大会，召集人应于会议召开前30日，在指定媒介公告。基金 份额持有人大会通知应至少载明以下内容：
+1）会议召开的时间、地点和会议形式；
+2）会议拟审议的事项、议事程序和表决方式；
+
+3）有权出席基金份额持有人大会的基金份额持有人的权益登记日；
+4）授权委托证明的内容要求（包括但不限于代理人身份，代理权限和代理有效期限等）、 送达时间和地点;
+5）会务常设联系人姓名及联系电话；
+
+6）出席会议者必须准备的文件和必须履行的手续；
+7）召集人需要通知的其他事项。 基金转换运作方式或者与其他基金合并的，基金管理人应于会议召开前30日发布提示性
+通知，除载明前述内容外，还应明确有关实施安排，说明对现有基金份额持有人的影响以及 基金份额持有人享有的选择权，并在实施前预留至少20个开放日或者交易日供基金份额持有 人做出选择。
+（2）采取通讯开会方式并进行表决的情况下，由会议召集人决定在会议通知中说明本 次基金份额持有人大会所采取的具体通讯方式、委托的公证机关及其联系方式和联系人、书 面表决意见寄交的截止时间和收取方式。
+（3）如召集人为基金管理人，则应另行书面通知基金托管人到指定地点对表决意见的 计票进行监督；如召集人为基金托管人，则应另行书面通知基金管理人到指定地点对表决意 见的计票进行监督；如召集人为基金份额持有人，则应另行书面通知基金管理人和基金托管 人到指定地点对表决意见的计票进行监督。基金管理人或基金托管人拒不派代表对书面表决
+ 
+
+
+意见的计票进行监督的，不影响表决意见的计票效力。
+4、基金份额持有人出席会议的方式 基金份额持有人大会可通过现场开会方式或通讯开会方式召开，会议的召开方式由会议
+召集人确定。
+（1）现场开会。由基金份额持有人本人出席或以代理投票授权委托证明委派代表出席， 现场开会时基金管理人和基金托管人的授权代表应当列席基金份额持有人大会，基金管理人 或托管人不派代表列席的，不影响表决效力。现场开会同时符合以下条件时，可以进行基金 份额持有人大会议程：
+1）亲自出席会议者持有基金份额的凭证、受托出席会议者出具的委托人持有基金份额 的凭证及委托人的代理投票授权委托证明符合法律法规、《基金合同》和会议通知的规定， 并且持有基金份额的凭证与基金管理人持有的登记资料相符；
+2）经核对，汇总到会者出示的在权益登记日持有基金份额的凭证显示，有效的基金份 额不少于本基金在权益登记日基金总份额的1/2（含1/2）。
+参加基金份额持有人大会的基金份额持有人的基金份额低于上述规定比例的，召集人可 以在原公告的基金份额持有人大会召开时间的三个月以后、六个月以内，就原定审议事项重 新召集基金份额持有人大会。重新召集的基金份额持有人大会，应当有代表1/3以上（含1/3） 基金份额的基金份额持有人或其代理人参加，方可召开。
+（2）通讯开会。通讯开会系指基金份额持有人将其对表决事项的投票以书面形式在表 决截至日以前送达至召集人指定的地址。通讯开会应以书面方式进行表决。
+在同时符合以下条件时，通讯开会的方式视为有效：
+1）会议召集人按《基金合同》约定公布会议通知后，在 2个工作日内连续公布相关提 示性公告；
+2）召集人按基金合同约定通知基金托管人（如果基金托管人为召集人，则为基金管理 人）到指定地点对书面表决意见的计票进行监督。会议召集人在基金托管人（如果基金托管 人为召集人，则为基金管理人）和公证机关的监督下按照会议通知规定的方式收取基金份额 持有人的书面表决意见；基金托管人或基金管理人经通知不参加收取书面表决意见的，不影 响表决效力；
+3）本人直接出具书面意见或授权他人代表出具书面意见的，基金份额持有人所持有的 基金份额不小于在权益登记日基金总份额的1/2（含1/2）；
+参加基金份额持有人大会的基金份额持有人的基金份额低于上述规定比例的，召集人可 以在原公告的基金份额持有人大会召开时间的三个月以后、六个月以内，就原定审议事项重 新召集基金份额持有人大会。重新召集的基金份额持有人大会，应当有代表1/3以上（含1/3） 基金份额的基金份额持有人或其代理人参加，方可召开。
+4）上述第3）项中直接出具书面意见的基金份额持有人或受托代表他人出具书面意见的
+ 
+
+
+代理人，同时提交的持有基金份额的凭证、受托出具书面意见的代理人出具的委托人持有基
+金份额的凭证及委托人的代理投票授权委托证明符合法律法规、《基金合同》和会议通知的 规定，并与基金登记注册机构记录相符；
+5）会议通知公布前报中国证监会备案。
+（3）在法律法规或监管机构允许的情况下，经会议通知载明，基金份额持有人也可以 采用网络、电话或其他方式进行表决，或者采用网络、电话或其他方式授权他人代为出席会 议并表决。
+5、议事内容与程序
+（1）议事内容及提案权 议事内容为关系基金份额持有人利益的重大事项，如《基金合同》的重大修改、决定终
+止《基金合同》、更换基金管理人、更换基金托管人、与其他基金合并、法律法规及《基金 合同》规定的其他事项以及会议召集人认为需提交基金份额持有人大会讨论的其他事项。
+基金份额持有人大会的召集人发出召集会议的通知后，对原有提案的修改应当在基金份 额持有人大会召开前及时公告。
+基金份额持有人大会不得对未事先公告的议事内容进行表决。
+（2）议事程序
+1）现场开会 在现场开会的方式下，首先由大会主持人按照下列第7条规定程序确定和公布监票人，
+然后由大会主持人宣读提案，经讨论后进行表决，并形成大会决议。大会主持人为基金管理 人授权出席会议的代表，在基金管理人授权代表未能主持大会的情况下，由基金托管人授权 其出席会议的代表主持；如果基金管理人授权代表和基金托管人授权代表均未能主持大会， 则由出席大会的基金份额持有人和代理人所持表决权的50%以上（含50%）选举产生一名基金 份额持有人作为该次基金份额持有人大会的主持人。基金管理人和基金托管人拒不出席或主 持基金份额持有人大会，不影响基金份额持有人大会作出的决议的效力。
+会议召集人应当制作出席会议人员的签名册。签名册载明参加会议人员姓名（或单位名 称）、身份证明文件号码、持有或代表有表决权的基金份额、委托人姓名（或单位名称）和 联系方式等事项。
+2）通讯开会 在通讯开会的情况下，首先由召集人提前30日公布提案，在所通知的表决截止日期后5
+个工作日内在公证机关监督下由召集人统计全部有效表决，在公证机关监督下形成决议。
+6、表决 基金份额持有人所持每份基金份额有一票表决权。 基金份额持有人大会决议分为一般决议和特别决议：
+（1）一般决议，一般决议须经参加大会的基金份额持有人或其代理人所持表决权的50%
+ 
+
+
+以上（含50%）通过方为有效；除下列第（2）项所规定的须以特别决议通过事项以外的其他
+事项均以一般决议的方式通过。
+（2）特别决议，特别决议应当经参加大会的基金份额持有人或其代理人所持表决权的
+
+2/3以上（含2/3）通过方可做出。转换基金运作方式、更换基金管理人或者基金托管人、终 止《基金合同》、与其他基金合并，以特别决议通过方为有效。
+基金份额持有人大会采取记名方式进行投票表决。 采取通讯方式进行表决时，除非在计票时有充分的相反证据证明，否则提交符合会议通
+知中规定的确认投资者身份文件的表决视为有效出席的投资者，表面符合会议通知规定的书 面表决意见视为有效表决，表决意见模糊不清或相互矛盾的视为弃权表决，但应当计入出具 书面意见的基金份额持有人所代表的基金份额总数。
+基金份额持有人大会的各项提案或同一项提案内并列的各项议题应当分开审议、逐项表 决。
+7、计票
+（1）现场开会
+1）如大会由基金管理人或基金托管人召集，基金份额持有人大会的主持人应当在会议 开始后宣布在出席会议的基金份额持有人和代理人中选举两名基金份额持有人代表与大会 召集人授权的一名监督员共同担任监票人；如大会由基金份额持有人自行召集或大会虽然由 基金管理人或基金托管人召集，但是基金管理人或基金托管人未出席大会的，基金份额持有 人大会的主持人应当在会议开始后宣布在出席会议的基金份额持有人中选举三名基金份额 持有人代表担任监票人。基金管理人或基金托管人不出席大会的，不影响计票的效力。
+2）监票人应当在基金份额持有人表决后立即进行清点并由大会主持人当场公布计票结 果。
+3）如果会议主持人或基金份额持有人或代理人对于提交的表决结果有怀疑，可以在宣 布表决结果后立即对所投票数要求进行重新清点。监票人应当进行重新清点，重新清点以一 次为限。重新清点后，大会主持人应当当场公布重新清点结果。
+4）计票过程应由公证机关予以公证,基金管理人或基金托管人拒不出席大会的，不影响 计票的效力。
+（2）通讯开会 在通讯开会的情况下，计票方式为：由大会召集人授权的两名监督员在基金托管人授权
+代表（若由基金托管人召集，则为基金管理人授权代表）的监督下进行计票，并由公证机关 对其计票过程予以公证。基金管理人或基金托管人拒派代表对书面表决意见的计票进行监督 的，不影响计票和表决结果。
+8、生效与公告 基金份额持有人大会决定的事项自表决通过之日起生效。
+ 
+
+
+基金份额持有人大会决定的事项应当自表决通过之日起5日内报中国证监会备案，并予
+以公告。如果采用通讯方式进行表决，在公告基金份额持有人大会决议时，必须将公证书全 文、公证机构、公证员姓名等一同公告。
+基金管理人、基金托管人和基金份额持有人应当执行生效的基金份额持有人大会的决议。 生效的基金份额持有人大会决议对全体基金份额持有人、基金管理人、基金托管人均有约束 力。
+9、法律法规或监管部门对基金份额持有人大会另有规定的，从其规定。
+
+（三）基金合同的变更、终止与基金财产的清算
+
+1、《基金合同》的变更
+
+（1）变更基金合同涉及法律法规规定或本合同约定应经基金份额持有人大会决议通 过的事项的，应召开基金份额持有人大会决议通过。对于可不经基金份额持有人大会决议 通过的事项，由基金管理人和基金托管人同意后变更并公告，并报中国证监会备案。
+（2）关于《基金合同》变更的基金份额持有人大会决定的事项应依法报中国证监会 备案并在指定媒介公告。
+2、《基金合同》的终止事由
+
+有下列情形之一的，《基金合同》应当终止：
+（1）基金份额持有人大会决定终止的；
+（2）基金管理人、基金托管人职责终止，在 6 个月内没有新基金管理人、新基金托 管人承接的；
+（3）《基金合同》约定的其他情形；
+（4）相关法律法规和中国证监会规定的其他情况。
+3、基金财产的清算
+（1）基金财产清算小组：自出现《基金合同》终止事由之日起 30 个工作日内成立清 算小组，基金管理人组织基金财产清算小组并在中国证监会的监督下进行基金清算。
+（2）基金财产清算小组组成：基金财产清算小组成员由基金管理人、基金托管人、 具有从事证券相关业务资格的注册会计师、律师以及中国证监会指定的人员组成。基金财 产清算小组可以聘用必要的工作人员。
+（3）基金财产清算小组职责：基金财产清算小组负责基金财产的保管、清理、估价、 变现和分配。基金财产清算小组可以依法进行必要的民事活动。
+（4）基金财产清算程序：
+1）《基金合同》终止情形出现时，由基金财产清算小组统一接管基金；
+2）对基金财产和债权债务进行清理和确认；
+3）对基金财产进行估值和变现；
+ 
+
+
+4）制作清算报告；
+5）聘请会计师事务所对清算报告进行外部审计，聘请律师事务所对清算报告出具法 律意见书；
+6）将清算报告报中国证监会备案并公告；
+7）对基金财产进行分配。
+（5）基金财产清算的期限为 6 个月。
+4、清算费用 清算费用是指基金财产清算小组在进行基金清算过程中发生的所有合理费用，清算费
+用由基金财产清算小组优先从基金财产中支付。
+5、基金财产清算剩余资产的分配 依据基金财产清算的分配方案，将基金财产清算后的全部剩余资产扣除基金财产清算
+费用、交纳所欠税款并清偿基金债务后，按基金份额持有人持有的基金份额比例进行分配。
+
+6、基金财产清算的公告 清算过程中的有关重大事项须及时公告；基金财产清算报告经会计师事务所审计并由
+律师事务所出具法律意见书后报中国证监会备案并公告。基金财产清算公告于基金财产清 算报告报中国证监会备案后 5 个工作日内由基金财产清算小组进行公告。
+7、基金财产清算账册及文件的保存 基金财产清算账册及有关文件由基金托管人保存 15 年以上。
+（四）争议的处理和适用的法律 各方当事人同意，因《基金合同》而产生的或与《基金合同》有关的一切争议，如经友
+好协商未能解决的，任何一方均有权将争议提交中国国际经济贸易仲裁委员会按其届时有效 的仲裁规则进行仲裁，仲裁地点为北京市。仲裁裁决是终局性的并对各方当事人具有约束力， 仲裁费用由败诉方承担。
+争议处理期间，基金合同当事人应恪守各自的职责，继续忠实、勤勉、尽责地履行基金 合同规定的义务，维护基金份额持有人的合法权益。
+《基金合同》受中国法律管辖。
+
+（五）基金合同存放地和投资者取得基金合同的方式
+《基金合同》可印制成册，供投资者在基金管理人、基金托管人、销售机构的办公场 所和营业场所查阅。
+ 
+
+
+
+十九、基金托管协议的内容摘要
+
+
+（一）托管协议当事人
+
+1.基金管理人 名称：长城基金管理有限公司
+注册地址：深圳市福田区益田路 6009 号新世界商务中心 41 层 办公地址：深圳市福田区益田路 6009 号新世界商务中心 41 层 邮政编码：518026
+法定代表人：杨光裕 成立日期：2001 年 12 月 27 日 批准设立机关及批准设立文号：中国证监会证监基金字[2001]55 号 组织形式：有限责任公司
+注册资本：人民币壹亿伍仟万元 存续期间：持续经营 经营范围：基金募集、基金销售、资产管理、特定客户资产管理和中国证监会许可的
+其他业务
+
+2.基金托管人 名称：中国民生银行股份有限公司 注册地址：北京市西城区复兴门内大街 2 号 办公地址：北京市西城区复兴门内大街 2 号 邮政编码：100031
+法定代表人：洪崎 成立日期：1996 年 2 月 7 日 基金托管业务批准文号：证监基金字[2004]101 号 组织形式：股份有限公司 注册资本：28,365,585,227 元人民币 存续期间：持续经营
+经营范围：吸收公众存款；发放短期、中期和长期贷款；办理国内外结算；办理票据 承兑与贴现、发行金融债券；代理发行、代理兑付、承销政府债券；买卖政府债券、金融 债券；从事同业拆借；买卖、代理买卖外汇；从事结汇、售汇业务；从事银行卡业务；提 供信用证服务及担保；代理收付款项；保险兼业代理业务（有效期至 2017 年 02 月 18 日）； 提供保管箱服务；经国务院银行业监督管理机构批准的其他业务。
+
+（二）基金托管人对基金管理人的业务监督和核查
+ 
+
+
+1.基金托管人根据有关法律法规的规定及基金合同的约定，对基金投资范围、投资对象
+进行监督。基金合同明确约定基金投资风格或证券选择标准的，基金管理人应按照基金托管 人要求的格式提供投资品种池，以便基金托管人运用相关技术系统，对基金实际投资是否符 合基金合同关于证券选择标准的约定进行监督，对存在疑义的事项进行核查。
+本基金的投资范围为具有良好流动性的金融工具，包括国内依法发行上市的股票（包 括中小板、创业板及其他经中国证监会核准上市的股票）、债券（含国家债券、金融债券、 次级债券、中央银行票据、企业债券、中小企业私募债券、公司债券、中期票据、短期融 资券、可转换债券、分离交易可转债纯债、资产支持证券等）、权证、货币市场工具以及法 律法规或中国证监会允许基金投资的其他金融工具(但须符合中国证监会相关规定)。
+如法律法规或监管机构以后允许基金投资其他品种，基金管理人在履行适当程序后，可 以将其纳入投资范围。
+本基金为混合型基金，投资组合比例为：本基金投资组合中股票投资比例为基金资产的
+
+0%-30%，本基金现金或者到期日在一年以内的政府债券的投资比例合计不低于基金资产净值 的 5%。
+若法律法规的相关规定发生变更或监管机构允许，本基金管理人在履行适当程序后，可 对上述资产配置比例进行调整。
+2.基金托管人根据有关法律法规的规定及基金合同的约定，对基金投资、融资、融券比 例进行监督。基金托管人按下述比例和调整期限进行监督：
+（1）本基金投资组合中股票投资比例为基金资产的 0%-30%；
+（2）保持不低于基金资产净值 5%的现金或者到期日在一年以内的政府债券；
+（3）本基金持有一家公司发行的证券，其市值不超过基金资产净值的 10%；
+
+（4）本基金管理人管理的全部基金持有一家公司发行的证券，不超过该证券的 10%；
+（5）本基金持有的全部权证，其市值不得超过基金资产净值的 3%；
+（6）本基金管理人管理的全部基金持有的同一权证，不得超过该权证的 10%；
+（7）本基金在任何交易日买入权证的总金额，不得超过上一交易日基金资产净值的
+0.5%；
+
+（8）本基金投资于同一原始权益人的各类资产支持证券的比例，不得超过基金资产净 值的 10%；
+（9）本基金持有的全部资产支持证券，其市值不得超过基金资产净值的 20%；
+（10）本基金持有的同一(指同一信用级别)资产支持证券的比例，不得超过该资产支 持证券规模的 10%；
+（11）本基金管理人管理的全部基金投资于同一原始权益人的各类资产支持证券，不 得超过其各类资产支持证券合计规模的 10%；
+（12）本基金应投资于信用级别评级为 BBB 以上(含 BBB)的资产支持证券。基金持有
+ 
+
+
+资产支持证券期间，如果其信用等级下降、不再符合投资标准，应在评级报告发布之日起
+3 个月内予以全部卖出；
+（13）基金财产参与股票发行申购，本基金所申报的金额不超过本基金的总资产，本 基金所申报的股票数量不超过拟发行股票公司本次发行股票的总量；
+（14）本基金总资产不得超过基金净资产的 140%；
+（15）本基金持有单只中小企业私募债券，其市值不得超过该基金资产净值的 10%；
+（16）法律法规及中国证监会规定的其他投资比例限制。 本基金在开始进行股指期货投资之前，应与基金托管人就股指期货清算、估值、交割等
+事宜另行具体协商。 如果法律法规对上述投资组合比例限制进行变更的，以变更后的规定为准。法律法规或
+监管部门取消上述限制，如适用于本基金，在履行适当程序后本基金投资不再受相关限制。 基金管理人应当自基金合同生效之日起 6 个月内使基金的投资组合比例符合基金合同
+的有关约定。基金托管人对基金的投资的监督与检查自本基金合同生效之日起开始。 因证券市场或期货市场波动、上市公司合并、基金规模变动、股权分置改革中支付对价
+等基金管理人之外的因素致使基金投资比例不符合上述规定投资比例的，基金管理人应当在
+10 个交易日内进行调整。法律法规另有规定的，从其规定。
+3.基金托管人根据有关法律法规的规定及基金合同的约定，对本托管协议第十五条第九 款基金投资禁止行为进行监督。基金托管人通过事后监督方式对基金管理人基金投资禁止行 为进行监督。
+4.基金托管人根据有关法律法规的规定及基金合同的约定，对基金管理人参与银行间债 券市场进行监督。基金管理人应在基金投资运作之前向基金托管人提供符合法律法规及行业 标准的、经慎重选择的、本基金适用的银行间债券市场交易对手名单，并约定各交易对手所 适用的交易结算方式。基金管理人应严格按照交易对手名单的范围在银行间债券市场选择交 易对手。基金托管人监督基金管理人是否按事前提供的银行间债券市场交易对手名单进行交 易。基金管理人可以每半年对银行间债券市场交易对手名单及结算方式进行更新，新名单确 定前已与本次剔除的交易对手所进行但尚未结算的交易，仍应按照协议进行结算。如基金管 理人根据市场情况需要临时调整银行间债券市场交易对手名单及结算方式的，应及时向基金 托管人说明理由，协商解决。
+基金管理人负责对交易对手的资信控制，按银行间债券市场的交易规则进行交易，并负 责解决因交易对手不履行合同而造成的纠纷及损失，基金托管人不承担由此造成的任何法律 责任及损失。若未履约的交易对手在基金托管人与基金管理人确定的时间前仍未承担违约责 任及其他相关法律责任的，基金管理人可以对相应损失先行予以承担，然后再向相关交易对 手追偿。基金托管人则根据银行间债券市场成交单对合同履行情况进行监督。如基金托管人 事后发现基金管理人没有按照事先约定的交易对手或交易方式进行交易时，基金托管人应及
+ 
+
+
+时提醒基金管理人，基金托管人不承担由此造成的任何损失和责任。
+5.基金托管人根据有关法律法规的规定及基金合同的约定，对基金管理人投资流通受限 证券进行监督。
+基金管理人投资流通受限证券，应事先根据中国证监会相关规定，明确基金投资流通受 限证券的比例，制订严格的投资决策流程和风险控制制度，防范流动性风险、法律风险和操 作风险等各种风险。基金托管人对基金管理人是否遵守相关制度、流动性风险处置预案以及 相关投资额度和比例等的情况进行监督。
+（1）本基金投资的受限证券须为经中国证监会批准的在发行时明确一定期限锁定期的 可交易证券，不包括由于发布重大消息或其他原因而临时停牌的证券、已发行未上市证券、 回购交易中的质押券等流通受限证券。本基金不投资有锁定期但锁定期不明确的证券。
+本基金投资的受限证券限于可由中国证券登记结算有限责任公司或中央国债登记结算 有限责任公司、银行间清算所股份有限公司负责登记和存管，并可在证券交易所或全国银 行间债券市场交易的证券。
+本基金投资的受限证券应保证登记存管在本基金名下，基金管理人负责相关工作的落实 和协调，并确保基金托管人能够正常查询。因基金管理人原因产生的受限证券登记存管问题， 造成基金托管人无法安全保管本基金资产的责任与损失，及因受限证券存管直接影响本基金 安全的责任及损失，由基金管理人承担。
+本基金投资受限证券，不得预付任何形式的保证金。
+（2）基金管理人对本基金投资受限证券的流动性风险负责，确保对相关风险采取积极 有效的措施，在合理的时间内有效解决基金运作的流动性问题。如因基金巨额赎回或市场发 生剧烈变动等原因而导致基金现金周转困难时，基金管理人应保证提供足额现金确保基金的 支付结算。对本基金因投资受限证券导致的流动性风险，基金托管人不承担任何责任。如因 基金管理人违反基金合同或预先确定的投资流通受限证券的比例导致本基金出现损失致使 基金托管人承担连带赔偿责任的，基金管理人应赔偿基金托管人由此遭受的损失。
+（3）本基金有关投资受限证券比例如违反有关限制规定，在合理期限内未能进行及时 调整，基金管理人应在两个工作日内编制临时报告书，予以公告。
+（4）基金托管人根据有关规定有权对基金管理人进行以下事项监督：
+1) 本基金投资受限证券时的法律法规遵守情况。
+2) 在基金投资受限证券管理工作方面有关制度、流动性风险处置预案的建立与完善 情况。
+3) 有关比例限制的执行情况。
+
+4) 信息披露情况。
+（5）相关法律法规对基金投资受限证券有新规定的，从其规定。
+6.基金管理人应当对投资中期票据业务进行研究，认真评估中期票据投资业务的风险，
+ 
+
+
+本着审慎、勤勉尽责的原则进行中期票据的投资业务。基金管理人根据法律、法规、监管部
+门的规定，制定了经公司董事会批准的基金投资中期票据相关制度(以下简称“《制度》”)， 以规范对中期票据的投资决策流程、风险控制。基金管理人《制度》的内容与本协议不一致 的，以本协议的约定为准。
+（1）基金投资中期票据应遵循以下投资限制：
+1)中期票据属于固定收益类证券，基金投资中期票据应符合法律、法规及《基金合同》 中关于该基金投资固定收益类证券的相关比例及期限限制；
+2)基金管理人管理的全部公募基金投资于一家企业发行的单期中期票据合计不超过该 期证券的 10%。
+（2）基金托管人对基金管理人流动性风险处置的监督职责限于： 基金托管人对基金投资中期票据是否符合比例限制进行事后监督，如发现异常情况，应
+及时以书面形式通知基金管理人。基金管理人应积极配合和协助基金托管人的监督和核查。 基金管理人接到通知后应及时核对并向基金托管人说明原因和解决措施。基金托管人有权随 时对所通知事项进行复查, 督促基金管理人改正。基金管理人违规事项未能在限期内纠正的， 基金托管人应报告中国证监会。
+（3） 如因证券市场波动、证券发行人合并、基金规模变动等基金管理人之外的因素， 基金管理人投资的中期票据超过投资比例的，基金托管人有权要求基金管理人在 10 个交易 日内将中期票据调整至规定的比例要求。
+7.本基金投资中小企业私募债券的应符合证监会《关于证券投资基金投资中小企业私募 债券有关问题的通知》等有关法律法规的规定。
+（1）基金管理人应在基金首次投资中小企业私募债券前，向基金托管人提供经基金管 理人董事会批准的有关基金投资中小企业私募债券的投资决策流程、风险控制制度、流动性 风险处置预案、信用风险处置预案等。
+基金管理人应至少于首次执行中小企业私募债券相关投资指令之前两个工作日将上述 资料书面发至基金托管人，保证基金托管人有足够的时间进行审核。基金托管人应在收到上 述资料后两个工作日内，以书面或其他双方认可的方式确认收到上述资料。
+（2）基金管理人应防范本基金投资中小企业私募债券的流动性风险，确保对相关风险 采取积极有效的措施，在合理的时间内有效解决基金运作的流动性问题。如因基金巨额赎回 或市场发生剧烈变动等原因而导致基金现金周转困难时，基金管理人应在符合法律法规、基 金合同的前提下确保基金的支付结算。
+（3）基金托管人有权根据基金管理人制定的风险控制制度对基金管理人投资中小企业 私募债券的额度和比例进行监督。如果基金管理人对相应风险控制制度进行修改的，应及时 修订后通知基金托管人。
+（4）基金托管人对基金投资中小企业私募债券是否符合比例限制进行事后监督，如发
+ 
+
+
+现异常情况，应及时以书面形式通知基金管理人。基金管理人应积极配合和协助基金托管人
+的监督和核查。基金管理人接到通知后应及时核对并向基金托管人说明原因和解决措施。基 金托管人有权随时对所通知事项进行复查, 督促基金管理人改正。基金管理人违规事项未能 在限期内纠正的，基金托管人应报告中国证监会。如基金托管人没有切实履行监督职责（因 基金管理人未就相应风险控制制度的修订及时通知基金托管人的除外），导致基金出现风险， 基金托管人须承担连带责任。
+如因证券市场波动、证券发行人合并或基金规模变化等不可归责于基金管理人的因素导 致基金投资的中小企业私募债券超过投资比例的，基金托管人有权要求基金管理人在 10 个 交易日内将中小企业私募债券调整至规定的比例要求。
+8.基金如投资银行存款，基金托管人根据有关法律法规的规定及基金合同的约定，对基 金投资银行存款的交易对手范围是否符合有关规定进行监督；基金管理人在签署银行存款协 议前，应将草拟的银行存款协议送基金托管人审核。首次投资银行存款之前，基金管理人应 与基金托管人就银行存款的投资签署风险控制补充协议。
+9.基金托管人根据有关法律法规的规定及基金合同的约定，对基金资产净值计算、基金 份额净值计算、应收资金到账、基金费用开支及收入确定、基金收益分配、相关信息披露、 基金宣传推介材料中登载基金业绩表现数据等进行监督和核查。
+10.基金托管人发现基金管理人的上述事项及投资指令或实际投资运作违反法律法规、 基金合同和本托管协议的规定，应及时以电话提醒或书面提示等方式通知基金管理人限期纠 正，并及时向国务院证券监督管理机构报告。基金管理人应积极配合和协助基金托管人的监 督和核查。基金管理人收到书面通知后应在下一工作日及时核对并以书面形式给基金托管人 发出回函，就基金托管人的疑义进行解释或举证，说明违规原因及纠正期限，并保证在规定 期限内及时改正。在上述规定期限内，基金托管人有权随时对通知事项进行复查，督促基金 管理人改正。基金管理人对基金托管人通知的违规事项未能在限期内纠正的，基金托管人应 报告中国证监会。
+11.基金管理人有义务配合和协助基金托管人依照法律法规、基金合同和本托管协议对 基金业务执行核查。对基金托管人发出的书面提示，基金管理人应在规定时间内答复并改正， 或就基金托管人的疑义进行解释或举证；对基金托管人按照法律法规、基金合同和本托管协 议的要求需向中国证监会报送基金监督报告的事项，基金管理人应积极配合提供相关数据资 料和制度等。
+12.若基金托管人发现基金管理人依据交易程序已经生效的指令违反法律、行政法规和 其他有关规定，或者违反基金合同约定的，应当立即通知基金管理人，由此造成的损失由基 金管理人承担，并及时向国务院证券监督管理机构报告。
+13.基金托管人发现基金管理人有重大违规行为，应及时报告中国证监会，同时通知基 金管理人限期纠正，并将纠正结果报告中国证监会。基金管理人无正当理由，拒绝、阻挠对
+ 
+
+
+方根据本托管协议规定行使监督权，或采取拖延、欺诈等手段妨碍对方进行有效监督，情节
+严重或经基金托管人提出警告仍不改正的，基金托管人应报告中国证监会。
+
+（三）基金管理人对基金托管人的业务核查
+
+1.基金管理人对基金托管人履行托管职责情况进行核查，核查事项包括基金托管人安全 保管基金财产、开设基金财产的资金账户和证券账户、复核基金管理人计算的基金资产净值、 基金份额净值、根据基金管理人指令办理清算交收、相关信息披露和监督基金投资运作等行 为。
+2.基金管理人发现基金托管人擅自挪用基金财产、未对基金财产实行分账管理、未执行 或无故延迟执行基金管理人资金划拨指令、泄露基金投资信息等违反《基金法》、基金合同、 本协议及其他有关规定时，应及时以书面形式通知基金托管人限期纠正。基金托管人收到通 知后应在下一工作日及时核对并以书面形式给基金管理人发出回函，说明违规原因及纠正期 限，并保证在规定期限内及时改正。在上述规定期限内，基金管理人有权随时对通知事项进 行复查，督促基金托管人改正。基金托管人应积极配合基金管理人的核查行为，包括但不限 于：提交相关资料以供基金管理人核查托管财产的完整性和真实性，在规定时间内答复基金 管理人并改正。
+
+3.基金管理人发现基金托管人有重大违规行为，应及时报告中国证监会，同时通知基 金托管人限期纠正，并将纠正结果报告中国证监会。基金托管人无正当理由，拒绝、阻挠 对方根据本协议规定行使监督权，或采取拖延、欺诈等手段妨碍对方进行有效监督，情节 严重或经基金管理人提出警告仍不改正的，基金管理人应报告中国证监会。
+
+（四）基金财产的保管
+
+1.基金财产保管的原则
+（1）基金财产应独立于基金管理人、基金托管人的固有财产。基金财产的债权、不得 与基金管理人、基金托管人固有财产的债务相抵销，不同基金财产的债权债务，不得相互抵 销。基金管理人、基金托管人以其自有资产承担法律责任，其债权人不得对基金财产行使请 求冻结、扣押和其他权利。
+（2）基金管理人、基金托管人因依法解散、被依法撤销或者被依法宣告破产等原因进 行清算的，基金财产不属于其清算财产。
+（3）基金托管人应安全保管基金财产。未经基金管理人依据合法程序作出的合法合规 指令，基金托管人不得自行运用、处分、分配基金的任何财产。非因基金财产本身承担的债 务，不得对基金财产强制执行。
+ 
+
+
+（4）基金托管人按照规定开设基金财产的资金账户和证券账户。
+（5）基金托管人对所托管的不同基金财产分别设置账户，确保基金财产的完整与独立。
+（6）基金托管人根据基金管理人的指令，按照基金合同和本协议的约定保管基金财产， 如有特殊情况双方可另行协商解决。
+（7）对于因为基金投资产生的应收资产，应由基金管理人负责与有关当事人确定到账 日期并通知基金托管人，到账日基金财产没有到达基金账户的，基金托管人应及时通知基金 管理人采取措施进行催收。由此给基金财产造成损失的，基金管理人应负责向有关当事人追 偿基金财产的损失，基金托管人对此不承担任何责任。
+（8）除依据法律法规和基金合同的规定外，基金托管人不得委托第三人托管基金财产。
+2.基金募集期间及募集资金的验资
+
+（1）基金募集期间应开立“基金募集专户”，用于存放募集的资金。该账户由基金管 理人开立。
+（2）基金募集期满或基金停止募集时，募集的基金份额总额、基金募集金额、基金份 额持有人人数符合《基金法》、《运作办法》等有关规定后，基金管理人应将属于基金财产 的全部资金划入基金托管人开立的基金银行账户，同时在规定时间内，聘请具有从事证券 相关业务资格的会计师事务所进行验资，出具验资报告。出具的验资报告由参加验资的 2 名或 2 名以上中国注册会计师签字并加盖会计师事务所公章方为有效。
+（3）若基金募集期限届满，未能达到基金合同生效的条件，由基金管理人按规定办理 退款等事宜，基金托管人应提供充分协助。
+3.基金银行账户的开立和管理
+
+（1）基金托管人应负责本基金的银行账户的开设和管理。
+
+（2）基金托管人应以本基金名义在其营业机构开立基金的银行账户，并根据基金管理 人合法合规的指令办理资金收付。本基金的银行预留印鉴由基金托管人保管和使用。
+（3）基金银行账户的开立和使用，限于满足开展本基金业务的需要。基金托管人和基 金管理人不得假借本基金的名义开立任何其他银行账户；亦不得使用基金的任何账户进行 本基金业务以外的活动。
+（4）基金银行账户的开立和管理应符合银行业监督管理机构的有关规定。
+
+（5）在符合法律法规规定的条件下，基金托管人可以通过基金托管人专用账户办理基 金资产的支付。
+4.基金证券账户和结算备付金账户的开立和管理
+
+（1）基金托管人在中国证券登记结算有限责任公司上海分公司、深圳分公司为本基金
+ 
+
+
+开立基金托管人与本基金联名的证券账户。
+
+（2）基金证券账户的开立和使用，仅限于满足开展本基金业务的需要。基金托管人和 基金管理人不得出借或未经对方书面同意擅自转让基金的任何证券账户，亦不得使用基金的 任何账户进行本基金业务以外的活动。
+（3）基金证券账户的开立和证券账户卡的保管由基金托管人负责，账户资产的管理和 运用由基金管理人负责。
+（4）基金托管人以自身法人名义在中国证券登记结算有限责任公司开立结算备付金账 户，并代表所托管的基金完成与中国证券登记结算有限责任公司的一级法人清算工作，基金 管理人应予以积极协助。结算备付金、证券结算保证金等的收取按照中国证券登记结算有限 责任公司的规定执行。
+（5）若中国证监会或其他监管机构在本托管协议订立日之后允许基金从事其他投资品 种的投资业务，涉及相关账户的开立、使用的，若无相关规定，则基金托管人比照上述关于 账户开立、使用的规定执行。
+5.债券托管专户的开设和管理
+基金合同生效后，基金托管人根据中国人民银行、中央国债登记结算有限责任公司的有 关规定，在中央国债登记结算有限责任公司、银行间清算所股份有限公司开立债券托管账户， 并代表基金进行银行间市场债券的结算。基金管理人和基金托管人共同代表基金签订全国银 行间债券市场债券回购主协议。
+6.其他账户的开立和管理
+
+（1）因业务发展需要而开立的其他账户，可以根据法律法规和基金合同的规定开立， 在基金管理人和基金托管人商议后由基金托管人负责开立。新账户按有关规定使用并管理。
+（2）法律法规等有关规定对相关账户的开立和管理另有规定的，从其规定办理。
+7.基金财产投资的有关有价凭证等的保管 基金财产投资的有关实物证券等有价凭证由基金托管人存放于基金托管人的保管库，也
+可存入中央国债登记结算有限责任公司、中国证券登记结算有限责任公司上海分公司/深圳 分公司或票据营业中心的代保管库，保管凭证由基金托管人持有。实物证券等有价凭证的购 买和转让，由基金管理人和基金托管人共同办理。基金托管人对由基金托管人以外机构实际 有效控制的证券不承担保管责任，但基金托管人应妥善保管保管凭证。
+8.与基金财产有关的重大合同的保管 与基金财产有关的重大合同的签署，由基金管理人负责。由基金管理人代表基金签署的、
+与基金财产有关的重大合同的原件分别由基金管理人、基金托管人保管。除本协议另有规定 外，基金管理人代表基金签署的与基金财产有关的重大合同包括但不限于基金年度审计合同、
+ 
+
+
+基金信息披露协议及基金投资业务中产生的重大合同，基金管理人应保证基金管理人和基金
+托管人至少各持有一份正本的原件。重大合同的保管期限为基金合同终止后15年。
+（五）基金资产净值计算与复核
+
+1、基金资产净值的计算、复核与完成的时间及程序
+（1）基金资产净值 基金资产净值是指基金资产总值减去负债后的金额。 基金份额净值是指基金资产净值除以基金份额总数，基金份额净值的计算，精确到
+0.001 元，小数点后第四位四舍五入，国家另有规定的，从其规定。 基金管理人每个工作日计算基金资产净值及基金份额净值，经基金托管人复核，按规定
+公告。
+（2）复核程序 基金管理人每工作日对基金资产进行估值后，将基金份额净值结果以双方约定的方式提
+交给基金托管人，经基金托管人复核无误后，以约定的方式将复核结果提交给基金管理人， 由基金管理人依据基金合同和有关法律法规对外公布。
+
+根据有关法律法规，基金资产净值计算和基金会计核算的义务由基金管理人承担。本 基金的基金会计责任方由基金管理人担任，因此，就与本基金有关的会计问题，如经相关 各方在平等基础上充分讨论后，仍无法达成一致意见的，按照基金管理人对基金资产净值 的计算结果对外予以公布。
+2、基金资产估值方法和特殊情形的处理
+
+（1）估值对象 基金所拥有的股票、股指期货、权证、债券和银行存款本息、应收款项、其它投资等
+资产及负债。
+
+（2）估值方法
+1)	证券交易所上市的有价证券的估值
+
+A.交易所上市的权益类品种（包括股票、权证等），以其估值日在证券交易所挂牌的市 价（收盘价）估值；估值日无交易的，且最近交易日后经济环境未发生重大变化或证券发 行机构未发生影响证券价格的重大事件的，以最近交易日的市价（收盘价）估值；如最近 交易日后经济环境发生了重大变化或证券发行机构发生影响证券价格的重大事件的，可参 考类似投资品种的现行市价及重大变化因素，调整最近交易市价，确定公允价格。
+B.交易所上市的固定收益类品种，可以采用由第三方估值机构提供的价格数据进行估 值，第三方估值机构根据以下原则确定公允价值：对于存在活跃市场的情况下，应以活跃
+ 
+
+
+市场上未经调整的报价作为计量日的公允价值；对于活跃市场报价未能代表计量日公允价
+
+值的情况下，应对市场报价进行调整以确认计量日的公允价值；对于不存在市场活动或市 场活动很少的情况下，则应采用估值技术确定其公允价值。
+C.交易所上市不存在活跃市场的有价证券，采用估值技术确定公允价值。交易所上市 的资产支持证券，采用估值技术确定公允价值，在估值技术难以可靠计量公允价值的情况 下，按成本估值。
+2) 处于未上市期间的有价证券应区分如下情况处理：
+A. 送股、转增股、配股和公开增发的新股，按估值日在证券交易所挂牌的同一股票的 市价（收盘价）估值；该日无交易的，以最近一日的市价（收盘价）估值；
+B. 首次公开发行未上市的股票、债券和权证，采用估值技术确定公允价值，在估值技 术难以可靠计量公允价值的情况下，按成本估值；
+C. 首次公开发行有明确锁定期的股票，同一股票在交易所上市后，按交易所上市的同 一股票的市价（收盘价）估值；非公开发行有明确锁定期的股票，按监管机构或行业协会有 关规定确定公允价值。
+3) 全国银行间债券市场交易的债券、资产支持证券等固定收益品种，采用估值技术确 定公允价值。
+4)	中小企业私募债券，采用估值技术确定公允价值，在估值技术难以可靠计量公允 价值的情况下，按成本估值。
+5) 同一债券同时在两个或两个以上市场交易的，按债券所处的市场分别估值。
+6) 基金投资的股指期货合约，一般以估值当日结算价进行估值，估值当日无结算价的， 且最近交易日后经济环境未发生重大变化的，采用最近交易日结算价估值。
+7) 如有确凿证据表明按上述方法进行估值不能客观反映其公允价值的，基金管理人可 根据具体情况与基金托管人商定后，按最能反映公允价值的价格估值。
+8) 相关法律法规以及监管部门有强制规定的，从其规定。如有新增事项，按国家最新 规定估值。
+
+如基金管理人或基金托管人发现基金估值违反基金合同订明的估值方法、程序及相关 法律法规的规定或者未能充分维护基金份额持有人利益时，应立即通知对方，共同查明原 因，双方协商解决。。
+3、估值差错处理
+
+（1）当基金份额净值小数点后 3 位以内(含第 3 位)发生差错时，视为基金份额净值错 误；基金份额净值出现错误时，基金管理人应当立即予以纠正，通报基金托管人，并采取 合理的措施防止损失进一步扩大；错误偏差达到基金份额净值的 0.25%时，基金管理人应
+ 
+
+
+当通报基金托管人并报中国证监会备案；错误偏差达到基金份额净值的 0.5%时，基金管理
+
+人应当公告；当发生净值计算错误时，由基金管理人负责处理，由此给基金份额持有人和 基金造成损失的，应由基金管理人先行赔付，基金管理人按差错情形，有权向其他当事人 追偿。
+（2）当基金份额净值计算差错给基金和基金份额持有人造成损失需要进行赔偿时，基 金管理人和基金托管人应根据实际情况界定双方承担的责任，经确认后按以下条款进行赔 偿：
+A.	本基金的基金会计责任方由基金管理人担任，与本基金有关的会计问题，如经双 方在平等基础上充分讨论后，尚不能达成一致时，按基金管理人的建议执行，由此给基金 份额持有人和基金财产造成的损失，由基金管理人负责赔付。
+B.	若基金管理人计算的基金份额净值已由基金托管人复核确认后公告，而且基金托 管人未对计算过程提出疑义或要求基金管理人书面说明，基金份额净值出错且造成基金份 额持有人损失的，应根据法律法规的规定对投资者或基金支付赔偿金，就实际向投资者或 基金支付的赔偿金额，基金管理人与基金托管人按照管理费和托管费的比例各自承担相应 的责任。
+C.	如基金管理人和基金托管人对基金份额净值的计算结果，虽然多次重新计算和核 对，尚不能达成一致时，为避免不能按时公布基金份额净值的情形，以基金管理人的计算 结果对外公布，由此给基金份额持有人和基金造成的损失，由基金管理人负责赔付。
+D.	由于基金管理人提供的信息错误（包括但不限于基金申购或赎回金额等），进而导 致基金份额净值计算错误而引起的基金份额持有人和基金财产的损失，由基金管理人负责 赔付。
+（3）由于不可抗力原因，或由于证券交易所及注册登记结算公司发送的数据错误，基 金管理人和基金托管人虽然已经采取必要、适当、合理的措施进行检查，但是未能发现该 错误而造成的基金份额净值计算错误，基金管理人、基金托管人可免除赔偿责任。但基金 管理人、基金托管人应积极采取必要的措施消除由此造成的影响。
+（4）基金管理人和基金托管人由于各自技术系统设置而产生的净值计算尾差，以基金 管理人计算结果为准。
+（5）前述内容如法律法规或者监管部门另有规定的，从其规定处理。如果行业另有通 行做法，双方当事人应本着平等和保护基金份额持有人利益的原则进行协商。
+ 
+
+
+4、基金账册的建立
+
+基金管理人进行基金会计核算并编制基金财务会计报告。基金管理人独立地设置、记 录和保管本基金的全套账册。基金托管人按规定制作相关账册并与基金管理人核对。若基 金管理人和基金托管人对会计处理方法存在分歧，应以基金管理人的处理方法为准。若当 日核对不符，暂时无法查找到错账的原因而影响到基金资产净值的计算和公告的，以基金 管理人的账册为准。
+5、基金定期报告的编制和复核
+（1）财务报表的编制 基金财务报表由基金管理人编制，基金托管人复核。
+（2）报表复核 基金托管人在收到基金管理人编制的基金财务报表后，进行独立的复核。核对不符时，
+应及时通知基金管理人共同查出原因，进行调整，直至双方数据完全一致。
+（3）财务报表的编制与复核时间安排
+1)	报表的编制
+基金管理人应当在每月结束后 5 个工作日内完成月度报表的编制；在每个季度结束之日 起 15 个工作日内完成基金季度报告的编制；在上半年结束之日起 60 日内完成基金半年度报 告的编制；在每年结束之日起 90 日内完成基金年度报告的编制。基金年度报告的财务会计 报告应当经过审计。基金合同生效不足两个月的，基金管理人可以不编制当期季度报告、半 年度报告或者年度报告。
+2)	报表的复核 基金管理人应及时完成报表编制，将有关报表提供基金托管人复核；基金托管人在复核
+过程中，发现双方的报表存在不符时，基金管理人和基金托管人应共同查明原因，进行调整， 调整以国家有关规定为准。
+
+基金管理人应留足充分的时间，便于基金托管人复核相关报表及报告。
+
+（六）基金份额持有人名册的保管 基金份额持有人名册至少应包括基金份额持有人的名称和持有的基金份额。基金份额持
+有人名册由基金注册登记机构根据基金管理人的指令编制和保管，基金管理人和基金托管人 应分别保管基金份额持有人名册，保存期不少于 15 年。如不能妥善保管，则按相关法规承 担责任。
+
+在基金托管人要求或编制半年报和年报前，基金管理人应将有关资料送交基金托管人， 不得无故拒绝或延误提供，并保证其的真实性、准确性和完整性。基金托管人不得将所保 管的基金份额持有人名册用于基金托管业务以外的其他用途，并应遵守保密义务。
+ 
+
+
+（七）争议解决方式
+
+因本托管协议产生或与之相关的争议，双方当事人应通过协商、调解解决，协商、调解 不能解决的，任何一方均有权将争议提交中国国际经济贸易仲裁委员会进行仲裁，仲裁地点 为北京市，按照中国国际经济贸易仲裁委员会届时有效的仲裁规则进行仲裁。仲裁裁决是终 局的，对本托管协议双方当事人均有约束力，仲裁费用由败诉方承担。
+争议处理期间，本托管协议双方当事人应恪守基金管理人和基金托管人职责，各自继续 忠实、勤勉、尽责地履行基金合同和本托管协议规定的义务，维护基金份额持有人的合法权 益。
+
+本协议受中国法律管辖。
+
+（八）托管协议的变更与终止
+
+1.本托管协议的变更程序 本托管协议双方当事人经协商一致，可以对本托管协议进行修改。修改后的新托管协议，
+其内容不得与基金合同的规定有任何冲突。基金托管协议的变更报中国证监会备案后生效。
+2.基金托管协议终止出现的情形
+（1）基金合同终止；
+（2）基金托管人解散、依法被撤销、破产或由其他基金托管人接管基金资产；
+
+（3）基金管理人解散、依法被撤销、破产或由其他基金管理人接管基金管理权；
+（4）发生法律法规、监管部门或基金合同规定的终止事项。
+
+3.基金财产的清算
+（1）基金财产清算小组
+
+1) 自出现《基金合同》终止事由之日起30个工作日成立清算小组，基金管理人组织 基金财产清算小组并在中国证监会的监督下进行基金清算。
+2) 基金财产清算小组成员由基金管理人、基金托管人、具有从事证券相关业务资格 的注册会计师、律师以及中国证监会指定的人员组成。基金财产清算小组可以聘用必要的 工作人员。
+3) 基金财产清算小组负责基金财产的保管、清理、估价、变现和分配。基金财产清 算小组可以依法进行必要的民事活动。
+（2）基金财产清算程序
+
+基金合同终止，应当按法律法规和本基金合同的有关规定对基金财产进行清算。基金财 产清算程序主要包括：
+1) 基金合同终止后，发布基金财产清算公告；
+ 
+
+
+2) 基金合同终止时，由基金财产清算小组统一接管基金财产；
+
+3) 对基金财产和债权债务进行清理和确认；
+
+4) 对基金财产进行估价和变现；
+
+5) 制作清算报告；
+
+6) 聘请会计师事务所对清算报告进行外部审计，聘请律师事务所出具法律意见书；
+
+7) 对基金剩余财产进行分配。基金财产清算的期限为 6 个月；
+
+（3）清算费用 清算费用是指基金财产清算小组在进行基金财产清算过程中发生的所有合理费用，清
+算费用由基金财产清算小组优先从基金财产中支付。
+
+（4）基金财产清算剩余资产的分配： 依据基金财产清算的分配方案，将基金财产清算后的全部剩余资产扣除基金财产清算
+费用、交纳所欠税款并清偿基金债务后，按基金份额持有人持有的基金份额比例进行分配。 (5)基金财产清算的公告 清算过程中的有关重大事项须及时公告；基金财产清算报告经会计师事务所审计并由
+律师事务所出具法律意见书后报中国证监会备案并公告。基金财产清算公告于基金财产清 算报告报中国证监会备案后 5 个工作日内由基金财产清算小组进行公告。
+(6)基金财产清算账册及文件的保存 基金财产清算账册及有关文件由基金托管人保存15年以上。
+ 
+
+
+
+二十、对基金份额持有人的服务
+
+基金管理人承诺为基金份额持有人提供一系列的服务，基金管理人将根据基金份额持有 人的需要和市场的变化，增加或变更服务项目。主要服务内容如下：
+（一）账单服务
+1、基金份额持有人可登录本基金管理人网站账户查询系统查阅对账单。
+2、基金份额持有人可通过网站、电话等方式向本基金管理人定制对账单。基金管理人 根据基金份额持有人的对账单定制情况，向账单期内发生交易或账单期末仍持有本公司旗下 基金份额的持有人定期或不定期发送对账单，但由于基金份额持有人未详实填写或未及时更 新相关信息（包括姓名、手机号码、电子邮箱、邮寄地址、邮政编码等）导致基金管理人无 法送出的除外。
+
+（二）客户服务中心（Call Center）电话服务
+
+1、24小时自动语音应答服务，为投资者提供基金净值查询、基金账户查询、基金信息 查询等服务。
+2、工作时间由专门客服人员为投资者提供全面业务咨询（包括公司信息、基金信息、 基金投资指南等）及投诉受理等服务。
+公司网站：www.ccfund.com.cn 客服邮箱：support@ccfund.com.cn 客服电话：400-8868-666
+ 
+
+
+
+二十一、招募说明书的存放及查阅方式
+
+本招募说明书存放在基金管理人、基金托管人的办公场所，投资者可在办公时间查阅。 在支付工本费后，投资者可在合理时间内取得上述文件的复制件或复印件。招募说明书条款 及内容应以招募说明书正本为准。
+投资者还可以登录基金管理人的网站（http://www.ccfund.com.cn）查阅和下载本招募 说明书。
+ 
+
+
+
+二十二、备查文件
+
+（一）中国证监会批准长城新视野混合型证券投资基金设立的文件
+
+（二）《长城新视野混合型证券投资基金基金合同》
+（三）《长城新视野混合型证券投资基金托管协议》
+（四）法律意见书
+（五）基金管理人业务资格批件、营业执照
+（六）基金托管人业务资格批件、营业执照
+
+（七）中国证监会规定的其他文件
+
+长城基金管理有限公司
+
+2016 年 4 月 9 日
+
+</div>
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/layer/layer.js"></script>
+<script>
+var ht;
+// 提交情况
+function tj() {
+var ml = $("#ml");
+if(ht==undefined) {
+	ht = ml.html();
+	ml.html('');
+}
+//页面层
+layer.open({
+title: '提交情况',
+type:1,
+fix: false, //不固定
+maxmin: true,
+  skin: 'layui-layer-rim', //加上边框
+  area: ['800px', '600px'], //宽高
+  content: ht
+});
+
+$("#ml").html('');
+}
+
+var ht1
+// 预览
+function cc() {
+var cl = $("#cl");
+if(ht1==undefined) {
+	ht1 = cl.html();
+	cl.html('');
+}
+
+//页面层
+layer.open({
+title: '报告预览',
+type:1,
+fix: false, //不固定
+maxmin: true,
+  skin: 'layui-layer-rim', //加上边框
+  area: ['800px', '600px'], //宽高
+  content: '<div  style="padding: 10px;">' + ht1 + '</div>'
+});
+
+$("#cl").html('');
+}
+
+
+</script>
+</body>
+</html>
